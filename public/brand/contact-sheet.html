@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baba Ayurved Pharmacy — Brand Kit & Asset Contact Sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-primary: #5C2E06;
+      --brand-leaf-green: #5C5E27;
+      --brand-ivory: #F0E4D3;
+      --brand-off-white: #FBF7F3;
+      --brand-cream: #F4EADD;
+      --brand-sand: #E6D3BA;
+      --brand-taupe: #CFB99A;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--brand-off-white);
+      color: var(--brand-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid var(--brand-sand);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .header-logo {
+      max-width: 320px;
+      height: auto;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--brand-leaf-green);
+      color: var(--brand-off-white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #7A4F23;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 3rem 0 1.5rem;
+      border-bottom: 1px solid var(--brand-sand);
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .section-title span {
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--brand-leaf-green);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Color Swatches Grid */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .swatch-card {
+      background: #FFFFFF;
+      border: 1px solid var(--brand-sand);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(92, 46, 6, 0.04);
+    }
+
+    .swatch-color {
+      height: 110px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0.75rem;
+    }
+
+    .swatch-hex {
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 0.85rem;
+      background: rgba(255,255,255,0.9);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      color: #222;
+    }
+
+    .swatch-info {
+      padding: 1rem;
+    }
+
+    .swatch-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .swatch-role {
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .proportion-bar {
+      display: flex;
+      height: 36px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1.5rem 0 0.5rem;
+      border: 1px solid var(--brand-sand);
+    }
+
+    .prop-segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s;
+    }
+
+    /* Logo Cards Grid */
+    .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo-card {
+      background: #FFFFFF;
+      border: 1px solid var(--brand-sand);
+      border-radius: 6px;
+      padding: 1.5rem;
+      display: flex;
+      flex-col;
+      gap: 1rem;
+      box-shadow: 0 2px 6px rgba(92, 46, 6, 0.03);
+    }
+
+    .logo-preview-box {
+      background: var(--brand-ivory);
+      border: 1px solid var(--brand-sand);
+      border-radius: 4px;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .logo-preview-box.dark {
+      background: var(--brand-primary);
+    }
+
+    .logo-preview-box img, .logo-preview-box svg {
+      max-width: 100%;
+      max-height: 100px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .logo-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .logo-meta h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .logo-meta .path {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #666;
+      word-break: break-all;
+      background: var(--brand-off-white);
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+    }
+
+    /* Packaging Grid */
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .asset-card {
+      background: #FFFFFF;
+      border: 1px solid var(--brand-sand);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(92, 46, 6, 0.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .asset-thumb {
+      position: relative;
+      background: var(--brand-ivory);
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+
+    .asset-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .asset-card:hover .asset-thumb img {
+      transform: scale(1.03);
+    }
+
+    .asset-details {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .asset-details h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .asset-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      background: var(--brand-sand);
+      color: var(--brand-primary);
+    }
+
+    .tag.primary {
+      background: var(--brand-leaf-green);
+      color: #FFF;
+    }
+
+    /* Table */
+    .manifest-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: #FFF;
+      border: 1px solid var(--brand-sand);
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.85rem;
+    }
+
+    .manifest-table th, .manifest-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--brand-cream);
+    }
+
+    .manifest-table th {
+      background: var(--brand-ivory);
+      font-weight: 600;
+      color: var(--brand-primary);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .manifest-table code {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--brand-primary);
+      background: var(--brand-off-white);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+    }
+
+    footer {
+      border-top: 2px solid var(--brand-sand);
+      margin-top: 4rem;
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">Official Brand Assets &middot; Single Source of Truth</div>
+      <img src="/brand/logos/baba-logo-primary.svg" alt="Baba Ayurved Pharmacy Primary Logo" class="header-logo">
+      <h1>Visual Identity &amp; Asset Contact Sheet</h1>
+      <p class="subtitle">Extracted and calibrated strictly from Baba brand kit_v2.pdf</p>
+    </header>
+
+    <!-- SECTION 1: COLOR PALETTE -->
+    <h2 class="section-title">
+      01 &middot; Exact Color Palette
+      <span>Brand Kit §04 Verified Hex Values</span>
+    </h2>
+
+    <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+      Exact colors implemented without approximation. Proportions strictly follow the brand-kit distribution: <strong>60% Background</strong>, <strong>25% Primary Titles/Button</strong>, <strong>10% Secondary Elements</strong>, and <strong>5% Accent</strong>.
+    </p>
+
+    <div class="proportion-bar">
+      <div class="prop-segment" style="width: 60%; background-color: #F0E4D3; color: #5C2E06;">60% Background (Ivory #F0E4D3 / Off-White #FBF7F3)</div>
+      <div class="prop-segment" style="width: 25%; background-color: #5C2E06; color: #FBF7F3;">25% Primary (#5C2E06)</div>
+      <div class="prop-segment" style="width: 10%; background-color: #E6D3BA; color: #5C2E06;">10% Secondary (#E6D3BA / #F4EADD)</div>
+      <div class="prop-segment" style="width: 5%; background-color: #5C5E27; color: #FFF;">5% Accent (#5C5E27)</div>
+    </div>
+
+    <div class="palette-grid" style="margin-top: 1.5rem;">
+      <!-- Primary Brown -->
+      <div class="swatch-card">
+        <div class="swatch-color" style="background-color: #5C2E06;">
+          <span class="swatch-hex" style="color: #5C2E06;">#5C2E06</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Primary Brown</div>
+          <div class="swatch-role">Brand wordmark, primary titles, solid primary buttons, strong heritage anchors (25%). Trust, tradition, strength.</div>
+        </div>
+      </div>
+
+      <!-- Leaf Green -->
+      <div class="swatch-card">
+        <div class="swatch-color" style="background-color: #5C5E27;">
+          <span class="swatch-hex" style="color: #5C5E27;">#5C5E27</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Leaf Green</div>
+          <div class="swatch-role">Botanical accents, secondary highlights, active badges, leaf element on the 'A' (5%). Natural, wellness, harmony, growth.</div>
+        </div>
+      </div>
+
+      <!-- Ivory Cream -->
+      <div class="swatch-card">
+        <div class="swatch-color" style="background-color: #F0E4D3;">
+          <span class="swatch-hex" style="color: #5C2E06;">#F0E4D3</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Ivory Cream</div>
+          <div class="swatch-role">Primary brand surface, calm backgrounds, cards, purity and balance (60%).</div>
+        </div>
+      </div>
+
+      <!-- Off-White -->
+      <div class="swatch-card">
+        <div class="swatch-color" style="background-color: #FBF7F3; border-bottom: 1px solid var(--brand-sand);">
+          <span class="swatch-hex" style="color: #5C2E06;">#FBF7F3</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Off-White</div>
+          <div class="swatch-role">Clean whitespace, canvas background, high-contrast readable surfaces.</div>
+        </div>
+      </div>
+
+      <!-- Cream -->
+      <div class="swatch-card">
+        <div class="swatch-color" style="background-color: #F4EADD;">
+          <span class="swatch-hex" style="color: #5C2E06;">#F4EADD</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cream</div>
+          <div class="swatch-role">Secondary surfaces, card insets, light UI controls.</div>
+        </div>
+      </div>
+
+      <!-- Sand -->
+      <div class="swatch-card">
+        <div class="swatch-color" style="background-color: #E6D3BA;">
+          <span class="swatch-hex" style="color: #5C2E06;">#E6D3BA</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Sand</div>
+          <div class="swatch-role">Elevated cards, subtle accent sections, container borders.</div>
+        </div>
+      </div>
+
+      <!-- Taupe -->
+      <div class="swatch-card">
+        <div class="swatch-color" style="background-color: #CFB99A;">
+          <span class="swatch-hex" style="color: #5C2E06;">#CFB99A</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">Taupe</div>
+          <div class="swatch-role">Dividers, borders, hairline structures, subtle demarcation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: TYPOGRAPHY -->
+    <h2 class="section-title">
+      02 &middot; Typography System
+      <span>Brand Kit §05 &amp; §06 Verified</span>
+    </h2>
+
+    <div style="background: #FFFFFF; border: 1px solid var(--brand-sand); border-radius: 6px; padding: 2rem; margin-bottom: 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <div>
+          <span class="tag primary">Primary Display Serif</span>
+          <h3 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; margin: 0.5rem 0;">Cormorant Garamond</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+            Used for hero headline, major section headings, heritage statements, editorial pull quotes, and product names.
+          </p>
+          <div style="font-family: var(--font-display); font-size: 1.5rem; line-height: 1.3;">
+            <p style="font-weight: 400;">Regular 400 &middot; Ritual, not remedy.</p>
+            <p style="font-weight: 500;">Medium 500 &middot; Phoolchand Aushdhalaya</p>
+            <p style="font-weight: 600;">SemiBold 600 &middot; 150+ Years Lineage</p>
+            <p style="font-style: italic;">Italic &middot; The unit is a morning, an evening, a season.</p>
+          </div>
+        </div>
+
+        <div>
+          <span class="tag">Secondary Functional Sans</span>
+          <h3 style="font-family: var(--font-sans); font-size: 2rem; font-weight: 600; margin: 0.5rem 0;">Montserrat</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+            Used for navigation, UI buttons, calls to action, labels, product metadata, prices, tables, and functional controls.
+          </p>
+          <div style="font-family: var(--font-sans); font-size: 1rem; line-height: 1.6;">
+            <p style="font-weight: 400;">Regular 400 &middot; Classical Dinacharya practice cards and evidence labels.</p>
+            <p style="font-weight: 500;">Medium 500 &middot; Navigation links, filter tags, batch certification.</p>
+            <p style="font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem;">SemiBold Tracked Caps &middot; PHARMACY &middot; HERBAL PREPARATIONS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: EXTRACTED LOGOS -->
+    <h2 class="section-title">
+      03 &middot; Extracted Logo Variations
+      <span>Original PDF Vectors &amp; Embedded PNGs</span>
+    </h2>
+
+    <div class="logos-grid">
+      <!-- 1. Primary Vector Logo -->
+      <div class="logo-card">
+        <div class="logo-preview-box">
+          <img src="/brand/logos/baba-logo-primary.svg" alt="Primary Vector Logo">
+        </div>
+        <div class="logo-meta">
+          <h3>01 &middot; Primary Vector Logo</h3>
+          <p style="font-size: 0.85rem; color: #555;">Pure vector extracted from PDF drawing streams. BABA in #5C2E06 with botanical leaf in #5C5E27 and AYURVEDA sub-wordmark.</p>
+          <div class="path">/brand/logos/baba-logo-primary.svg</div>
+        </div>
+      </div>
+
+      <!-- 2. Monogram -->
+      <div class="logo-card">
+        <div class="logo-preview-box">
+          <img src="/brand/logos/baba-monogram.svg" alt="Monogram Vector">
+        </div>
+        <div class="logo-meta">
+          <h3>02 &middot; Brand Monogram</h3>
+          <p style="font-size: 0.85rem; color: #555;">'B' monogram with botanical leaf sprout. Ideal for compact headers, avatar, seals, and mobile app icons.</p>
+          <div class="path">/brand/logos/baba-monogram.svg</div>
+        </div>
+      </div>
+
+      <!-- 3. Favicon -->
+      <div class="logo-card">
+        <div class="logo-preview-box">
+          <img src="/brand/logos/baba-favicon.svg" alt="Favicon Badge">
+        </div>
+        <div class="logo-meta">
+          <h3>03 &middot; Favicon Badge</h3>
+          <p style="font-size: 0.85rem; color: #555;">Square badge with ivory background (#F0E4D3), brown monogram, and green leaf. Applied to browser tab icon.</p>
+          <div class="path">/brand/logos/baba-favicon.svg</div>
+        </div>
+      </div>
+
+      <!-- 4. Logo on Dark Background -->
+      <div class="logo-card">
+        <div class="logo-preview-box dark">
+          <img src="/brand/logos/baba-logo-dark.svg" alt="Logo on Dark">
+        </div>
+        <div class="logo-meta">
+          <h3>04 &middot; Logo on Dark Background</h3>
+          <p style="font-size: 0.85rem; color: #555;">Espresso brown background (#3E240C) with light cream letterforms (#FBF7F3). Extracted from Brand Kit §02.</p>
+          <div class="path">/brand/logos/baba-logo-dark.svg</div>
+        </div>
+      </div>
+
+      <!-- 5. Logo on Light Background -->
+      <div class="logo-card">
+        <div class="logo-preview-box">
+          <img src="/brand/logos/baba-logo-light.svg" alt="Logo on Light">
+        </div>
+        <div class="logo-meta">
+          <h3>05 &middot; Logo on Light Background</h3>
+          <p style="font-size: 0.85rem; color: #555;">Ivory background (#F0E4D3) with primary brown wordmark and green leaf accent.</p>
+          <div class="path">/brand/logos/baba-logo-light.svg</div>
+        </div>
+      </div>
+
+      <!-- 6. Standalone Leaf Icon -->
+      <div class="logo-card">
+        <div class="logo-preview-box">
+          <img src="/brand/logos/baba-leaf-icon.svg" alt="Leaf Icon">
+        </div>
+        <div class="logo-meta">
+          <h3>06 &middot; Standalone Leaf Icon</h3>
+          <p style="font-size: 0.85rem; color: #555;">Pure botanical leaf graphic in leaf green (#5C5E27). Used for list bullets, section badges, and apothecary seals.</p>
+          <div class="path">/brand/logos/baba-leaf-icon.svg</div>
+        </div>
+      </div>
+
+      <!-- 7. Logo Variations V2: Primary -->
+      <div class="logo-card">
+        <div class="logo-preview-box">
+          <img src="/brand/logos/baba-logo-v2-primary.png" alt="Logo V2 Primary">
+        </div>
+        <div class="logo-meta">
+          <h3>07 &middot; Logo Variations V2 (Primary)</h3>
+          <p style="font-size: 0.85rem; color: #555;">Original embedded high-resolution raster asset (1802&times;872 px) from Brand Kit §03.</p>
+          <div class="path">/brand/logos/baba-logo-v2-primary.png</div>
+        </div>
+      </div>
+
+      <!-- 8. Logo Variations V2: Monogram -->
+      <div class="logo-card">
+        <div class="logo-preview-box">
+          <img src="/brand/logos/baba-logo-v2-monogram.png" alt="Logo V2 Monogram">
+        </div>
+        <div class="logo-meta">
+          <h3>08 &middot; Logo Variations V2 (Monogram)</h3>
+          <p style="font-size: 0.85rem; color: #555;">Original embedded high-resolution raster asset (1350&times;1165 px) from Brand Kit §03.</p>
+          <div class="path">/brand/logos/baba-logo-v2-monogram.png</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: PACKAGING & LIFESTYLE ASSETS -->
+    <h2 class="section-title">
+      04 &middot; Extracted Packaging &amp; Lifestyle Imagery
+      <span>Brand Kit §09 &amp; §10 Authentic Mockups</span>
+    </h2>
+
+    <div class="assets-grid">
+      <!-- 1. Lifestyle Showcase -->
+      <div class="asset-card">
+        <div class="asset-thumb">
+          <img src="/brand/packaging/brand-lifestyle-showcase.webp" alt="Brand Lifestyle Showcase">
+        </div>
+        <div class="asset-details">
+          <div class="asset-tags">
+            <span class="tag primary">Hero Feature</span>
+            <span class="tag">1536&times;1024</span>
+          </div>
+          <h3>Brand Lifestyle Showcase</h3>
+          <p style="font-size: 0.85rem; color: #555;">Premium Ayurvedic apothecary packaging arrangement with jars, wooden spoons, boxes, and botanical leaves in soft natural morning light.</p>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #777;">/brand/packaging/brand-lifestyle-showcase.webp</div>
+        </div>
+      </div>
+
+      <!-- 2. Packaging Shelf Lineup -->
+      <div class="asset-card">
+        <div class="asset-thumb">
+          <img src="/brand/packaging/packaging-shelf-lineup.webp" alt="Packaging Shelf Lineup">
+        </div>
+        <div class="asset-details">
+          <div class="asset-tags">
+            <span class="tag primary">Catalogue</span>
+            <span class="tag">1799&times;874</span>
+          </div>
+          <h3>Product Range Shelf Lineup</h3>
+          <p style="font-size: 0.85rem; color: #555;">Comprehensive showcase of bottles, tins, boxes, and amber glass jars displayed across an apothecary wooden shelf.</p>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #777;">/brand/packaging/packaging-shelf-lineup.webp</div>
+        </div>
+      </div>
+
+      <!-- 3. Amber Glass Jars -->
+      <div class="asset-card">
+        <div class="asset-thumb">
+          <img src="/brand/packaging/packaging-amber-jars.webp" alt="Amber Glass Jars">
+        </div>
+        <div class="asset-details">
+          <div class="asset-tags">
+            <span class="tag primary">Single Herbs</span>
+            <span class="tag">1536&times;1024</span>
+          </div>
+          <h3>Amber Glass Apothecary Jars</h3>
+          <p style="font-size: 0.85rem; color: #555;">Dark amber glass jars with gold aluminum lids holding classical herbal preparations and churnas.</p>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #777;">/brand/packaging/packaging-amber-jars.webp</div>
+        </div>
+      </div>
+
+      <!-- 4. Tins & Boxes -->
+      <div class="asset-card">
+        <div class="asset-thumb">
+          <img src="/brand/packaging/packaging-tins-boxes.webp" alt="Packaging Tins & Boxes">
+        </div>
+        <div class="asset-details">
+          <div class="asset-tags">
+            <span class="tag primary">Churnas</span>
+            <span class="tag">1536&times;1024</span>
+          </div>
+          <h3>Herbal Tins &amp; Rigid Boxes</h3>
+          <p style="font-size: 0.85rem; color: #555;">Authentic tin canisters and paperboard packaging designed for light-sensitive botanical powders.</p>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #777;">/brand/packaging/packaging-tins-boxes.webp</div>
+        </div>
+      </div>
+
+      <!-- 5. Bottles & Dropper -->
+      <div class="asset-card">
+        <div class="asset-thumb">
+          <img src="/brand/packaging/packaging-bottles-dropper.webp" alt="Bottles & Dropper">
+        </div>
+        <div class="asset-details">
+          <div class="asset-tags">
+            <span class="tag primary">Taila &amp; Oils</span>
+            <span class="tag">1536&times;1024</span>
+          </div>
+          <h3>Amber Tincture Bottles &amp; Dropper</h3>
+          <p style="font-size: 0.85rem; color: #555;">Traditional medicated oils (Taila) and liquid extract dropper bottles with graduated pipettes.</p>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #777;">/brand/packaging/packaging-bottles-dropper.webp</div>
+        </div>
+      </div>
+
+      <!-- 6. Stacked Boxes -->
+      <div class="asset-card">
+        <div class="asset-thumb">
+          <img src="/brand/packaging/packaging-boxes-stack.webp" alt="Stacked Boxes">
+        </div>
+        <div class="asset-details">
+          <div class="asset-tags">
+            <span class="tag primary">Formulations</span>
+            <span class="tag">1536&times;1024</span>
+          </div>
+          <h3>Stacked Formulation Cartons</h3>
+          <p style="font-size: 0.85rem; color: #555;">Recyclable kraft paperboard cartons with hot-stamped botanical line work and Shastrokt seals.</p>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #777;">/brand/packaging/packaging-boxes-stack.webp</div>
+        </div>
+      </div>
+
+      <!-- 7. Stationery & Shopping Bag -->
+      <div class="asset-card">
+        <div class="asset-thumb">
+          <img src="/brand/packaging/packaging-stationery-bag.webp" alt="Stationery & Bag">
+        </div>
+        <div class="asset-details">
+          <div class="asset-tags">
+            <span class="tag primary">Retail Experience</span>
+            <span class="tag">1536&times;1024</span>
+          </div>
+          <h3>Apothecary Bag &amp; Stationery</h3>
+          <p style="font-size: 0.85rem; color: #555;">Craft shopping bags, letterheads, and prescription envelopes reflecting the 150-year pharmacy heritage.</p>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #777;">/brand/packaging/packaging-stationery-bag.webp</div>
+        </div>
+      </div>
+
+      <!-- 8. Cosmetic Tubes & Pouches -->
+      <div class="asset-card">
+        <div class="asset-thumb">
+          <img src="/brand/packaging/packaging-tubes-pouches.webp" alt="Tubes & Pouches">
+        </div>
+        <div class="asset-details">
+          <div class="asset-tags">
+            <span class="tag primary">Balms &amp; Lepa</span>
+            <span class="tag">1254&times;1254</span>
+          </div>
+          <h3>Herbal Tubes &amp; Resealable Pouches</h3>
+          <p style="font-size: 0.85rem; color: #555;">Modern barrier pouches and aluminum tubes for classical lepa (pastes) and topical ointments.</p>
+          <div style="font-family: monospace; font-size: 0.75rem; color: #777;">/brand/packaging/packaging-tubes-pouches.webp</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: ASSET MANIFEST TABLE -->
+    <h2 class="section-title">
+      05 &middot; Complete Asset Manifest Table
+      <span>Systematic Inventory</span>
+    </h2>
+
+    <table class="manifest-table">
+      <thead>
+        <tr>
+          <th>Asset Name</th>
+          <th>File Path</th>
+          <th>Type / Format</th>
+          <th>Dimensions</th>
+          <th>Extraction Source</th>
+          <th>Primary Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Primary Vector Logo</strong></td>
+          <td><code>/brand/logos/baba-logo-primary.svg</code></td>
+          <td>SVG (Lossless Vector)</td>
+          <td>Scalable (489&times;179 viewBox)</td>
+          <td>PDF Drawings 4&ndash;17</td>
+          <td>Header, Homepage Hero, Official Wordmark</td>
+        </tr>
+        <tr>
+          <td><strong>Primary Logo (Reversed)</strong></td>
+          <td><code>/brand/logos/baba-logo-reversed.svg</code></td>
+          <td>SVG (Lossless Vector)</td>
+          <td>Scalable (489&times;179 viewBox)</td>
+          <td>PDF Drawings (Reversed)</td>
+          <td>Dark Footer, Dark Ribbons, Inverted Surfaces</td>
+        </tr>
+        <tr>
+          <td><strong>Brand Monogram</strong></td>
+          <td><code>/brand/logos/baba-monogram.svg</code></td>
+          <td>SVG (Lossless Vector)</td>
+          <td>Scalable (95&times;71 viewBox)</td>
+          <td>PDF Drawings 174&ndash;176</td>
+          <td>Mobile Header, Compact Lockup, Seals</td>
+        </tr>
+        <tr>
+          <td><strong>Favicon Badge</strong></td>
+          <td><code>/brand/logos/baba-favicon.svg</code></td>
+          <td>SVG (Lossless Vector)</td>
+          <td>Scalable (76&times;76 viewBox)</td>
+          <td>PDF Drawings 128, 177&ndash;179</td>
+          <td>Browser Favicon, App Icon (src/app/icon.svg)</td>
+        </tr>
+        <tr>
+          <td><strong>Standalone Leaf Icon</strong></td>
+          <td><code>/brand/logos/baba-leaf-icon.svg</code></td>
+          <td>SVG (Lossless Vector)</td>
+          <td>Scalable (70&times;93 viewBox)</td>
+          <td>PDF Drawings 172&ndash;173</td>
+          <td>Botanical Accent, Bullets, Micro-interactions</td>
+        </tr>
+        <tr>
+          <td><strong>Logo on Dark Background</strong></td>
+          <td><code>/brand/logos/baba-logo-dark.svg</code></td>
+          <td>SVG (Lossless Vector)</td>
+          <td>218&times;87 px</td>
+          <td>PDF Drawings 145&ndash;159</td>
+          <td>Dark Themed Sections, Brand Guideline Specimen</td>
+        </tr>
+        <tr>
+          <td><strong>Logo on Light Background</strong></td>
+          <td><code>/brand/logos/baba-logo-light.svg</code></td>
+          <td>SVG (Lossless Vector)</td>
+          <td>218&times;87 px</td>
+          <td>PDF Drawings 130&ndash;144</td>
+          <td>Light Themed Cards, Brand Guideline Specimen</td>
+        </tr>
+        <tr>
+          <td><strong>Logo V2 Primary</strong></td>
+          <td><code>/brand/logos/baba-logo-v2-primary.png</code></td>
+          <td>PNG / WebP (Raster)</td>
+          <td>1802&times;872 px</td>
+          <td>PDF Embedded xref 20</td>
+          <td>V2 Alternate Presentation, Specimen</td>
+        </tr>
+        <tr>
+          <td><strong>Brand Lifestyle Showcase</strong></td>
+          <td><code>/brand/packaging/brand-lifestyle-showcase.webp</code></td>
+          <td>WebP + PNG</td>
+          <td>1536&times;1024 px</td>
+          <td>PDF Embedded xref 28</td>
+          <td>Hero Banner, Editorial Storytelling, Brand Ambience</td>
+        </tr>
+        <tr>
+          <td><strong>Product Range Shelf Lineup</strong></td>
+          <td><code>/brand/packaging/packaging-shelf-lineup.webp</code></td>
+          <td>WebP + PNG</td>
+          <td>1799&times;874 px</td>
+          <td>PDF Embedded xref 32</td>
+          <td>Product Discovery, Catalogue Overview, Shop Hero</td>
+        </tr>
+        <tr>
+          <td><strong>Amber Glass Jars</strong></td>
+          <td><code>/brand/packaging/packaging-amber-jars.webp</code></td>
+          <td>WebP + PNG</td>
+          <td>1536&times;1024 px</td>
+          <td>PDF Embedded xref 52</td>
+          <td>Single Herb Churnas (Amalaki, Ashwagandha)</td>
+        </tr>
+        <tr>
+          <td><strong>Herbal Tins &amp; Boxes</strong></td>
+          <td><code>/brand/packaging/packaging-tins-boxes.webp</code></td>
+          <td>WebP + PNG</td>
+          <td>1536&times;1024 px</td>
+          <td>PDF Embedded xref 56</td>
+          <td>Classical Formulations (Triphala Churna)</td>
+        </tr>
+        <tr>
+          <td><strong>Bottles &amp; Droppers</strong></td>
+          <td><code>/brand/packaging/packaging-bottles-dropper.webp</code></td>
+          <td>WebP + PNG</td>
+          <td>1536&times;1024 px</td>
+          <td>PDF Embedded xref 36</td>
+          <td>Medicated Tailas &amp; Classical Oil Formulations</td>
+        </tr>
+        <tr>
+          <td><strong>Stacked Formulation Boxes</strong></td>
+          <td><code>/brand/packaging/packaging-boxes-stack.webp</code></td>
+          <td>WebP + PNG</td>
+          <td>1536&times;1024 px</td>
+          <td>PDF Embedded xref 48</td>
+          <td>Classical Avaleh &amp; Specialty Preparations</td>
+        </tr>
+        <tr>
+          <td><strong>Apothecary Bag &amp; Stationery</strong></td>
+          <td><code>/brand/packaging/packaging-stationery-bag.webp</code></td>
+          <td>WebP + PNG</td>
+          <td>1536&times;1024 px</td>
+          <td>PDF Embedded xref 44</td>
+          <td>Heritage Lineage &amp; Sourcing Provenance Sections</td>
+        </tr>
+        <tr>
+          <td><strong>Herbal Tubes &amp; Pouches</strong></td>
+          <td><code>/brand/packaging/packaging-tubes-pouches.webp</code></td>
+          <td>WebP + PNG</td>
+          <td>1254&times;1254 px</td>
+          <td>PDF Embedded xref 70</td>
+          <td>Topical Lepa &amp; Modern Eco-Pouch Formulations</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <p>&copy; 2026 Baba Ayurved Pharmacy &middot; Phoolchand Aushdhalaya Lineage (Est. 150+ Years) &middot; Madhya Pradesh, India</p>
+      <p style="font-size: 0.75rem; color: #888; margin-top: 0.5rem;">Assets extracted cleanly with PyMuPDF &amp; Pillow from <code>Baba brand kit_v2.pdf</code>. Single source of truth visual identity implementation.</p>
+    </footer>
+  </div>
+</body>
+</html>
