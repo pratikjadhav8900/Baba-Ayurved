@@ -9,7 +9,7 @@ import { Heading } from "@/components/ui/Heading";
 import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
-import { imageSlots } from "@/content/assets";
+import { imageSlots, type ImageSlot } from "@/content/assets";
 import { rituals } from "@/content/rituals";
 
 export const metadata: Metadata = {
@@ -55,7 +55,7 @@ export default function ShopPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-3 md:col-span-8">
             {rituals.map((ritual) => {
-              const slot = imageSlots[ritual.slug] || imageSlots.hero;
+              const slot = (imageSlots as Record<string, ImageSlot>)[ritual.slug] || imageSlots.hero;
               return (
                 <Link
                   key={ritual.slug}

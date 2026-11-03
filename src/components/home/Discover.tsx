@@ -10,7 +10,7 @@ import { ImageFrame } from "@/components/ui/ImageFrame";
 import { ScrollRow } from "@/components/ui/ScrollRow";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
-import { imageSlots } from "@/content/assets";
+import { imageSlots, type ImageSlot } from "@/content/assets";
 import { rituals } from "@/content/rituals";
 
 /**
@@ -61,7 +61,7 @@ export function Discover() {
 
           <ScrollRow className="-mx-gutter px-gutter">
             {rituals.map((ritual) => {
-              const slot = imageSlots[ritual.slug] || imageSlots.hero;
+              const slot = (imageSlots as Record<string, ImageSlot>)[ritual.slug] || imageSlots.hero;
               return (
                 <li key={ritual.slug} className="w-56 shrink-0 snap-start sm:w-64">
                   <Link href={`/rituals/${ritual.slug}`} className="group flex flex-col gap-3">
