@@ -328,7 +328,7 @@ const rasayanaGlowCards: GlowCardItem[] = [
     taglineSecondary: "Solar Longevity.",
     taglineStyle: "standard",
     bgImage: "/brand/rituals/rasayana-glow-1.jpg",
-    productImage: "/brand/products/product-benefits-card.jpg",
+    productImage: "/brand/products/amalaki-product-card.jpg",
     productPos: "bottom-right",
   },
   {

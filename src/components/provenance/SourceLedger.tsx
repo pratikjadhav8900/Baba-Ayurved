@@ -51,7 +51,7 @@ export function SourceLedger({
                   <div key={key} className={key === "herb" ? "col-span-2 md:col-span-1" : undefined}>
                     <dt
                       className={`font-sans text-label uppercase tracking-label ${
-                        isGlass ? "text-[#C5A880] font-semibold" : "text-tone-muted"
+                        isGlass ? "text-brand-ivory font-semibold" : "text-tone-muted"
                       }`}
                     >
                       {label}
@@ -60,7 +60,7 @@ export function SourceLedger({
                       className={
                         isTemplate
                           ? isGlass
-                            ? "mt-1.5 font-sans text-xs inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/25"
+                            ? "mt-1.5 font-sans text-xs inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-white/90 border border-white/20"
                             : "mt-1 font-sans text-value text-tone-muted"
                           : isGlass
                             ? "mt-1 font-serif text-step text-white"
@@ -69,7 +69,7 @@ export function SourceLedger({
                     >
                       {isTemplate ? (
                         <>
-                          {isGlass && <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />}
+                          {isGlass && <span className="h-1.5 w-1.5 rounded-full bg-white/80 animate-pulse" />}
                           Pending verification
                         </>
                       ) : (

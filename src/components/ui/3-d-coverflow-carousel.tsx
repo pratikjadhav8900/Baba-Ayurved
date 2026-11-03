@@ -181,20 +181,20 @@ export function CoverFlowCarousel({
         {/* Eyebrow */}
         {sectionLabel && (
           <div className="flex items-center gap-3 mb-10">
-            <span style={{ width: "48px", height: "1px", background: "linear-gradient(90deg, transparent, #c5a880)" }} />
+            <span style={{ width: "48px", height: "1px", background: "linear-gradient(90deg, transparent, rgba(240,228,211,0.4))" }} />
             <h3
               style={{
                 fontSize: "0.8rem",
                 fontWeight: 700,
                 letterSpacing: "0.32em",
                 textTransform: "uppercase",
-                color: "#c5a880",
+                color: "#F0E4D3",
                 margin: 0,
               }}
             >
               {sectionLabel}
             </h3>
-            <span style={{ width: "48px", height: "1px", background: "linear-gradient(90deg, #c5a880, transparent)" }} />
+            <span style={{ width: "48px", height: "1px", background: "linear-gradient(90deg, rgba(240,228,211,0.4), transparent)" }} />
           </div>
         )}
 
@@ -260,7 +260,7 @@ export function CoverFlowCarousel({
                   transformOrigin: "center center",
                   transition: "all 800ms cubic-bezier(0.25, 1, 0.5, 1)",
                   boxShadow: isCenter
-                    ? "0 28px 70px rgba(0,0,0,0.95), 0 0 40px rgba(197,168,128,0.3)"
+                    ? "0 30px 80px rgba(0,0,0,0.95), 0 0 0 1px rgba(255,255,255,0.12)"
                     : "0 16px 40px rgba(0,0,0,0.6)",
                   cursor: isCenter ? "default" : "pointer",
                 }}
@@ -368,12 +368,10 @@ export function CoverFlowCarousel({
 
                     <div
                       style={{
-                        width: "36px",
-                        height: "2px",
-                        backgroundColor: "#c5a880",
-                        borderRadius: "2px",
-                        margin: "6px auto 6px",
-                        boxShadow: "0 0 8px rgba(197,168,128,0.7)",
+                        width: "32px",
+                        height: "1px",
+                        backgroundColor: "rgba(255, 255, 255, 0.35)",
+                        margin: "8px auto 8px",
                       }}
                     />
 
@@ -406,16 +404,17 @@ export function CoverFlowCarousel({
                         gap: "6px",
                         padding: "8px 22px",
                         borderRadius: "9999px",
-                        background: "linear-gradient(135deg, #c5a880 0%, #a48256 100%)",
-                        color: "#110d0c",
+                        background: "#FBF7F3",
+                        color: "#5C2E06",
                         fontSize: "0.75rem",
-                        fontWeight: 800,
+                        fontWeight: 700,
                         letterSpacing: "0.14em",
                         textTransform: "uppercase",
                         textDecoration: "none",
-                        boxShadow: "0 4px 14px rgba(0,0,0,0.4), 0 0 15px rgba(197,168,128,0.3)",
+                        border: "1px solid rgba(255, 255, 255, 0.9)",
+                        boxShadow: "0 4px 18px rgba(0,0,0,0.4)",
                         cursor: "pointer",
-                        transition: "transform 200ms ease, box-shadow 200ms ease",
+                        transition: "transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease",
                       }}
                     >
                       <span>{item.ctaText || "View Menu"}</span>
@@ -494,10 +493,10 @@ export function CoverFlowCarousel({
                 height: "8px",
                 width: idx === currentIndex ? "28px" : "8px",
                 borderRadius: "9999px",
-                backgroundColor: idx === currentIndex ? "#c5a880" : "rgba(255,255,255,0.25)",
+                backgroundColor: idx === currentIndex ? "#FBF7F3" : "rgba(255,255,255,0.25)",
                 border: "none",
                 cursor: "pointer",
-                boxShadow: idx === currentIndex ? "0 0 10px rgba(197,168,128,0.7)" : "none",
+                boxShadow: idx === currentIndex ? "0 0 10px rgba(255,255,255,0.5)" : "none",
                 transition: "all 300ms ease",
               }}
             />

@@ -26,7 +26,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-6 md:col-span-4">
             <BrandLockup layout="horizontal" tone="reversed" size="md" />
             <p className="max-w-[32ch] font-serif text-sm leading-relaxed text-brand-sand/90">
-              Carrying forward the living Ayurvedic lineage of Phoolchand Aushdhalaya (more than 150 years) from Madhya Pradesh, India.
+              Preserving 159 years of authentic clinical Hakim lineage from Maharaj Bada, Gwalior, Madhya Pradesh.
             </p>
             <div className="rounded-xs border border-brand-sand/30 bg-[#3E240C]/60 p-4">
               <span className="block font-sans text-[10px] uppercase tracking-label text-brand-sand">
@@ -35,6 +35,10 @@ export function SiteFooter() {
               <p className="mt-1 font-serif text-xs italic text-brand-ivory">
                 &ldquo;Ritual, not remedy. The unit of practice is a morning, an evening, and a season.&rdquo;
               </p>
+            </div>
+            <div className="text-[11px] font-sans text-brand-sand/75">
+              <span className="font-semibold text-brand-ivory">Manufactured By:</span> Baba Ayurved Pharmacy, Industrial Area, Gwalior, M.P.<br />
+              <span className="font-semibold text-brand-ivory">Mfg. Lic. No.:</span> 25D/23/99
             </div>
           </div>
 

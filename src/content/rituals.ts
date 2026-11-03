@@ -12,7 +12,7 @@ import type { Treatment } from "@/components/brand/RosetteSurround";
  * every day. Practice names are classical terms taken from the brief.
  */
 
-export type RitualSlug = "morning" | "evening" | "rasayana";
+export type RitualSlug = "morning" | "evening" | "rasayana" | "unhurried-gut-health";
 
 export type Ritual = {
   slug: RitualSlug;
@@ -74,6 +74,21 @@ export const rituals: readonly Ritual[] = [
       "Rasayana is the classical practice of nourishing the body over time. The texts describe it as resting on the way a person lives, not on one preparation taken alone. This collection is being designed around that idea.",
     sequence: [],
     treatment: "rays",
+  },
+  {
+    slug: "unhurried-gut-health",
+    number: "04",
+    name: "Unhurried Gut Health",
+    term: "Koshtha Shuddhi & Samagni",
+    summary: "14-day Panchakarma-inspired architecture restoring the rhythm and natural intelligence of your digestive fire.",
+    intro:
+      "Modern digestive distress is rarely a failure of nutrition alone; it is a failure of pace. Rooted in Charaka Samhita (Vimanasthana 2.8-9), this ritual combines four classical formulations with conscious pauses, 100 unhurried steps, and rhythmic colon release.",
+    sequence: [
+      { practice: "Phase 1: Koshtha-Shodhana (Clearing colon pathways)", term: "Days 1–3" },
+      { practice: "Phase 2: Yakrit Shuddhi & Agni Deepana (Liver reset & mucosal healing)", term: "Days 4–10" },
+      { practice: "Phase 3: Rasayana & Samagni Sthapana (Sealing rhythm & daily Dinacharya)", term: "Days 11–14 & beyond" },
+    ],
+    treatment: "sunray",
   },
 ] as const;
 

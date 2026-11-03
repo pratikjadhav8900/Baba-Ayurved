@@ -13,12 +13,14 @@ import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { imageSlots } from "@/content/assets";
 import { ritualBySlug, rituals, type RitualSlug } from "@/content/rituals";
+import { GutHealthRitualKit } from "@/components/rituals/GutHealthRitualKit";
 
 /** Short, specific credit lines tying each temporary photograph to its ritual. */
 const imageCredits: Record<RitualSlug, string> = {
   morning: "The lota: the vessel for ushapan, warm water on waking",
   evening: "A lit brass lamp, lit at the day's end",
   rasayana: "Ashwagandha root and powder, one of the rasayana herbs",
+  "unhurried-gut-health": "The Unhurried Gut Health Ritual Kit & 3g Matra Measuring Spoon",
 };
 
 export function generateStaticParams() {
@@ -52,6 +54,10 @@ async function RitualContent({ params }: { params: PageProps<"/rituals/[slug]">[
   const { slug } = await params;
   const ritual = ritualBySlug(slug);
   if (!ritual) notFound();
+
+  if (ritual.slug === "unhurried-gut-health") {
+    return <GutHealthRitualKit />;
+  }
 
   const index = rituals.findIndex((item) => item.slug === ritual.slug);
   const next = rituals[(index + 1) % rituals.length];

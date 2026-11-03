@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { BottomNav } from "@/components/layout/BottomNav";
 import { CartDrawer } from "@/components/shop/CartDrawer";
 import { CartProvider } from "@/context/CartContext";
 import { fontVariables } from "@/lib/fonts";
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </main>
             <SiteFooter />
             <CartDrawer />
+            <BottomNav />
           </MotionProvider>
         </CartProvider>
       </body>

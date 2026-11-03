@@ -2,6 +2,7 @@ import { ArtworkSection } from "@/components/home/ArtworkSection";
 import { ClosingMoment } from "@/components/home/ClosingMoment";
 import { Hero } from "@/components/home/Hero";
 import { Heritage } from "@/components/home/Heritage";
+import { GutKitHeroBanner } from "@/components/home/GutKitHeroBanner";
 import { OptimizationProductSlider } from "@/components/home/OptimizationProductSlider";
 import { Provenance } from "@/components/home/Provenance";
 import { Rituals } from "@/components/home/Rituals";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <OptimizationProductSlider />
       <Rituals />
+      <GutKitHeroBanner />
       <Heritage />
       <Provenance />
       <ArtworkSection />

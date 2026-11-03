@@ -3,30 +3,31 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { imageSlots } from "@/content/assets";
+import { GondTreeOfLife, GondLeafIcon, GondPatternBorder } from "@/components/brand/GondArt";
 
 const metadataItems = [
-  { label: "ROLE", value: "Master Vaidya" },
-  { label: "LINEAGE", value: "150+ Years (5 Gen)" },
-  { label: "LOCATION", value: "Madhya Pradesh" },
-  { label: "STANDARD", value: "Shastrokt Classical" },
+  { label: "LINEAGE", value: "159 Years (Since 1860s)" },
+  { label: "ORIGIN", value: "Rajasthan to Gwalior" },
+  { label: "HERITAGE TEXTS", value: "Handwritten Pothis" },
+  { label: "MFG. LIC. NO.", value: "25D/23/99 (Est. 1999)" },
 ];
 
 const livingPrinciples = [
   "Bedside diagnosis before commercial packaging",
-  "Slow-simmered in seasoned brass vessels",
-  "Wild-gathered from indigenous MP terroir",
+  "Wisdom documented in sacred family Pothis",
+  "Wild-gathered from indigenous MP forest terroir",
 ];
 
-const painPoints = [
-  "No synthetic binders, talc, or parabens",
-  "Zero unverified claims or disease hype",
-  "Exact canonical Bhavaprakasha ratios",
+const compoundingStandards = [
+  "No synthetic binders, talc, or aggressive purgatives",
+  "100% Shastrokt classical text citations",
+  "Hand-milled botanicals according to Charaka Samhita",
 ];
 
 const babaDelivers = [
-  "100% Shastrokt classical authenticity",
-  "Single-lot verification by resident Vaidya",
-  "5 generations of unbroken bedside lineage",
+  "159 years of unbroken clinical Hakim lineage",
+  "Dedicated Gwalior manufacturing unit (Lic. 25D/23/99)",
+  "Rooted in Madhya Pradesh's indigenous botanical roots",
 ];
 
 export function Heritage() {
@@ -86,20 +87,33 @@ export function Heritage() {
             </div>
 
             {/* Bio Paragraph */}
-            <p className="max-w-xl font-sans text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-[#5C2E06]/85">
-              For more than 150 years across five continuous generations, our family has practiced classical Ayurveda in Madhya Pradesh. Formulations were refined through generational bedside diagnosis and authentic Shastrokt knowledge, long before commercial wellness marketing existed.
-            </p>
+            <div className="flex flex-col gap-3">
+              <p className="max-w-xl font-sans text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-[#5C2E06]/90">
+                Nearly 159 years ago, our ancestors migrated from Rajasthan to the historic Maharaj Bada in Gwalior. Practicing as dedicated Hakims, they hand-prepared botanical churnas, syrups, and tablets—safeguarding their clinical methodologies in handwritten formulation diaries (<em className="font-serif italic text-brand-primary">Pothis</em>).
+              </p>
+              <p className="max-w-xl font-sans text-sm sm:text-base font-normal leading-relaxed text-[#5C2E06]/80">
+                In 1999, our father established our dedicated, state-approved manufacturing facility in Gwalior under <strong className="font-semibold text-brand-primary">Mfg. Lic. No. 25D/23/99</strong>, ensuring these classical recipes remain uncompromised by modern shortcuts.
+              </p>
+            </div>
 
-            {/* Footer Reference */}
-            <p className="font-sans text-xs tracking-wide text-[#8C5E28]/80">
-              Archival lineage from Phoolchand Aushdhalaya ledger &middot; Est. Pre-1900s, Central India
-            </p>
+            {/* Gond Art Heritage Callout */}
+            <div className="flex items-center gap-3 pt-2">
+              <GondLeafIcon className="h-5 w-5 text-brand-leaf-green shrink-0" />
+              <p className="font-sans text-xs tracking-wide text-[#8C5E28]">
+                Deeply rooted in Madhya Pradesh &middot; Guided by classical Shastras and indigenous forest terroir
+              </p>
+            </div>
 
           </div>
 
           {/* Right Column: Laboratory Compounding Imagery + Overlapping Cards */}
           <div className="relative mx-auto w-full max-w-lg lg:col-span-6 lg:max-w-none">
             
+            {/* Background Gond Tree Watermark */}
+            <div className="absolute -right-16 -top-16 opacity-10 pointer-events-none text-brand-primary hidden sm:block">
+              <GondTreeOfLife className="w-80 h-80" />
+            </div>
+
             {/* Main Photo Frame */}
             <div className="relative mx-auto aspect-[4/5] w-full max-w-[460px] overflow-hidden rounded-[32px] border border-[#DFCDB7] bg-[#FAF5ED] shadow-xl">
               <Image
@@ -121,7 +135,7 @@ export function Heritage() {
               <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[13px] text-[#5C2E06]/85">
                 {livingPrinciples.map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 leading-snug">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C49A45]" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5C5E27]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -134,9 +148,9 @@ export function Heritage() {
                 Compounding Standard
               </h3>
               <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[13px] text-[#5C2E06]/85">
-                {painPoints.map((item, i) => (
+                {compoundingStandards.map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 leading-snug">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C49A45]" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5C5E27]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -151,7 +165,7 @@ export function Heritage() {
               <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[13px] text-[#F0E4D3]/90">
                 {babaDelivers.map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 leading-snug">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C49A45]" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5C5E27]" />
                     <span>{item}</span>
                   </li>
                 ))}
