@@ -15,12 +15,15 @@ type ModernProductCardProps = {
 export function ModernProductCard({ product, onInspect }: ModernProductCardProps) {
   const { addToCart } = useCart();
   const [isAdded, setIsAdded] = useState(false);
+  const [isPopping, setIsPopping] = useState(false);
   const slot = imageSlots[product.imageSlot] || imageSlots.hero;
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
     addToCart(product, 1);
     setIsAdded(true);
+    setIsPopping(true);
+    setTimeout(() => setIsPopping(false), 220);
     setTimeout(() => setIsAdded(false), 1800);
   };
 
@@ -33,7 +36,7 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
 
   return (
     <article
-      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-solid border-brand-sand/70 bg-white shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary/30 hover:shadow-xl"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-solid border-brand-sand/70 bg-white shadow-2xs transition-all duration-500 ease-out hover:-translate-y-0.5 hover:border-brand-primary/30 hover:shadow-xl"
     >
       {/* Top Image Poster Container */}
       <div className="relative aspect-4/5 w-full overflow-hidden bg-gradient-to-b from-[#FAF6F0] to-[#EFE4D6]">
@@ -43,7 +46,7 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
             alt={slot.alt}
             fill
             sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center font-serif text-xs text-brand-leaf-green">
@@ -81,7 +84,9 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
           <button
             type="button"
             onClick={handleAddToCart}
-            className={`flex items-center justify-center gap-1.5 rounded-xl px-3 py-2 font-sans text-xs font-semibold shadow-xs backdrop-blur-xs transition-all hover:scale-[1.02] active:scale-95 ${
+            className={`flex items-center justify-center gap-1.5 rounded-xl px-3 py-2 font-sans text-xs font-semibold shadow-xs backdrop-blur-xs transition-all duration-200 ease-out hover:scale-[1.02] active:scale-90 ${
+              isPopping ? "scale-110" : "scale-100"
+            } ${
               isAdded
                 ? "bg-brand-leaf-green text-brand-ivory"
                 : "bg-brand-primary text-brand-ivory hover:bg-brand-primary/95"
@@ -174,7 +179,9 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
               <button
                 type="button"
                 onClick={handleAddToCart}
-                className={`inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider transition-all duration-200 active:scale-95 shadow-xs ${
+                className={`inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider transition-all duration-200 ease-out active:scale-90 shadow-xs ${
+                  isPopping ? "scale-110" : "scale-100"
+                } ${
                   isAdded
                     ? "bg-brand-leaf-green text-brand-ivory"
                     : "bg-brand-primary text-brand-ivory hover:bg-brand-primary/90 hover:shadow-md"

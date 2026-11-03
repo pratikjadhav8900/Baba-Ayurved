@@ -81,6 +81,7 @@ const sliderItems: SliderProduct[] = [
 export function OptimizationProductSlider() {
   const { addToCart } = useCart();
   const [addedId, setAddedId] = useState<string | null>(null);
+  const [poppingId, setPoppingId] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -184,6 +185,10 @@ export function OptimizationProductSlider() {
     e.stopPropagation();
     addToCart(item.baseProduct, 1);
     setAddedId(item.id);
+    setPoppingId(item.id);
+    setTimeout(() => {
+      setPoppingId((curr) => (curr === item.id ? null : curr));
+    }, 220);
     setTimeout(() => {
       setAddedId((curr) => (curr === item.id ? null : curr));
     }, 1800);
@@ -247,11 +252,12 @@ export function OptimizationProductSlider() {
         >
           {sliderItems.map((item) => {
             const isAdded = addedId === item.id;
+            const isPopping = poppingId === item.id;
             return (
               <div
                 key={item.id}
                 data-slider-card
-                className="group relative flex flex-col justify-between w-[85vw] sm:w-[48vw] md:w-[36vw] lg:w-[28.5vw] xl:w-[25vw] shrink-0 snap-start border-r border-[#DFCDB7] bg-[#FAF5ED] hover:bg-[#FFFDF9] p-6 sm:p-7 select-none transition-colors duration-300"
+                className="group relative flex flex-col justify-between w-[85vw] sm:w-[48vw] md:w-[36vw] lg:w-[28.5vw] xl:w-[25vw] shrink-0 snap-start rounded-2xl border-r border-[#DFCDB7] bg-[#FAF5ED] hover:bg-[#FFFDF9] p-6 sm:p-7 select-none transition-all duration-500 ease-out hover:-translate-y-0.5 hover:shadow-xl hover:z-10"
               >
                 {/* Top Badge: Refined Antique Brass / Botanical Olive badge */}
                 <div className="flex justify-end w-full min-h-[26px]">
@@ -268,14 +274,14 @@ export function OptimizationProductSlider() {
 
                 {/* Centered Packshot Product Image framed in clean display mat */}
                 <div className="relative my-4 flex h-60 sm:h-64 md:h-72 w-full items-center justify-center rounded-2xl bg-white border border-[#E8DAC7]/75 p-3 sm:p-4 shadow-[0_4px_16px_rgba(62,36,12,0.03)] overflow-hidden transition-all duration-300 group-hover:border-[#C49A45]/40 group-hover:shadow-[0_8px_24px_rgba(62,36,12,0.06)]">
-                  <div className="relative h-full w-full max-w-[220px] max-h-[240px] transition-transform duration-500 ease-out group-hover:scale-105">
+                  <div className="relative h-full w-full max-w-[220px] max-h-[240px]">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       priority={item.id === "triphala-optimization"}
                       sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 29vw, (min-width: 640px) 48vw, 85vw"
-                      className="object-contain drop-shadow-sm"
+                      className="object-contain drop-shadow-sm transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
                 </div>
@@ -304,7 +310,9 @@ export function OptimizationProductSlider() {
                   <button
                     type="button"
                     onClick={(e) => handleAddToCart(e, item)}
-                    className={`rounded-full px-4 py-2 font-sans text-[11px] font-bold uppercase tracking-wider transition-all duration-200 active:scale-95 cursor-pointer shadow-xs ${
+                    className={`rounded-full px-4 py-2 font-sans text-[11px] font-bold uppercase tracking-wider transition-all duration-200 ease-out active:scale-90 cursor-pointer shadow-xs ${
+                      isPopping ? "scale-110" : "scale-100"
+                    } ${
                       isAdded
                         ? "bg-[#5C5E27] text-white"
                         : "bg-[#FFFDF9] text-[#3E240C] border border-[#CBB396] hover:bg-[#3E240C] hover:text-[#FAF6F0] hover:border-[#3E240C]"
