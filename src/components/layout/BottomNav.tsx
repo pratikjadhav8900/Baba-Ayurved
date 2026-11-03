@@ -64,7 +64,7 @@ export function BottomNav() {
 
   return (
     <nav
-      className="fixed bottom-[max(12px,env(safe-area-inset-bottom,12px))] left-0 right-0 z-[950] flex items-center justify-center pointer-events-none px-4 select-none"
+      className="fixed bottom-[max(12px,env(safe-area-inset-bottom,12px))] left-0 right-0 z-[950] flex items-center justify-center pointer-events-none px-4 select-none md:hidden"
       aria-label="Bottom Navigation Dock"
     >
       <div className="pointer-events-auto relative flex items-center w-full max-w-[420px] rounded-full bg-[#0E0C0B]/95 backdrop-blur-2xl border border-white/15 p-1.5 shadow-[0_18px_50px_rgba(0,0,0,0.7),0_0_24px_rgba(92,46,6,0.2)]">
