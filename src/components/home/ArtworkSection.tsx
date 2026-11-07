@@ -129,8 +129,8 @@ export function ArtworkSection() {
                 Artwork that is not ours to draw.
               </h2>
 
-              <p className="font-serif text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#5C2E06]/90">
-                Gond painting originated in Madhya Pradesh, the same state our family pharmacy has worked in since 1999. In April 2023, Gond art received a formal Geographical Indication (GI) tag recognizing the cultural heritage of its indigenous artists.
+              <p className="font-serif text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#3E240C]">
+                Gond painting originated in Madhya Pradesh, the same state our family pharmacy has worked in since 1999 — now protected by a formal Geographical Indication (GI) tag.
               </p>
             </Reveal>
 
@@ -138,7 +138,7 @@ export function ArtworkSection() {
             <Reveal delay={0.05}>
               <div className="relative rounded-2xl border border-[#E6D3BA] bg-[#FFFDF9] p-5 sm:p-6 shadow-[0_8px_24px_rgba(62,36,12,0.03)]">
                 <div className="mb-2.5">
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-[#A87E30] block">
+                  <span className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-[#8A6220] block">
                     Phoolchand Aushdhalaya · Board of Provenance
                   </span>
                   <h3 className="font-serif text-base sm:text-lg font-semibold text-[#2A1808] mt-0.5">
@@ -146,112 +146,101 @@ export function ArtworkSection() {
                   </h3>
                 </div>
 
-                <blockquote className="border-l-2 border-[#C49A45]/60 pl-3.5 my-3 text-xs sm:text-sm font-serif italic text-[#3E240C]/90 leading-relaxed">
-                  &ldquo;We do not illustrate Gond-style motifs in-house, nor do we generate digital imitations. When commissioned, each piece will be reproduced in its authentic full colors, alongside the artist&rsquo;s name, village, and formal GI authorised-user license record.&rdquo;
+                <blockquote className="border-l-2 border-[#C49A45]/60 pl-3.5 my-3 text-xs sm:text-sm font-serif italic text-[#2A1808] leading-relaxed">
+                  &ldquo;We do not illustrate Gond-style motifs in-house, nor generate digital imitations. Commissioned pieces carry the artist&rsquo;s name, village, and GI license record.&rdquo;
                 </blockquote>
 
-                <p className="font-sans text-[11px] text-[#5C2E06]/75 leading-relaxed pt-1">
-                  Madhya Pradesh Geographical Indication Authorised User Registration: <strong className="text-[#3E240C] font-semibold">#AU-442/2023</strong>.
+                <p className="font-sans text-[11px] text-[#5C2E06] leading-relaxed pt-1">
+                  GI Authorised User Registration: <strong className="text-[#3E240C] font-semibold">#AU-442/2023</strong>
                 </p>
               </div>
             </Reveal>
 
-            {/* The Brand's Own Surround System */}
+            {/* Interactive Process Stepper — only the active step expands, so all three are never fighting for attention at once */}
             <Reveal delay={0.1}>
-              <div className="flex flex-col gap-1.5 pt-1">
-                <span className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-[#5C2E06]">
-                  The Brand&rsquo;s Own Surround Language
+              <div className="flex flex-col gap-2">
+                <span className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-[#3E240C]">
+                  The Brand&rsquo;s Surround Language
                 </span>
-                <p className="font-sans text-xs sm:text-sm text-[#5C2E06]/85 leading-relaxed">
-                  Derived from the seven-circle rosette geometry in indigo and warm cream. A minimalist technique-only surround system that remains strictly secondary to commissioned tribal art.
-                </p>
-              </div>
-            </Reveal>
+                <div className="flex flex-col gap-2.5" role="tablist" aria-label="Brand Surround System Steps">
+                  {steps.map((step, idx) => {
+                    const isActive = idx === activeStepIndex;
 
-            {/* Interactive Process Stepper (3 Interactive Connected Cards) */}
-            <Reveal delay={0.15}>
-              <div className="flex flex-col gap-3" role="tablist" aria-label="Brand Surround System Steps">
-                {steps.map((step, idx) => {
-                  const isActive = idx === activeStepIndex;
+                    return (
+                      <m.button
+                        key={step.id}
+                        type="button"
+                        role="tab"
+                        id={`step-tab-${step.id}`}
+                        aria-selected={isActive}
+                        aria-controls={`step-panel-${step.id}`}
+                        onClick={() => setActiveStepIndex(idx)}
+                        whileHover={{ scale: 1.006 }}
+                        whileTap={{ scale: 0.995 }}
+                        transition={{ duration: 0.2 }}
+                        className={`relative flex flex-col gap-3 rounded-xl p-4 text-left transition-all duration-300 w-full cursor-pointer ${
+                          isActive
+                            ? "bg-[#FFFDF9] border-2 border-[#5C2E06] shadow-[0_10px_28px_rgba(62,36,12,0.08)]"
+                            : "bg-[#FDFBF7]/80 hover:bg-[#FFFDF9] border border-[#E6D3BA]/80 hover:border-[#C49A45]/50 shadow-xs"
+                        }`}
+                      >
+                        {/* Always-visible compact row */}
+                        <div className="flex items-center gap-3.5">
+                          <div
+                            className={`flex size-9 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-bold transition-colors ${
+                              isActive
+                                ? "bg-[#3E240C] text-[#FBF7F3] shadow-xs"
+                                : "bg-[#F0E4D3] text-[#5C2E06]"
+                            }`}
+                          >
+                            {step.stepNumber}
+                          </div>
 
-                  return (
-                    <m.button
-                      key={step.id}
-                      type="button"
-                      role="tab"
-                      id={`step-tab-${step.id}`}
-                      aria-selected={isActive}
-                      aria-controls={`step-panel-${step.id}`}
-                      onClick={() => setActiveStepIndex(idx)}
-                      whileHover={{ scale: 1.008 }}
-                      whileTap={{ scale: 0.995 }}
-                      transition={{ duration: 0.2 }}
-                      className={`relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-xl p-4 sm:p-5 text-left transition-all duration-300 w-full cursor-pointer ${
-                        isActive
-                          ? "bg-[#FFFDF9] border-2 border-[#5C2E06] shadow-[0_10px_28px_rgba(62,36,12,0.08)] ring-1 ring-[#5C2E06]/20"
-                          : "bg-[#FDFBF7]/80 hover:bg-[#FFFDF9] border border-[#E6D3BA]/80 hover:border-[#C49A45]/50 shadow-xs"
-                      }`}
-                    >
-                      {/* Left: Step indicator, rosette thumbnail, and copy */}
-                      <div className="flex items-start gap-3.5">
-                        {/* Number Badge */}
-                        <div
-                          className={`flex size-10 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-bold transition-colors ${
-                            isActive
-                              ? "bg-[#3E240C] text-[#FBF7F3] shadow-xs"
-                              : "bg-[#F0E4D3] text-[#5C2E06]/80"
-                          }`}
-                        >
-                          {step.stepNumber}
-                        </div>
-
-                        {/* Text Details */}
-                        <div className="flex flex-col gap-0.5">
-                          <div className="flex flex-wrap items-center gap-2">
-                            <span className="font-serif text-base sm:text-lg font-semibold text-[#2A1808]">
+                          <div className="flex flex-1 flex-wrap items-center gap-2">
+                            <span className="font-serif text-base font-semibold text-[#2A1808]">
                               {step.name}
                             </span>
                             <span
                               className={`rounded-full px-2 py-0.5 font-sans text-[9.5px] font-bold uppercase tracking-wider ${
                                 isActive
                                   ? "bg-[#5C2E06]/10 text-[#5C2E06]"
-                                  : "bg-[#E6D3BA]/40 text-[#5C2E06]/70"
+                                  : "bg-[#E6D3BA]/40 text-[#5C2E06]/85"
                               }`}
                             >
                               {step.ritualPhase}
                             </span>
                           </div>
 
-                          <span className="font-serif text-xs text-[#A87E30] italic font-medium">
-                            {step.sanskrit}
-                          </span>
-
-                          <p className="font-sans text-xs text-[#5C2E06]/80 leading-relaxed mt-1">
-                            {step.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Right: Rosette Surround Icon & Active Indicator */}
-                      <div className="flex sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto gap-2 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#E6D3BA]/40">
-                        <div className="relative flex items-center justify-center size-12">
                           <RosetteSurround
-                            size={48}
+                            size={32}
                             treatment={step.treatment}
                             lineWidth={isActive ? 1.6 : 1.2}
                             color={isActive ? "#3E240C" : "#A87E30"}
                             spin={isActive}
-                            className="transition-transform duration-500"
+                            className="shrink-0 transition-transform duration-500"
                           />
                         </div>
 
-                        <span className="font-sans text-[9.5px] uppercase font-bold tracking-wider text-[#A87E30]">
-                          {step.timeframe}
-                        </span>
-                      </div>
-                    </m.button>
-                  );
-                })}
+                        {/* Expanded detail — only for the active step */}
+                        {isActive && (
+                          <m.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            transition={{ duration: 0.25 }}
+                            className="flex flex-col gap-1 pl-[46px]"
+                          >
+                            <span className="font-serif text-xs text-[#8A6220] italic font-medium">
+                              {step.sanskrit} &middot; {step.timeframe}
+                            </span>
+                            <p className="font-sans text-xs text-[#3E240C] leading-relaxed">
+                              {step.description}
+                            </p>
+                          </m.div>
+                        )}
+                      </m.button>
+                    );
+                  })}
+                </div>
               </div>
             </Reveal>
           </div>
@@ -280,7 +269,7 @@ export function ArtworkSection() {
                     GI Tag Compliant
                   </span>
 
-                  <span className="font-mono text-xs font-semibold text-[#5C2E06]/80 tracking-wider">
+                  <span className="font-mono text-xs font-semibold text-[#3E240C] tracking-wider">
                     BATCH #042/100
                   </span>
                 </div>
@@ -312,7 +301,7 @@ export function ArtworkSection() {
                     <h4 className="font-serif text-2xl font-semibold text-[#2A1808]">
                       Triphala Rasayana
                     </h4>
-                    <p className="font-sans text-xs uppercase tracking-[0.15em] text-[#5C2E06]/75 mt-0.5">
+                    <p className="font-sans text-xs uppercase tracking-[0.15em] text-[#5C2E06] mt-0.5">
                       Wild Amalaki · Haritaki · Bibhitaki
                     </p>
                   </div>
@@ -342,7 +331,7 @@ export function ArtworkSection() {
                         {activeStep.productGuidance.action}
                       </p>
 
-                      <p className="font-sans text-xs text-[#5C2E06]/85 leading-relaxed">
+                      <p className="font-sans text-xs text-[#3E240C] leading-relaxed">
                         {activeStep.productGuidance.herbalSynergy}
                       </p>
                     </m.div>

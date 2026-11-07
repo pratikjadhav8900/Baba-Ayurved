@@ -187,16 +187,14 @@ export function CartDrawer() {
               <span>Complimentary shipping &amp; Vaidya-verified packaging included.</span>
             </p>
 
-            <button
-              type="button"
-              onClick={() => {
-                alert("Thank you! Classical orders will be processed via Phoolchand Aushdhalaya.");
-              }}
+            <Link
+              href="/checkout"
+              onClick={closeCart}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-3.5 font-sans text-xs font-semibold uppercase tracking-wider text-brand-ivory shadow-md transition-all hover:bg-brand-primary/95 hover:shadow-lg active:scale-[0.99]"
             >
               <span>Proceed to Checkout</span>
               <ArrowRight className="h-4 w-4" />
-            </button>
+            </Link>
 
             <button
               type="button"

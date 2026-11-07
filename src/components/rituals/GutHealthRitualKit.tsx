@@ -11,8 +11,8 @@ import {
   GondTreeOfLife,
   GondLeafIcon,
   GondPatternBorder,
-  GondMatraSpoon,
 } from "@/components/brand/GondArt";
+import { AnimatedMatraSpoon } from "@/components/brand/AnimatedMatraSpoon";
 import {
   AlertTriangle,
   Clock,
@@ -754,7 +754,7 @@ export function GutHealthRitualKit() {
                 </span>
 
                 <div className="w-full py-6 flex items-center justify-center">
-                  <GondMatraSpoon className="w-full max-w-md text-brand-primary" />
+                  <AnimatedMatraSpoon className="w-full max-w-md text-brand-primary" />
                 </div>
 
                 <div className="mt-6 grid grid-cols-3 gap-4 border-t border-brand-sand/60 pt-6 w-full text-center">

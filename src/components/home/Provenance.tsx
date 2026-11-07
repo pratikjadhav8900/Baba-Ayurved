@@ -1,13 +1,11 @@
-import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
-import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
-import { imageSlots } from "@/content/assets";
 import { CoverFlowCarousel, CarouselItem } from "@/components/ui/3-d-coverflow-carousel";
+import { ProductCutoutShowcase } from "@/components/home/ProductCutoutShowcase";
 
 const botanicalCarouselItems: CarouselItem[] = [
   {
@@ -67,34 +65,13 @@ const botanicalCarouselItems: CarouselItem[] = [
  * Central India and maintains the honest SourceLedger for batch certifications.
  */
 export function Provenance() {
-  const turmericSlot = imageSlots.provenance;
-
   return (
     <Section id="provenance" aria-labelledby="provenance-heading" className="py-14 md:py-24">
       <Container width="wide" className="flex flex-col gap-16 md:gap-20">
         {/* Editorial Section Intro */}
         <div className="grid gap-10 md:grid-cols-12 md:items-center md:gap-12">
           <Reveal variant="plate" className="md:col-span-6 lg:col-span-5">
-            <div className="relative overflow-hidden rounded-md border border-brand-sand bg-brand-off-white p-3 shadow-xl">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-brand-cream">
-                <Image
-                  src={turmericSlot.src || "/brand/packaging/packaging-boxes-stack.webp"}
-                  alt={turmericSlot.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 450px, 100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/50 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 rounded-xs bg-brand-off-white/90 p-3 backdrop-blur-md border border-brand-sand/60">
-                  <span className="block font-sans text-[11px] font-semibold uppercase tracking-label text-brand-leaf-green">
-                    Desha &amp; Kala &middot; Classical Ethnobotany
-                  </span>
-                  <span className="block font-serif text-sm font-medium text-brand-primary">
-                    Ground Haridra (Turmeric) &middot; Central Indian Terroir
-                  </span>
-                </div>
-              </div>
-            </div>
+            <ProductCutoutShowcase />
           </Reveal>
 
           <div className="flex flex-col gap-6 md:col-span-6 lg:col-span-7">
@@ -129,6 +106,8 @@ export function Provenance() {
               items={botanicalCarouselItems}
               sectionLabel="CENTRAL INDIAN BOTANICAL FIELD GUIDE"
               className="py-8 sm:py-12"
+              autoplay
+              autoplayDelay={4500}
             />
           </div>
         </Reveal>

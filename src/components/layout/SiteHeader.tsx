@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { User, ShoppingBag, ChevronDown, Menu, X } from "lucide-react";
+import { User, ShoppingBag, Heart, ChevronDown, Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 import { useCart } from "@/context/CartContext";
+import { useWishlist } from "@/context/WishlistContext";
 import { site } from "@/lib/site";
 
 /**
@@ -15,6 +16,7 @@ import { site } from "@/lib/site";
 export function SiteHeader() {
   const pathname = usePathname();
   const { totalCount, openCart } = useCart();
+  const { totalCount: wishlistCount } = useWishlist();
   const [isCollectionOpen, setIsCollectionOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -112,68 +114,85 @@ export function SiteHeader() {
           </div>
 
           <Link
-            href="/#heritage"
+            href="/rituals"
             style={{ color: "rgba(255, 255, 255, 0.85)" }}
             className="rounded-full px-4 py-2 font-sans text-xs font-semibold hover:text-white hover:bg-white/10 transition-colors"
           >
-            Heritage
+            Rituals
           </Link>
 
           <Link
-            href="/#provenance"
+            href="/community"
             style={{ color: "rgba(255, 255, 255, 0.85)" }}
             className="rounded-full px-4 py-2 font-sans text-xs font-semibold hover:text-white hover:bg-white/10 transition-colors"
           >
-            Sourcing
-          </Link>
-
-          <Link
-            href="/#rituals"
-            style={{ color: "rgba(255, 255, 255, 0.85)" }}
-            className="rounded-full px-4 py-2 font-sans text-xs font-semibold hover:text-white hover:bg-white/10 transition-colors"
-          >
-            Daily Rituals
+            Community
           </Link>
         </nav>
 
-        {/* Right Action Icons (User & Bag) */}
+        {/* Right Action Icons (Account, Wishlist & Bag) */}
         <div className="flex items-center gap-3">
-          <button
-            type="button"
+          <Link
+            href="/account"
             style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
-            className="flex h-10 w-10 items-center justify-center rounded-full transition-transform hover:scale-105 active:scale-95 shadow-md cursor-pointer"
+            className="flex h-10 w-10 items-center justify-center rounded-full transition-transform hover:scale-105 active:scale-95 shadow-md"
             aria-label="Account profile"
           >
             <User className="h-4 w-4" />
-          </button>
+          </Link>
 
-          <button
-            type="button"
-            onClick={openCart}
-            style={{ 
-              backgroundColor: "rgba(255, 255, 255, 0.1)", 
-              borderColor: "rgba(255, 255, 255, 0.2)",
-              color: "#FFFFFF" 
-            }}
-            className="relative flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md cursor-pointer"
-            aria-label={`Open shopping cart (${totalCount} items)`}
-          >
-            <ShoppingBag className="h-4 w-4" />
-            {totalCount > 0 && (
-              <span 
-                style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
-                className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
-              >
-                {totalCount}
-              </span>
-            )}
-          </button>
+          {/* Wishlist & Cart hidden below md — the bottom dock already covers these on mobile */}
+          <div className="hidden items-center gap-3 md:flex">
+            <Link
+              href="/wishlist"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderColor: "rgba(255, 255, 255, 0.2)",
+                color: "#FFFFFF",
+              }}
+              className="relative flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md"
+              aria-label={`Open wishlist (${wishlistCount} items)`}
+            >
+              <Heart className="h-4 w-4" />
+              {wishlistCount > 0 && (
+                <span
+                  style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
+                  className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
+                >
+                  {wishlistCount}
+                </span>
+              )}
+            </Link>
 
-          {/* Mobile Menu Toggle */}
+            <button
+              type="button"
+              onClick={openCart}
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderColor: "rgba(255, 255, 255, 0.2)",
+                color: "#FFFFFF"
+              }}
+              className="relative flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md cursor-pointer"
+              aria-label={`Open shopping cart (${totalCount} items)`}
+            >
+              <ShoppingBag className="h-4 w-4" />
+              {totalCount > 0 && (
+                <span
+                  style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
+                  className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
+                >
+                  {totalCount}
+                </span>
+              )}
+            </button>
+          </div>
+
+          {/* Tablet Menu Toggle — mobile already has the bottom dock, so this only
+              covers the md-to-lg gap where neither the pill nav nor the dock shows. */}
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white lg:hidden"
+            className="hidden h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white md:flex lg:hidden"
             aria-label="Toggle navigation menu"
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -181,9 +200,9 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Tablet Drawer Menu */}
       {isMobileMenuOpen && (
-        <div className="mt-4 border-t border-white/10 pt-4 lg:hidden">
+        <div className="mt-4 hidden border-t border-white/10 pt-4 md:block lg:hidden">
           <div className="flex flex-col gap-2">
             <Link
               href="/"
@@ -200,25 +219,32 @@ export function SiteHeader() {
               Collection
             </Link>
             <Link
-              href="/#heritage"
+              href="/rituals"
               onClick={() => setIsMobileMenuOpen(false)}
               className="rounded-xl px-4 py-2.5 font-sans text-sm font-semibold hover:bg-white/10 text-white"
             >
-              Heritage
+              Rituals
             </Link>
             <Link
-              href="/#provenance"
+              href="/community"
               onClick={() => setIsMobileMenuOpen(false)}
               className="rounded-xl px-4 py-2.5 font-sans text-sm font-semibold hover:bg-white/10 text-white"
             >
-              Sourcing
+              Community
             </Link>
             <Link
-              href="/#rituals"
+              href="/wishlist"
               onClick={() => setIsMobileMenuOpen(false)}
               className="rounded-xl px-4 py-2.5 font-sans text-sm font-semibold hover:bg-white/10 text-white"
             >
-              Daily Rituals
+              Wishlist{wishlistCount > 0 ? ` (${wishlistCount})` : ""}
+            </Link>
+            <Link
+              href="/account"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="rounded-xl px-4 py-2.5 font-sans text-sm font-semibold hover:bg-white/10 text-white"
+            >
+              Account
             </Link>
           </div>
         </div>

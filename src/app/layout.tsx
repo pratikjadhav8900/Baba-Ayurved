@@ -5,6 +5,11 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { CartDrawer } from "@/components/shop/CartDrawer";
 import { CartProvider } from "@/context/CartContext";
+import { WishlistProvider } from "@/context/WishlistContext";
+import { AddressProvider } from "@/context/AddressContext";
+import { OrderProvider } from "@/context/OrderContext";
+import { ProfileProvider } from "@/context/ProfileContext";
+import { SessionProviderWrapper } from "@/components/providers/SessionProviderWrapper";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -30,17 +35,27 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
-        <CartProvider>
-          <MotionProvider>
-            <SiteHeader />
-            <main id="main" className="flex-1">
-              {children}
-            </main>
-            <SiteFooter />
-            <CartDrawer />
-            <BottomNav />
-          </MotionProvider>
-        </CartProvider>
+        <SessionProviderWrapper>
+          <CartProvider>
+            <WishlistProvider>
+              <AddressProvider>
+                <OrderProvider>
+                  <ProfileProvider>
+                    <MotionProvider>
+                      <SiteHeader />
+                      <main id="main" className="flex-1">
+                        {children}
+                      </main>
+                      <SiteFooter />
+                      <CartDrawer />
+                      <BottomNav />
+                    </MotionProvider>
+                  </ProfileProvider>
+                </OrderProvider>
+              </AddressProvider>
+            </WishlistProvider>
+          </CartProvider>
+        </SessionProviderWrapper>
       </body>
     </html>
   );

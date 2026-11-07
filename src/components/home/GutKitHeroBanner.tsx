@@ -6,7 +6,8 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
-import { GondTreeOfLife, GondLeafIcon, GondMatraSpoon, GondPatternBorder } from "@/components/brand/GondArt";
+import { GondTreeOfLife, GondLeafIcon, GondPatternBorder } from "@/components/brand/GondArt";
+import { AnimatedMatraSpoon } from "@/components/brand/AnimatedMatraSpoon";
 import { ArrowRight, Sparkles, BookOpen, Clock, ShieldCheck } from "lucide-react";
 
 export function GutKitHeroBanner() {
@@ -103,7 +104,7 @@ export function GutKitHeroBanner() {
                   Carved from solid neem wood or etched brass with a debossed 3g fill line. Guarantees calibrated clinical dosage across all 14 days without kitchen guesswork.
                 </p>
                 <div className="py-2">
-                  <GondMatraSpoon className="w-full h-16 text-brand-primary" />
+                  <AnimatedMatraSpoon className="w-full h-16 text-brand-primary" />
                 </div>
               </div>
 

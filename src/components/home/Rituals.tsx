@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 interface RitualStep {
   id: string;
@@ -467,22 +468,22 @@ export function Rituals() {
       {/* Section Header */}
       <section className="bg-[#FAF6F0] border-t border-[#DFCDB7] pt-10 pb-5 md:pt-14 md:pb-6">
         <Container className="flex flex-col gap-6">
-          <div className="flex flex-col gap-3 max-w-3xl">
+          <Reveal className="flex flex-col gap-3 max-w-3xl">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-[#8C5E28]" />
               <span className="font-sans text-xs font-bold uppercase tracking-widest text-[#8C5E28]">
                 The Science of Daily Living
               </span>
             </div>
-            
+
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-[#2A1808]">
               Ritual, not remedy.
             </h2>
-            
+
             <p className="font-sans text-base sm:text-lg leading-relaxed text-[#5C2E06]/85 font-normal">
               Ayurveda was never a reactive shelf of pills. In the classical texts of <em>Charaka</em> and <em>Sushruta</em>, health is the cumulative byproduct of an ordered day: what enters the senses upon waking, how the body winds down at dusk, and how living conforms to the seasons.
             </p>
-          </div>
+          </Reveal>
 
           {/* Interactive Mode Switcher Tabs */}
           <div
@@ -611,7 +612,7 @@ export function Rituals() {
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
-                  className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing touch-pan-x"
+                  className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory scroll-smooth scroll-px-4 cursor-grab active:cursor-grabbing touch-pan-x"
                   style={{
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",
@@ -623,9 +624,21 @@ export function Rituals() {
                     <div
                       key={card.step.id}
                       data-glow-card
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`Inspect ritual: ${card.step.practice}`}
                       onClick={() => handleCardClick(card.step)}
-                      className="group relative flex-none w-[85vw] sm:w-[48vw] md:w-[32vw] lg:w-[31.8%] xl:w-[32%] aspect-[4/5] min-h-[480px] sm:min-h-[520px] md:min-h-[560px] rounded-3xl sm:rounded-[32px] overflow-hidden shadow-xl border border-black/10 cursor-pointer snap-start transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 select-none"
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          handleCardClick(card.step);
+                        }
+                      }}
+                      className="group relative flex-none w-[85vw] sm:w-[48vw] md:w-[32vw] lg:w-[31.8%] xl:w-[32%] aspect-[4/5] min-h-[480px] sm:min-h-[520px] md:min-h-[560px] rounded-3xl sm:rounded-[32px] overflow-hidden shadow-xl border border-black/10 cursor-pointer snap-start select-none outline-none transition-all duration-400 ease-out hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#C49A45]/70 hover:ring-1 hover:ring-[#C49A45]/40 active:translate-y-0 active:scale-[0.985] focus-visible:-translate-y-1.5 focus-visible:border-[#C49A45]/80 focus-visible:ring-2 focus-visible:ring-[#C49A45]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF6F0] focus-visible:shadow-2xl"
                     >
+                      {/* 0. Spotlight glow overlay (21st.dev-style interactive feedback) */}
+                      <div className="pointer-events-none absolute inset-0 z-20 rounded-3xl sm:rounded-[32px] opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100 group-focus-visible:opacity-100 bg-[radial-gradient(circle_at_50%_0%,rgba(196,154,69,0.28),transparent_65%)]" />
+
                       {/* 1. Full-Bleed Radiant Model Beauty Portrait */}
                       <Image
                         src={card.bgImage}

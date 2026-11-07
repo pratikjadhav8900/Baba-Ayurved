@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, Check } from "lucide-react";
 import { featuredProducts, type Product } from "@/content/products";
 import { useCart } from "@/context/CartContext";
+import { Reveal } from "@/components/motion/Reveal";
 
 type SliderProduct = {
   id: string;
@@ -202,7 +203,7 @@ export function OptimizationProductSlider() {
     >
       <div className="mx-auto max-w-[1720px] px-4 sm:px-6 md:px-10 lg:px-12">
         {/* Top Header Row with Bold Headline and Carousel Arrows */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between mb-8 md:mb-12">
+        <Reveal className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between mb-8 md:mb-12">
           <div className="max-w-3xl">
             <span className="font-sans text-[11px] font-bold uppercase tracking-[0.25em] text-[#8C5E28] block mb-2">
               Classical Botanical Formulations
@@ -233,9 +234,10 @@ export function OptimizationProductSlider() {
               <ChevronRight className="h-4 w-4" />
             </button>
           </div>
-        </div>
+        </Reveal>
 
         {/* Product Carousel Grid with Sleek Vertical Divider Borders */}
+        <Reveal delay={0.1}>
         <div
           ref={scrollContainerRef}
           onMouseDown={handleMouseDown}
@@ -332,6 +334,7 @@ export function OptimizationProductSlider() {
             );
           })}
         </div>
+        </Reveal>
 
         {/* Bottom Bar: Coffee "SHOP NOW" Button on Left, Pagination Dots on Right */}
         <div className="mt-8 sm:mt-10 flex items-center justify-between">

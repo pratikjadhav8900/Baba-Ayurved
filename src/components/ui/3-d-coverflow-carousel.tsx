@@ -144,7 +144,7 @@ export function CoverFlowCarousel({
 
   return (
     <section
-      className={`relative w-full min-h-[780px] sm:min-h-[840px] flex items-center justify-center overflow-hidden py-14 select-none ${className}`}
+      className={`relative w-full flex items-center justify-center overflow-hidden select-none ${className || "py-14"}`}
       style={{
         backgroundColor: "#0c0a09",
         color: "#ffffff",

@@ -3,12 +3,14 @@
 import React, { useTransition } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Sparkles, Flame, History, ShoppingBag } from "lucide-react";
+import { Home, Sparkles, Heart, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useWishlist } from "@/context/WishlistContext";
 
 export function BottomNav() {
   const pathname = usePathname();
   const { totalCount, openCart, isOpen: isCartOpen } = useCart();
+  const { totalCount: wishlistCount } = useWishlist();
   const [, startTransition] = useTransition();
 
   // Hide on checkout if present
@@ -16,63 +18,36 @@ export function BottomNav() {
     return null;
   }
 
-  // Active state determination (matching Oriental Sports mutual exclusion)
+  // Active state determination (mutual exclusion across tabs)
   const isCartActive = isCartOpen;
-  const isRitualsActive =
-    !isCartActive &&
-    (pathname.startsWith("/rituals") || pathname.includes("#rituals"));
-  const isHeritageActive =
-    !isCartActive && !isRitualsActive && pathname.includes("#heritage");
+  const isWishlistActive = !isCartActive && pathname.startsWith("/wishlist");
   const isCollectionActive =
     !isCartActive &&
-    !isRitualsActive &&
-    !isHeritageActive &&
+    !isWishlistActive &&
     (pathname.startsWith("/shop") || pathname.startsWith("/products"));
   const isHomeActive =
     !isCartActive &&
-    !isRitualsActive &&
-    !isHeritageActive &&
+    !isWishlistActive &&
     !isCollectionActive &&
     pathname === "/";
 
-  // Active tab index for animated glider slider (0 to 4)
+  // Active tab index for animated glider slider (0 to 3)
   let activeIndex = 0;
   if (isCollectionActive) activeIndex = 1;
-  else if (isRitualsActive) activeIndex = 2;
-  else if (isHeritageActive) activeIndex = 3;
-  else if (isCartActive) activeIndex = 4;
-
-  const handleHeritageClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/") {
-      e.preventDefault();
-      const el = document.getElementById("heritage");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  const handleRitualsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname === "/") {
-      e.preventDefault();
-      const el = document.getElementById("rituals");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
+  else if (isWishlistActive) activeIndex = 2;
+  else if (isCartActive) activeIndex = 3;
 
   return (
     <nav
-      className="fixed bottom-[max(12px,env(safe-area-inset-bottom,12px))] left-0 right-0 z-[950] flex items-center justify-center pointer-events-none px-4 select-none md:hidden"
+      className="fixed bottom-[max(12px,env(safe-area-inset-bottom,12px))] left-0 right-0 z-[950] flex md:!hidden items-center justify-center pointer-events-none px-4 select-none"
       aria-label="Bottom Navigation Dock"
     >
-      <div className="pointer-events-auto relative flex items-center w-full max-w-[420px] rounded-full bg-[#0E0C0B]/95 backdrop-blur-2xl border border-white/15 p-1.5 shadow-[0_18px_50px_rgba(0,0,0,0.7),0_0_24px_rgba(92,46,6,0.2)]">
-        {/* Animated Sliding Active Capsule Pill */}
+      <div className="pointer-events-auto relative flex items-center w-full max-w-[420px] rounded-full bg-[#1C140D] p-1.5 shadow-[8px_8px_16px_rgba(0,0,0,0.65),-8px_-8px_16px_rgba(255,255,255,0.035)]">
+        {/* Animated Sliding Active Capsule — pressed-in neumorphic well */}
         <div
-          className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-[#5C2E06] border border-white/20 shadow-[0_0_18px_rgba(92,46,6,0.75),inset_0_1px_1px_rgba(255,255,255,0.25)] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none z-10"
+          className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-[#1C140D] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.65),inset_-4px_-4px_8px_rgba(255,255,255,0.035)] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none z-10"
           style={{
-            width: "calc((100% - 12px) / 5)",
+            width: "calc((100% - 12px) / 4)",
             transform: `translateX(calc(${activeIndex} * 100%))`,
           }}
           aria-hidden="true"
@@ -82,7 +57,7 @@ export function BottomNav() {
         <Link
           href="/"
           className={`relative z-20 flex flex-1 flex-col items-center justify-center py-2 px-1 rounded-full transition-colors ${
-            isHomeActive ? "text-white font-bold" : "text-white/65 hover:text-white"
+            isHomeActive ? "text-[#E2B784] font-bold" : "text-white/55 hover:text-white/80"
           }`}
           aria-label="Home"
         >
@@ -97,13 +72,13 @@ export function BottomNav() {
           </span>
         </Link>
 
-        {/* 2. Collection / Shop */}
+        {/* 2. Products / Shop */}
         <Link
           href="/shop"
           className={`relative z-20 flex flex-1 flex-col items-center justify-center py-2 px-1 rounded-full transition-colors ${
-            isCollectionActive ? "text-white font-bold" : "text-white/65 hover:text-white"
+            isCollectionActive ? "text-[#E2B784] font-bold" : "text-white/55 hover:text-white/80"
           }`}
-          aria-label="Collection"
+          aria-label="Products"
         >
           <div className="relative flex items-center justify-center w-5 h-5">
             <Sparkles size={18} strokeWidth={isCollectionActive ? 2.4 : 1.8} />
@@ -112,56 +87,37 @@ export function BottomNav() {
             )}
           </div>
           <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
-            Collection
+            Products
           </span>
         </Link>
 
-        {/* 3. Daily Rituals */}
+        {/* 3. Wishlist */}
         <Link
-          href="/#rituals"
-          onClick={handleRitualsClick}
+          href="/wishlist"
           className={`relative z-20 flex flex-1 flex-col items-center justify-center py-2 px-1 rounded-full transition-colors ${
-            isRitualsActive ? "text-white font-bold" : "text-white/65 hover:text-white"
+            isWishlistActive ? "text-[#E2B784] font-bold" : "text-white/55 hover:text-white/80"
           }`}
-          aria-label="Daily Rituals"
+          aria-label={`Wishlist with ${wishlistCount} items`}
         >
           <div className="relative flex items-center justify-center w-5 h-5">
-            <Flame size={18} strokeWidth={isRitualsActive ? 2.4 : 1.8} />
-            {isRitualsActive && (
-              <span className="absolute -top-0.5 -right-1 h-1.5 w-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade80]" />
+            <Heart size={18} strokeWidth={isWishlistActive ? 2.4 : 1.8} />
+            {wishlistCount > 0 && (
+              <span className="absolute -top-2 -right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C2392A] px-1 font-mono text-[9px] font-bold text-white shadow-[0_0_8px_rgba(194,57,42,0.8)]">
+                {wishlistCount > 9 ? "9+" : wishlistCount}
+              </span>
             )}
           </div>
           <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
-            Rituals
+            Wishlist
           </span>
         </Link>
 
-        {/* 4. Heritage */}
-        <Link
-          href="/#heritage"
-          onClick={handleHeritageClick}
-          className={`relative z-20 flex flex-1 flex-col items-center justify-center py-2 px-1 rounded-full transition-colors ${
-            isHeritageActive ? "text-white font-bold" : "text-white/65 hover:text-white"
-          }`}
-          aria-label="Heritage"
-        >
-          <div className="relative flex items-center justify-center w-5 h-5">
-            <History size={18} strokeWidth={isHeritageActive ? 2.4 : 1.8} />
-            {isHeritageActive && (
-              <span className="absolute -top-0.5 -right-1 h-1.5 w-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade80]" />
-            )}
-          </div>
-          <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
-            Heritage
-          </span>
-        </Link>
-
-        {/* 5. Cart Drawer Button */}
+        {/* 4. Cart Drawer Button */}
         <button
           type="button"
           onClick={() => openCart()}
           className={`relative z-20 flex flex-1 flex-col items-center justify-center py-2 px-1 rounded-full transition-colors cursor-pointer ${
-            isCartActive ? "text-white font-bold" : "text-white/65 hover:text-white"
+            isCartActive ? "text-[#E2B784] font-bold" : "text-white/55 hover:text-white/80"
           }`}
           aria-label={`Open Cart with ${totalCount} items`}
         >

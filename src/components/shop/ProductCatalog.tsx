@@ -43,24 +43,31 @@ export function ProductCatalog() {
       {/* Filter and Sort Toolbar */}
       <div className="flex flex-col gap-4 border-b border-solid border-brand-sand/60 pb-6 sm:flex-row sm:items-center sm:justify-between">
         {/* Category Pills Bar (Horizontal Scroll on Mobile) */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none sm:flex-wrap touch-pan-x">
-          {productCategories.map((cat) => {
-            const isActive = activeCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setActiveCategory(cat.id)}
-                className={`whitespace-nowrap rounded-xl px-4 py-2 font-sans text-xs font-semibold tracking-wider transition-all duration-200 focus-visible:outline-brand-primary ${
-                  isActive
-                    ? "bg-brand-primary text-brand-ivory shadow-xs"
-                    : "bg-white text-brand-primary/80 border border-brand-sand hover:bg-brand-sand/30 hover:text-brand-primary"
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
+        <div className="relative -mx-4 sm:mx-0">
+          <div className="flex items-center gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:flex-wrap sm:px-0 touch-pan-x">
+            {productCategories.map((cat) => {
+              const isActive = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`shrink-0 whitespace-nowrap rounded-xl px-4 py-2 font-sans text-xs font-semibold tracking-wider transition-all duration-200 focus-visible:outline-brand-primary ${
+                    isActive
+                      ? "bg-brand-primary text-brand-ivory shadow-xs"
+                      : "bg-white text-brand-primary/80 border border-brand-sand hover:bg-brand-sand/30 hover:text-brand-primary"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
+          </div>
+          {/* Fade hint that more pills are scrollable, so the row reads as "scroll" not "cut off" */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-brand-cream to-transparent sm:hidden"
+          />
         </div>
 
         {/* Sort Dropdown */}

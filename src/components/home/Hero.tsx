@@ -3,19 +3,23 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  ShoppingBag, 
+import {
+  ShoppingBag,
   User,
+  Heart,
   ChevronDown,
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useWishlist } from "@/context/WishlistContext";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 
 type CarouselSlide = {
   id: string;
   src: string;
+  /** Portrait crop, centered on the product, for the mobile full-bleed stage. */
+  srcMobile: string;
   alt: string;
   caption: string;
 };
@@ -24,30 +28,35 @@ const slides: readonly CarouselSlide[] = [
   {
     id: "multi-product",
     src: "/brand/hero-baba-multi-product.jpg",
+    srcMobile: "/brand/hero-baba-multi-product-vertical.jpg",
     alt: "Baba Ayurveda full classical formulary range with amber bottle, canister, and formulation box",
     caption: "Full Classical Lineup · 174 SKUs",
   },
   {
     id: "triphala-jar",
     src: "/brand/hero-baba-triphala-horizontal.jpg",
+    srcMobile: "/brand/hero-baba-triphala-horizontal-vertical.jpg",
     alt: "Baba Ayurveda Triphala 60 capsules amber jar on dark slate with moody smoke",
     caption: "Triphala 60 Capsules · Digestive Balance",
   },
   {
     id: "triphala-tin",
     src: "/brand/hero-baba-triphala-tin.jpg",
+    srcMobile: "/brand/hero-baba-triphala-tin-vertical.jpg",
     alt: "Baba Ayurveda Triphala 200g herbal tin canister with gold brushed lid",
     caption: "Triphala Churna 200g · Pure Micro-Milled Powder",
   },
   {
     id: "taila-dropper",
     src: "/brand/hero-baba-taila-dropper.jpg",
+    srcMobile: "/brand/hero-baba-taila-dropper-vertical.jpg",
     alt: "Baba Ayurveda medicated taila herbal dropper bottle on dark slate with smoke",
     caption: "Medicated Taila Dropper · 16-Paka Boils",
   },
   {
     id: "carton-pouch",
     src: "/brand/hero-baba-carton-pouch.jpg",
+    srcMobile: "/brand/hero-baba-carton-pouch-vertical.jpg",
     alt: "Baba Ayurveda eco-kraft formulation carton and pouch on dark slate",
     caption: "Formulation Carton & Pouch · Eco-Kraft Line",
   },
@@ -55,6 +64,7 @@ const slides: readonly CarouselSlide[] = [
 
 export function Hero() {
   const { totalCount, openCart } = useCart();
+  const { totalCount: wishlistCount } = useWishlist();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isCollectionOpen, setIsCollectionOpen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -273,62 +283,78 @@ export function Hero() {
             </div>
 
             <Link
-              href="/#heritage"
+              href="/rituals"
               style={{ color: "rgba(255, 255, 255, 0.85)" }}
               className="rounded-full px-4 py-2 font-sans text-xs font-semibold hover:text-white hover:bg-white/10 transition-colors"
             >
-              Heritage
+              Rituals
             </Link>
 
             <Link
-              href="/#provenance"
+              href="/community"
               style={{ color: "rgba(255, 255, 255, 0.85)" }}
               className="rounded-full px-4 py-2 font-sans text-xs font-semibold hover:text-white hover:bg-white/10 transition-colors"
             >
-              Sourcing
-            </Link>
-
-            <Link
-              href="/#rituals"
-              style={{ color: "rgba(255, 255, 255, 0.85)" }}
-              className="rounded-full px-4 py-2 font-sans text-xs font-semibold hover:text-white hover:bg-white/10 transition-colors"
-            >
-              Daily Rituals
+              Community
             </Link>
           </nav>
 
-          {/* Right Action Icons (User & Bag) */}
+          {/* Right Action Icons (Account, Wishlist & Bag) */}
           <div className="flex items-center gap-2.5 sm:gap-3">
-            <button
-              type="button"
+            <Link
+              href="/account"
               style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
-              className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full transition-transform hover:scale-105 active:scale-95 shadow-md cursor-pointer"
+              className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full transition-transform hover:scale-105 active:scale-95 shadow-md"
               aria-label="Account profile"
             >
               <User className="h-4 w-4" />
-            </button>
+            </Link>
 
-            <button
-              type="button"
-              onClick={openCart}
-              style={{ 
-                backgroundColor: "rgba(255, 255, 255, 0.1)", 
-                borderColor: "rgba(255, 255, 255, 0.2)",
-                color: "#FFFFFF" 
-              }}
-              className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md cursor-pointer"
-              aria-label={`Open shopping cart (${totalCount} items)`}
-            >
-              <ShoppingBag className="h-4 w-4" />
-              {totalCount > 0 && (
-                <span 
-                  style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
-                  className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
-                >
-                  {totalCount}
-                </span>
-              )}
-            </button>
+            {/* Wishlist & Cart hidden below md — the bottom dock already covers these on mobile */}
+            <div className="hidden items-center gap-2.5 sm:gap-3 md:flex">
+              <Link
+                href="/wishlist"
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  borderColor: "rgba(255, 255, 255, 0.2)",
+                  color: "#FFFFFF",
+                }}
+                className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md"
+                aria-label={`Open wishlist (${wishlistCount} items)`}
+              >
+                <Heart className="h-4 w-4" />
+                {wishlistCount > 0 && (
+                  <span
+                    style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
+                    className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
+                  >
+                    {wishlistCount}
+                  </span>
+                )}
+              </Link>
+
+              <button
+                type="button"
+                onClick={openCart}
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  borderColor: "rgba(255, 255, 255, 0.2)",
+                  color: "#FFFFFF"
+                }}
+                className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md cursor-pointer"
+                aria-label={`Open shopping cart (${totalCount} items)`}
+              >
+                <ShoppingBag className="h-4 w-4" />
+                {totalCount > 0 && (
+                  <span
+                    style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
+                    className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
+                  >
+                    {totalCount}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -336,21 +362,13 @@ export function Hero() {
       {/* ======================================================== */}
       {/* MOBILE VIEW (< md): Dedicated Uncropped Carousel Stage    */}
       {/* ======================================================== */}
-      <div className="relative z-20 flex md:hidden flex-col justify-between px-4 pb-6 pt-1 gap-4 flex-1">
-        {/* Compact Typography Header */}
-        <div className="flex flex-col gap-1 text-center px-1">
-          <span className="font-sans text-[10px] sm:text-xs font-bold tracking-widest uppercase text-emerald-400">
-            150+ Years Ayurvedic Lineage
-          </span>
-          <h1 className="font-sans text-2xl sm:text-3xl font-extrabold uppercase tracking-tight leading-tight text-white">
-            Precision Compounds. <br />
-            <span className="text-white/90">Absolute Integrity.</span>
-          </h1>
-        </div>
+      <div className="relative z-20 flex md:hidden flex-col justify-between pb-6 pt-1 gap-4 flex-1">
+        {/* Kept for SEO/accessibility structure; the visible headline moved off mobile per design */}
+        <h1 className="sr-only">Precision Compounds. Absolute Integrity.</h1>
 
-        {/* Dedicated 16:10 Carousel Stage: 100% Uncropped, High-Visibility Product Showcase */}
-        <div 
-          className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/15 bg-[#12161E] shadow-2xl select-none"
+        {/* Full-Bleed Carousel Stage: edge-to-edge, fills the remaining space */}
+        <div
+          className="relative w-full flex-1 min-h-0 overflow-hidden bg-[#12161E] shadow-2xl select-none"
           onTouchStart={(e) => { setIsPaused(true); onTouchStart(e); }}
           onTouchMove={onTouchMove}
           onTouchEnd={() => { setIsPaused(false); onTouchEnd(); }}
@@ -368,11 +386,11 @@ export function Hero() {
                 }`}
               >
                 <Image
-                  src={slide.src}
+                  src={slide.srcMobile}
                   alt={slide.alt}
                   fill
                   priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="100vw"
                   className="object-cover object-center"
                 />
                 {/* Subtle vignette for overlay readability */}
@@ -382,7 +400,7 @@ export function Hero() {
           })}
 
           {/* Top Bar inside Stage: Counter & Swipe Pill */}
-          <div className="absolute top-2.5 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
+          <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
             <span className="rounded-full bg-black/60 backdrop-blur-md border border-white/15 px-2.5 py-0.5 font-sans text-[11px] font-bold text-white tracking-wider">
               0{currentIndex + 1} <span className="text-white/50">/ 0{slides.length}</span>
             </span>
@@ -392,7 +410,7 @@ export function Hero() {
           </div>
 
           {/* Bottom Bar inside Stage: Caption & Controls */}
-          <div className="absolute bottom-2.5 left-3 right-3 z-20 flex flex-col gap-1.5">
+          <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-col gap-1.5">
             <p className="font-sans text-xs font-semibold text-white drop-shadow-md truncate">
               {slides[currentIndex].caption}
             </p>
@@ -442,7 +460,7 @@ export function Hero() {
         </div>
 
         {/* CTA Button & Short Copy */}
-        <div className="flex flex-col gap-2.5">
+        <div className="shrink-0 flex flex-col gap-2.5 px-5">
           <button
             type="button"
             onClick={scrollToCatalog}
@@ -453,75 +471,11 @@ export function Hero() {
             <ShoppingBag className="h-4 w-4" />
           </button>
 
-          <p className="font-sans text-[11px] text-center text-white/70 leading-relaxed px-2">
+          <p className="rounded-xl bg-black/35 px-4 py-2.5 text-center font-sans text-[11px] text-white leading-relaxed backdrop-blur-sm">
             Ultra-pure formulations systematically verified from Sanskrit pharmacopeias for clinical reliability.
           </p>
         </div>
 
-        {/* Horizontal Scrollable Spec Cards (Compact, No Vertical Bloat) */}
-        <div
-          className="w-full overflow-x-auto pb-1 scrollbar-none snap-x flex gap-2.5 touch-pan-x"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            WebkitOverflowScrolling: "touch",
-            overscrollBehaviorX: "contain",
-          }}
-        >
-          {/* Card 1 */}
-          <div 
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.08)", borderColor: "rgba(255, 255, 255, 0.16)" }}
-            className="snap-start shrink-0 flex items-center gap-2.5 rounded-xl border px-3.5 py-2.5 backdrop-blur-md min-w-[210px]"
-          >
-            <span className="font-mono text-xs font-bold text-white bg-white/15 px-2 py-1 rounded-md">
-              01
-            </span>
-            <div className="flex flex-col">
-              <span className="font-sans text-[11px] font-bold tracking-wider uppercase text-white">
-                99.8%+ VERIFIED PURITY
-              </span>
-              <span className="font-sans text-[10px] text-white/70">
-                Zero synthetic dyes
-              </span>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div 
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.08)", borderColor: "rgba(255, 255, 255, 0.16)" }}
-            className="snap-start shrink-0 flex items-center gap-2.5 rounded-xl border px-3.5 py-2.5 backdrop-blur-md min-w-[210px]"
-          >
-            <span className="font-mono text-xs font-bold text-white bg-white/15 px-2 py-1 rounded-md">
-              02
-            </span>
-            <div className="flex flex-col">
-              <span className="font-sans text-[11px] font-bold tracking-wider uppercase text-white">
-                150+ Years Lineage
-              </span>
-              <span className="font-sans text-[10px] text-white/70">
-                Phoolchand Aushdhalaya
-              </span>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div 
-            style={{ backgroundColor: "rgba(255, 255, 255, 0.08)", borderColor: "rgba(255, 255, 255, 0.16)" }}
-            className="snap-start shrink-0 flex items-center gap-2.5 rounded-xl border px-3.5 py-2.5 backdrop-blur-md min-w-[210px]"
-          >
-            <span className="font-mono text-xs font-bold text-white bg-white/15 px-2 py-1 rounded-md">
-              03
-            </span>
-            <div className="flex flex-col">
-              <span className="font-sans text-[11px] font-bold tracking-wider uppercase text-white">
-                Cold-Sealed Logistics
-              </span>
-              <span className="font-sans text-[10px] text-white/70">
-                Dispatched directly
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* ======================================================== */}
@@ -645,79 +599,15 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Bottom Floating Glassmorphic Spec Cards (Desktop 3-Card Grid) */}
-        <div className="relative z-20 w-full px-6 pb-8 md:px-12 md:pb-10">
-          <div className="mx-auto max-w-7xl">
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 md:gap-5">
-              {/* Card 1: Verified Purity */}
-              <div 
-                style={{ 
-                  backgroundColor: "rgba(255, 255, 255, 0.08)", 
-                  borderColor: "rgba(255, 255, 255, 0.16)", 
-                  color: "#FFFFFF" 
-                }}
-                className="flex items-center gap-3.5 rounded-2xl border px-5 py-4 backdrop-blur-xl shadow-xl transition-all hover:bg-white/15 hover:border-white/30"
-              >
-                <span className="font-mono text-sm font-bold text-white bg-white/15 px-2.5 py-1.5 rounded-lg shrink-0">
-                  01
-                </span>
-                <div className="flex flex-col">
-                  <span style={{ color: "#FFFFFF" }} className="font-sans text-xs md:text-sm font-bold tracking-wider uppercase">
-                    99.8%+ VERIFIED PURITY
-                  </span>
-                  <span style={{ color: "rgba(255, 255, 255, 0.7)" }} className="font-sans text-[11px]">
-                    Zero synthetic preservatives or dyes
-                  </span>
-                </div>
-              </div>
-
-              {/* Card 2: 150+ Years Lineage */}
-              <div 
-                style={{ 
-                  backgroundColor: "rgba(255, 255, 255, 0.08)", 
-                  borderColor: "rgba(255, 255, 255, 0.16)", 
-                  color: "#FFFFFF" 
-                }}
-                className="flex items-center gap-3.5 rounded-2xl border px-5 py-4 backdrop-blur-xl shadow-xl transition-all hover:bg-white/15 hover:border-white/30"
-              >
-                <span className="font-mono text-sm font-bold text-white bg-white/15 px-2.5 py-1.5 rounded-lg shrink-0">
-                  02
-                </span>
-                <div className="flex flex-col">
-                  <span style={{ color: "#FFFFFF" }} className="font-sans text-xs md:text-sm font-bold tracking-wider uppercase">
-                    150+ Years Lineage
-                  </span>
-                  <span style={{ color: "rgba(255, 255, 255, 0.7)" }} className="font-sans text-[11px]">
-                    Phoolchand Aushdhalaya, MP
-                  </span>
-                </div>
-              </div>
-
-              {/* Card 3: High-Velocity Logistics */}
-              <div 
-                style={{ 
-                  backgroundColor: "rgba(255, 255, 255, 0.08)", 
-                  borderColor: "rgba(255, 255, 255, 0.16)", 
-                  color: "#FFFFFF" 
-                }}
-                className="flex items-center gap-3.5 rounded-2xl border px-5 py-4 backdrop-blur-xl shadow-xl transition-all hover:bg-white/15 hover:border-white/30"
-              >
-                <span className="font-mono text-sm font-bold text-white bg-white/15 px-2.5 py-1.5 rounded-lg shrink-0">
-                  03
-                </span>
-                <div className="flex flex-col">
-                  <span style={{ color: "#FFFFFF" }} className="font-sans text-xs md:text-sm font-bold tracking-wider uppercase">
-                    High-Velocity Logistics
-                  </span>
-                  <span style={{ color: "rgba(255, 255, 255, 0.7)" }} className="font-sans text-[11px]">
-                    Cold-sealed dispatched directly
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
+      {/* Soft handoff into the next (cream) section — fades the hero's dark
+          base up into the warm cream tone, so the cut from dark to light
+          scrolls in gently instead of hitting a hard edge. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-28 md:h-36 bg-gradient-to-b from-transparent to-[#F4ECE1]"
+      />
     </section>
   );
 }
