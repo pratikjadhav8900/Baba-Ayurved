@@ -3,14 +3,14 @@
 import React, { useTransition } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Sparkles, Heart, ShoppingBag } from "lucide-react";
+import { Home, Sparkles, Package, ShoppingBag, User } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { useWishlist } from "@/context/WishlistContext";
+import { useOrders } from "@/context/OrderContext";
 
 export function BottomNav() {
   const pathname = usePathname();
   const { totalCount, openCart, isOpen: isCartOpen } = useCart();
-  const { totalCount: wishlistCount } = useWishlist();
+  const { orders } = useOrders();
   const [, startTransition] = useTransition();
 
   // Hide on checkout if present
@@ -20,22 +20,27 @@ export function BottomNav() {
 
   // Active state determination (mutual exclusion across tabs)
   const isCartActive = isCartOpen;
-  const isWishlistActive = !isCartActive && pathname.startsWith("/wishlist");
+  const isOrdersActive = !isCartActive && pathname.startsWith("/account/orders");
+  const isAccountActive =
+    !isCartActive && !isOrdersActive && pathname.startsWith("/account");
   const isCollectionActive =
     !isCartActive &&
-    !isWishlistActive &&
+    !isOrdersActive &&
+    !isAccountActive &&
     (pathname.startsWith("/shop") || pathname.startsWith("/products"));
   const isHomeActive =
     !isCartActive &&
-    !isWishlistActive &&
+    !isOrdersActive &&
+    !isAccountActive &&
     !isCollectionActive &&
     pathname === "/";
 
-  // Active tab index for animated glider slider (0 to 3)
+  // Active tab index for animated glider slider (0 to 4)
   let activeIndex = 0;
   if (isCollectionActive) activeIndex = 1;
-  else if (isWishlistActive) activeIndex = 2;
+  else if (isOrdersActive) activeIndex = 2;
   else if (isCartActive) activeIndex = 3;
+  else if (isAccountActive) activeIndex = 4;
 
   return (
     <nav
@@ -47,7 +52,7 @@ export function BottomNav() {
         <div
           className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-[#1C140D] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.65),inset_-4px_-4px_8px_rgba(255,255,255,0.035)] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none z-10"
           style={{
-            width: "calc((100% - 12px) / 4)",
+            width: "calc((100% - 12px) / 5)",
             transform: `translateX(calc(${activeIndex} * 100%))`,
           }}
           aria-hidden="true"
@@ -91,24 +96,24 @@ export function BottomNav() {
           </span>
         </Link>
 
-        {/* 3. Wishlist */}
+        {/* 3. Orders */}
         <Link
-          href="/wishlist"
+          href="/account/orders"
           className={`relative z-20 flex flex-1 flex-col items-center justify-center py-2 px-1 rounded-full transition-colors ${
-            isWishlistActive ? "text-[#E2B784] font-bold" : "text-white/55 hover:text-white/80"
+            isOrdersActive ? "text-[#E2B784] font-bold" : "text-white/55 hover:text-white/80"
           }`}
-          aria-label={`Wishlist with ${wishlistCount} items`}
+          aria-label={`Orders${orders.length > 0 ? `, ${orders.length} placed` : ""}`}
         >
           <div className="relative flex items-center justify-center w-5 h-5">
-            <Heart size={18} strokeWidth={isWishlistActive ? 2.4 : 1.8} />
-            {wishlistCount > 0 && (
+            <Package size={18} strokeWidth={isOrdersActive ? 2.4 : 1.8} />
+            {orders.length > 0 && (
               <span className="absolute -top-2 -right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C2392A] px-1 font-mono text-[9px] font-bold text-white shadow-[0_0_8px_rgba(194,57,42,0.8)]">
-                {wishlistCount > 9 ? "9+" : wishlistCount}
+                {orders.length > 9 ? "9+" : orders.length}
               </span>
             )}
           </div>
           <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
-            Wishlist
+            Orders
           </span>
         </Link>
 
@@ -136,6 +141,25 @@ export function BottomNav() {
             Cart
           </span>
         </button>
+
+        {/* 5. Account */}
+        <Link
+          href="/account"
+          className={`relative z-20 flex flex-1 flex-col items-center justify-center py-2 px-1 rounded-full transition-colors ${
+            isAccountActive ? "text-[#E2B784] font-bold" : "text-white/55 hover:text-white/80"
+          }`}
+          aria-label="Account"
+        >
+          <div className="relative flex items-center justify-center w-5 h-5">
+            <User size={18} strokeWidth={isAccountActive ? 2.4 : 1.8} />
+            {isAccountActive && (
+              <span className="absolute -top-0.5 -right-1 h-1.5 w-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade80]" />
+            )}
+          </div>
+          <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
+            Account
+          </span>
+        </Link>
       </div>
     </nav>
   );

@@ -310,51 +310,49 @@ export function Hero() {
               <User className="h-4 w-4" />
             </Link>
 
-            {/* Wishlist & Cart hidden below md — the bottom dock already covers these on mobile */}
-            <div className="hidden items-center gap-2.5 sm:gap-3 md:flex">
-              <Link
-                href="/wishlist"
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  borderColor: "rgba(255, 255, 255, 0.2)",
-                  color: "#FFFFFF",
-                }}
-                className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md"
-                aria-label={`Open wishlist (${wishlistCount} items)`}
-              >
-                <Heart className="h-4 w-4" />
-                {wishlistCount > 0 && (
-                  <span
-                    style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
-                    className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
-                  >
-                    {wishlistCount}
-                  </span>
-                )}
-              </Link>
+            <Link
+              href="/wishlist"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderColor: "rgba(255, 255, 255, 0.2)",
+                color: "#FFFFFF",
+              }}
+              className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md"
+              aria-label={`Open wishlist (${wishlistCount} items)`}
+            >
+              <Heart className="h-4 w-4" />
+              {wishlistCount > 0 && (
+                <span
+                  style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
+                  className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
+                >
+                  {wishlistCount}
+                </span>
+              )}
+            </Link>
 
-              <button
-                type="button"
-                onClick={openCart}
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  borderColor: "rgba(255, 255, 255, 0.2)",
-                  color: "#FFFFFF"
-                }}
-                className="relative flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md cursor-pointer"
-                aria-label={`Open shopping cart (${totalCount} items)`}
-              >
-                <ShoppingBag className="h-4 w-4" />
-                {totalCount > 0 && (
-                  <span
-                    style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
-                    className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
-                  >
-                    {totalCount}
-                  </span>
-                )}
-              </button>
-            </div>
+            {/* Cart hidden below md — the bottom dock already covers it on mobile */}
+            <button
+              type="button"
+              onClick={openCart}
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderColor: "rgba(255, 255, 255, 0.2)",
+                color: "#FFFFFF"
+              }}
+              className="relative hidden h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border backdrop-blur-md transition-all hover:bg-white/20 hover:scale-105 active:scale-95 shadow-md cursor-pointer md:flex"
+              aria-label={`Open shopping cart (${totalCount} items)`}
+            >
+              <ShoppingBag className="h-4 w-4" />
+              {totalCount > 0 && (
+                <span
+                  style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
+                  className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
+                >
+                  {totalCount}
+                </span>
+              )}
+            </button>
           </div>
         </div>
       </header>
