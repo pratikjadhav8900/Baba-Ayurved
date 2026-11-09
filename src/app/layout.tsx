@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -53,13 +54,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   <OrderProvider>
                     <ProfileProvider>
                       <MotionProvider>
-                        <SiteHeader />
+                        <Suspense fallback={null}>
+                          <SiteHeader />
+                        </Suspense>
                         <main id="main" className="flex-1">
                           {children}
                         </main>
                         <SiteFooter />
                         <CartDrawer />
-                        <BottomNav />
+                        <Suspense fallback={null}>
+                          <BottomNav />
+                        </Suspense>
                       </MotionProvider>
                     </ProfileProvider>
                   </OrderProvider>

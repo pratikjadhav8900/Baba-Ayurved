@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { User, Package, MapPin, CreditCard } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -18,7 +18,7 @@ const navItems = [
   { href: "/account/payment", icon: CreditCard, label: "Payment Method" },
 ] as const;
 
-export default function AccountLayout({ children }: { children: React.ReactNode }) {
+function AccountLayoutInner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   // Only call useSession's gating logic once Google Sign-In actually exists —
@@ -68,5 +68,13 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
         <div className="min-w-0 flex-1">{children}</div>
       </Container>
     </Section>
+  );
+}
+
+export default function AccountLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <Suspense fallback={null}>
+      <AccountLayoutInner>{children}</AccountLayoutInner>
+    </Suspense>
   );
 }
