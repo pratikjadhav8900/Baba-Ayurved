@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { ProductOrbitCarousel, type OrbitProduct } from "@/components/ui/product-orbit-carousel";
 import { featuredProducts, type Product } from "@/content/products";
 import { useCart } from "@/context/CartContext";
+import { useLenis } from "@/components/motion/SmoothScrollProvider";
 
 const findProduct = (id: string): Product => featuredProducts.find((p) => p.id === id) ?? featuredProducts[0];
 
@@ -45,6 +46,7 @@ const orbitProducts: OrbitProduct[] = bestSellers.map(({ base, orbit }, i) => ({
 
 export function CatalogHero() {
   const { addToCart } = useCart();
+  const lenis = useLenis();
 
   const handleAddToCart = (_product: OrbitProduct, index: number) => {
     addToCart(bestSellers[index].base, 1);
@@ -52,7 +54,12 @@ export function CatalogHero() {
 
   const scrollToCatalog = () => {
     const el = document.getElementById("catalog-grid");
-    if (el) {
+    if (!el) return;
+    // Lenis owns window scrolling once mounted — the native smooth-scroll
+    // API would otherwise fight it.
+    if (lenis) {
+      lenis.scrollTo(el);
+    } else {
       el.scrollIntoView({ behavior: "smooth" });
     }
   };

@@ -240,6 +240,7 @@ export function OptimizationProductSlider() {
         <Reveal delay={0.1}>
         <div
           ref={scrollContainerRef}
+          data-lenis-prevent
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}

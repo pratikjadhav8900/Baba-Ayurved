@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
+import { useStaggerReveal } from "@/components/motion/useStaggerReveal";
 
 interface RitualStep {
   id: string;
@@ -371,6 +372,14 @@ export function Rituals() {
   const eveningScrollRef = useRef<HTMLDivElement>(null);
   const rasayanaScrollRef = useRef<HTMLDivElement>(null);
 
+  // Each tab's card grid mounts/unmounts on tab switch (not just CSS-hidden),
+  // so `activeTab` must be a dependency — otherwise a tab visited after the
+  // first would never get its cards queried (the hook's one-and-only effect
+  // run would have seen a still-null container).
+  const morningGridRef = useStaggerReveal<HTMLDivElement>("[data-glow-card]", { deps: [activeTab] });
+  const eveningGridRef = useStaggerReveal<HTMLDivElement>("[data-glow-card]", { deps: [activeTab] });
+  const rasayanaGridRef = useStaggerReveal<HTMLDivElement>("[data-glow-card]", { deps: [activeTab] });
+
   // Drag to scroll & touch gesture state
   const isDraggingRef = useRef(false);
   const startXRef = useRef(0);
@@ -602,9 +611,10 @@ export function Rituals() {
               </div>
 
               {/* Radiant Glow Cards Horizontal Carousel */}
-              <div className="relative">
+              <div ref={morningGridRef} className="relative">
                 <div
                   ref={morningScrollRef}
+                  data-lenis-prevent
                   onMouseDown={(e) => handleMouseDown(e, morningScrollRef.current)}
                   onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseUp}
@@ -823,9 +833,10 @@ export function Rituals() {
               </div>
 
               {/* Radiant Glow Cards Horizontal Carousel */}
-              <div className="relative">
+              <div ref={eveningGridRef} className="relative">
                 <div
                   ref={eveningScrollRef}
+                  data-lenis-prevent
                   onMouseDown={(e) => handleMouseDown(e, eveningScrollRef.current)}
                   onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseUp}
@@ -1032,9 +1043,10 @@ export function Rituals() {
               </div>
 
               {/* Radiant Glow Cards Horizontal Carousel */}
-              <div className="relative">
+              <div ref={rasayanaGridRef} className="relative">
                 <div
                   ref={rasayanaScrollRef}
+                  data-lenis-prevent
                   onMouseDown={(e) => handleMouseDown(e, rasayanaScrollRef.current)}
                   onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseUp}

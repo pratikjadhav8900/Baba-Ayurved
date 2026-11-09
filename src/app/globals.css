@@ -362,9 +362,23 @@
   animation: slow-turn 240s linear infinite;
 }
 
-/* Scroll-reveal content must stay visible with no JS or with reduced motion. */
+/*
+ * Scroll-reveal content must stay visible with no JS or with reduced motion.
+ * [data-gsap-reveal] only needs `opacity` forced back on: under reduced
+ * motion its own effect never calls gsap.fromTo (early return), so no
+ * inline transform is ever applied there in the first place — forcing
+ * `transform: none` too would just permanently block any unrelated CSS
+ * hover/active transform a tagged element's own className happens to carry.
+ * [data-reveal] (the `motion`-powered <Reveal> component) genuinely does use
+ * transform/clip-path for its entrance, so it still needs all three forced.
+ *
+ * `scripting: none` only has cross-browser support in some engines, so it
+ * isn't relied on as the sole no-JS fallback — see the <noscript> block
+ * rendered in app/layout.tsx for a fallback that works everywhere.
+ */
 @media (scripting: none) {
-  [data-reveal] {
+  [data-reveal],
+  [data-gsap-reveal] {
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;
@@ -376,6 +390,10 @@
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;
+  }
+
+  [data-gsap-reveal] {
+    opacity: 1 !important;
   }
 
   .animate-turn {

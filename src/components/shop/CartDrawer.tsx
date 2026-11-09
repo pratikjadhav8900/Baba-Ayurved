@@ -6,26 +6,32 @@ import Link from "next/link";
 import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { imageSlots } from "@/content/assets";
+import { useLenis } from "@/components/motion/SmoothScrollProvider";
 
 export function CartDrawer() {
   const { items, isOpen, closeCart, updateQuantity, removeFromCart, subtotal, totalCount } =
     useCart();
   const drawerRef = useRef<HTMLDivElement>(null);
+  const lenis = useLenis();
 
-  // Close on Escape key and lock background scroll
+  // Close on Escape key and lock background scroll. Lenis drives its own rAF
+  // scroll loop independent of CSS `overflow`, so it needs to be stopped
+  // explicitly or the page behind the drawer would still smooth-scroll.
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") closeCart();
     }
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      lenis?.stop();
       window.addEventListener("keydown", handleKeyDown);
     }
     return () => {
       document.body.style.overflow = "";
+      lenis?.start();
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, closeCart]);
+  }, [isOpen, closeCart, lenis]);
 
   if (!isOpen) return null;
 

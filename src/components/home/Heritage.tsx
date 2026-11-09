@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { imageSlots } from "@/content/assets";
 import { GondTreeOfLife, GondLeafIcon, GondPatternBorder } from "@/components/brand/GondArt";
+import { GsapFadeUp } from "@/components/motion/GsapFadeUp";
 
 const metadataItems = [
   { label: "LINEAGE", value: "159 Years (Since 1860s)" },
@@ -47,8 +48,8 @@ export function Heritage() {
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
           
           {/* Left Column: Lineage Profile & Metadata */}
-          <div className="flex flex-col gap-6 sm:gap-8 lg:col-span-6 lg:pr-4">
-            
+          <div className="lg:col-span-6 lg:pr-4">
+          <GsapFadeUp className="flex flex-col gap-6 sm:gap-8">
             {/* Pill Tag */}
             <div className="inline-flex w-fit items-center gap-2.5 rounded-full border border-[#DFCDB7] bg-[#FAF5ED] px-1.5 py-1 shadow-xs backdrop-blur-xs">
               <span className="rounded-full bg-[#3E240C] px-3 py-0.5 font-sans text-[11px] font-bold tracking-wider text-[#FAF6F0] uppercase">
@@ -103,7 +104,7 @@ export function Heritage() {
                 Deeply rooted in Madhya Pradesh &middot; Guided by classical Shastras and indigenous forest terroir
               </p>
             </div>
-
+          </GsapFadeUp>
           </div>
 
           {/* Right Column: Laboratory Compounding Imagery + Overlapping Cards */}
@@ -115,7 +116,7 @@ export function Heritage() {
             </div>
 
             {/* Main Photo Frame */}
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[460px] overflow-hidden rounded-[32px] border border-[#DFCDB7] bg-[#FAF5ED] shadow-xl">
+            <GsapFadeUp className="relative mx-auto aspect-[4/5] w-full max-w-[460px] overflow-hidden rounded-[32px] border border-[#DFCDB7] bg-[#FAF5ED] shadow-xl">
               <Image
                 src={heritageImage.src || "/brand/heritage/vaidya-research.jpg"}
                 alt={heritageImage.alt}
@@ -125,10 +126,13 @@ export function Heritage() {
                 sizes="(min-width: 1024px) 460px, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-            </div>
+            </GsapFadeUp>
 
             {/* Floating Card 1: Top Left (Living Principles) */}
-            <div className="mt-4 sm:mt-0 sm:absolute sm:-left-4 sm:top-6 lg:-left-10 lg:top-8 z-20 w-full sm:w-64 lg:w-72 rounded-2xl border border-[#DFCDB7] bg-[#FAF5ED]/95 p-4.5 shadow-lg backdrop-blur-xs transition-transform duration-300 hover:scale-[1.02]">
+            <GsapFadeUp
+              delay={0.15}
+              className="mt-4 sm:mt-0 sm:absolute sm:-left-4 sm:top-6 lg:-left-10 lg:top-8 z-20 w-full sm:w-64 lg:w-72 rounded-2xl border border-[#DFCDB7] bg-[#FAF5ED]/95 p-4.5 shadow-lg backdrop-blur-xs transition-transform duration-300 hover:scale-[1.02]"
+            >
               <h3 className="font-sans text-[15px] font-bold text-[#2A1808]">
                 Living Principles
               </h3>
@@ -140,10 +144,13 @@ export function Heritage() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </GsapFadeUp>
 
             {/* Floating Card 2: Middle Right (Zero Compromise / Authentic Standard) */}
-            <div className="mt-4 sm:mt-0 sm:absolute sm:-right-4 sm:top-[34%] lg:-right-8 lg:top-[36%] z-20 w-full sm:w-64 lg:w-72 rounded-2xl border border-[#DFCDB7] bg-[#FAF5ED]/95 p-4.5 shadow-lg backdrop-blur-xs transition-transform duration-300 hover:scale-[1.02]">
+            <GsapFadeUp
+              delay={0.3}
+              className="mt-4 sm:mt-0 sm:absolute sm:-right-4 sm:top-[34%] lg:-right-8 lg:top-[36%] z-20 w-full sm:w-64 lg:w-72 rounded-2xl border border-[#DFCDB7] bg-[#FAF5ED]/95 p-4.5 shadow-lg backdrop-blur-xs transition-transform duration-300 hover:scale-[1.02]"
+            >
               <h3 className="font-sans text-[15px] font-bold text-[#2A1808]">
                 Compounding Standard
               </h3>
@@ -155,10 +162,13 @@ export function Heritage() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </GsapFadeUp>
 
             {/* Floating Card 3: Bottom Left (Apothecary Espresso & Warm Ivory Card) */}
-            <div className="mt-4 sm:mt-0 sm:absolute sm:-left-4 sm:bottom-6 lg:-left-10 lg:bottom-8 z-20 w-full sm:w-72 lg:w-80 rounded-2xl bg-[#3E240C] p-5 text-[#FAF6F0] shadow-2xl shadow-[#3E240C]/25 border border-[#5C2E06] transition-transform duration-300 hover:scale-[1.02]">
+            <GsapFadeUp
+              delay={0.45}
+              className="mt-4 sm:mt-0 sm:absolute sm:-left-4 sm:bottom-6 lg:-left-10 lg:bottom-8 z-20 w-full sm:w-72 lg:w-80 rounded-2xl bg-[#3E240C] p-5 text-[#FAF6F0] shadow-2xl shadow-[#3E240C]/25 border border-[#5C2E06] transition-transform duration-300 hover:scale-[1.02]"
+            >
               <h3 className="font-sans text-[15px] font-bold text-[#FAF6F0]">
                 What Baba Ayurved Delivers
               </h3>
@@ -170,7 +180,7 @@ export function Heritage() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </GsapFadeUp>
 
           </div>
 

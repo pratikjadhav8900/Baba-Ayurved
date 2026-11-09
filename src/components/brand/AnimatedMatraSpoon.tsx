@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type MouseEvent } from "react";
 import * as m from "motion/react-m";
-import { useMotionValue, useSpring, useTransform, type MouseEvent } from "motion/react";
+import { useMotionValue, useSpring, useTransform } from "motion/react";
 import { usePrefersReducedMotion } from "@/components/motion/usePrefersReducedMotion";
 
 type AnimatedMatraSpoonProps = {
