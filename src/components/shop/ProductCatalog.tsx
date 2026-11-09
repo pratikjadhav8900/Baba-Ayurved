@@ -6,7 +6,6 @@ import { featuredProducts, productCategories, type Product } from "@/content/pro
 import { ModernProductCard } from "./ModernProductCard";
 import { ProductDetailModal } from "./ProductDetailModal";
 import { Button } from "@/components/ui/Button";
-import { useStaggerReveal } from "@/components/motion/useStaggerReveal";
 
 type SortOption = "featured" | "price-asc" | "price-desc" | "name-asc";
 
@@ -39,19 +38,13 @@ export function ProductCatalog() {
     return list;
   }, [activeCategory, sortBy]);
 
-  // Re-runs whenever the filtered set changes, so re-filtered-in cards still
-  // get queried and animated rather than only the ones present on mount.
-  const gridRef = useStaggerReveal<HTMLDivElement>("article", {
-    deps: [filteredProducts.length, activeCategory],
-  });
-
   return (
     <div className="flex flex-col gap-8 md:gap-10">
       {/* Filter and Sort Toolbar */}
       <div className="flex flex-col gap-4 border-b border-solid border-brand-sand/60 pb-6 sm:flex-row sm:items-center sm:justify-between">
         {/* Category Pills Bar (Horizontal Scroll on Mobile) */}
         <div className="relative -mx-4 sm:mx-0">
-          <div data-lenis-prevent className="flex items-center gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:flex-wrap sm:px-0 touch-pan-x">
+          <div className="flex items-center gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:flex-wrap sm:px-0 touch-pan-x">
             {productCategories.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
@@ -139,7 +132,7 @@ export function ProductCatalog() {
           </button>
         </div>
       ) : (
-        <div ref={gridRef} className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-7 lg:gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-7 lg:gap-8">
           {filteredProducts.map((product) => (
             <ModernProductCard
               key={product.id}

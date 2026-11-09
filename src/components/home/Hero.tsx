@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,12 +11,8 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
-import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
-import { usePrefersReducedMotion } from "@/components/motion/usePrefersReducedMotion";
-import { useLenis } from "@/components/motion/SmoothScrollProvider";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 
 type CarouselSlide = {
@@ -72,14 +68,6 @@ export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isCollectionOpen, setIsCollectionOpen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const reduceMotion = usePrefersReducedMotion();
-  const lenis = useLenis();
-
-  const sectionRef = useRef<HTMLElement>(null);
-  const bgCarouselRef = useRef<HTMLDivElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
-  const desktopCtaRef = useRef<HTMLDivElement>(null);
-  const desktopCopyRef = useRef<HTMLParagraphElement>(null);
 
   // Touch gesture state for mobile swiping
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -128,81 +116,20 @@ export function Hero() {
 
   const scrollToCatalog = () => {
     const el = document.getElementById("shop") || document.getElementById("catalog-grid");
-    if (!el) return;
-    // Lenis owns window scrolling once mounted — asking the native API to
-    // smooth-scroll at the same time fights it and produces visible jank.
-    if (lenis) {
-      lenis.scrollTo(el);
-    } else {
+    if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  // Elegant entrance on load (not scroll-triggered — the hero is already in
-  // view) + a slow, subtle parallax drift on the background carousel as the
-  // hero scrolls past. Skipped entirely under reduced motion.
-  useGSAP(
-    () => {
-      if (reduceMotion) return;
-
-      const tl = gsap.timeline({ defaults: { ease: "power3.out", clearProps: "transform" } });
-      if (headlineRef.current) {
-        tl.fromTo(headlineRef.current, { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 1 });
-      }
-      if (desktopCtaRef.current) {
-        tl.fromTo(
-          desktopCtaRef.current,
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.8 },
-          "-=0.6"
-        );
-      }
-      if (desktopCopyRef.current) {
-        tl.fromTo(
-          desktopCopyRef.current,
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.8 },
-          "-=0.5"
-        );
-      }
-
-      // The background carousel is `hidden md:block` — only create the
-      // (per-scroll-frame, scrubbed) parallax ScrollTrigger when it's
-      // actually visible, and let matchMedia tear it down automatically if
-      // the viewport ever crosses the breakpoint, instead of recalculating
-      // a transform on a display:none element on every scroll on mobile.
-      ScrollTrigger.matchMedia({
-        "(min-width: 768px)": () => {
-          if (!bgCarouselRef.current) return;
-          // Slight pre-scale gives the translateY headroom so the parallax
-          // drift never reveals an edge beneath the image.
-          gsap.set(bgCarouselRef.current, { scale: 1.06 });
-          gsap.to(bgCarouselRef.current, {
-            yPercent: 6,
-            ease: "none",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top top",
-              end: "bottom top",
-              scrub: true,
-            },
-          });
-        },
-      });
-    },
-    { scope: sectionRef, dependencies: [reduceMotion], revertOnUpdate: true }
-  );
-
   return (
-    <section
-      ref={sectionRef}
+    <section 
       style={{ backgroundColor: "#0A0D11", color: "#FFFFFF" }}
       className="relative min-h-[96vh] w-full overflow-hidden flex flex-col justify-between"
     >
       {/* ======================================================== */}
       {/* DESKTOP BACKGROUND CAROUSEL (hidden on mobile)            */}
       {/* ======================================================== */}
-      <div ref={bgCarouselRef} className="absolute inset-0 z-0 hidden md:block">
+      <div className="absolute inset-0 z-0 hidden md:block">
         {slides.map((slide, index) => {
           const isActive = index === currentIndex;
           return (
@@ -559,10 +486,8 @@ export function Hero() {
             {/* Left Text Block */}
             <div className="max-w-2xl">
               {/* Monumental All-Caps Pure White Headline */}
-              <h1
-                ref={headlineRef}
-                data-gsap-reveal
-                style={{ color: "#FFFFFF", opacity: 0 }}
+              <h1 
+                style={{ color: "#FFFFFF" }}
                 className="font-sans text-4xl sm:text-6xl md:text-7xl lg:text-[4.75rem] font-extrabold uppercase tracking-tight leading-[1.03]"
               >
                 PRECISION <br />
@@ -571,7 +496,7 @@ export function Hero() {
               </h1>
 
               {/* High-Contrast Pure White Pill Button */}
-              <div ref={desktopCtaRef} data-gsap-reveal style={{ opacity: 0 }} className="mt-8 flex items-center">
+              <div className="mt-8 flex items-center">
                 <button
                   type="button"
                   onClick={scrollToCatalog}
@@ -584,10 +509,8 @@ export function Hero() {
               </div>
 
               {/* Precision Technical & Philosophical Copy in Clean White */}
-              <p
-                ref={desktopCopyRef}
-                data-gsap-reveal
-                style={{ color: "rgba(255, 255, 255, 0.85)", opacity: 0 }}
+              <p 
+                style={{ color: "rgba(255, 255, 255, 0.85)" }}
                 className="mt-7 max-w-xl font-sans text-xs sm:text-sm md:text-base leading-relaxed font-normal"
               >
                 Engineered from classical Sanskrit pharmacopeias and 150+ years of uninterrupted Ayurvedic lineage. BABA AYURVED delivers ultra-pure, systematically verified formulations designed to establish a new baseline in botanical precision and therapeutic reliability.

@@ -6,7 +6,6 @@ import { X, ShoppingBag, Check } from "lucide-react";
 import { imageSlots } from "@/content/assets";
 import type { Product } from "@/content/products";
 import { useCart } from "@/context/CartContext";
-import { useLenis } from "@/components/motion/SmoothScrollProvider";
 
 type ProductDetailModalProps = {
   product: Product | null;
@@ -18,11 +17,7 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
   const { addToCart } = useCart();
   const [isAdded, setIsAdded] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const lenis = useLenis();
 
-  // Lenis drives its own rAF scroll loop independent of CSS `overflow`, so
-  // it needs to be stopped explicitly or the page behind this modal would
-  // still smooth-scroll (same fix as CartDrawer).
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") {
@@ -32,7 +27,6 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
 
     if (product) {
       document.body.style.overflow = "hidden";
-      lenis?.stop();
       window.addEventListener("keydown", handleKeyDown);
       setQuantity(1);
       setIsAdded(false);
@@ -40,10 +34,9 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
 
     return () => {
       document.body.style.overflow = "";
-      lenis?.start();
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [product, onClose, lenis]);
+  }, [product, onClose]);
 
   if (!product) return null;
 
