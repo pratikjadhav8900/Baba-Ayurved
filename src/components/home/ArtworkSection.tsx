@@ -37,7 +37,7 @@ const steps: readonly StepData[] = [
     ritualPhase: "Morning Ritual",
     timeframe: "Brahma Muhurta (Dawn)",
     description:
-      "Concentric solar halos drawn strictly from the seven-circle rosette geometry. Designed for daily morning formulations that awaken metabolic agni and digestive clarity.",
+      "Solar halos marking daily morning formulations that awaken digestive clarity.",
     productGuidance: {
       phase: "Morning Awakening",
       action: "Take 2 Triphala capsules with warm mountain spring water at sunrise.",
@@ -54,7 +54,7 @@ const steps: readonly StepData[] = [
     ritualPhase: "Evening Repose",
     timeframe: "Sandhya Kala (Twilight)",
     description:
-      "A soft crescent perimeter celebrating the cooling lunar phase. Hand-embossed on unbleached, acid-free cotton cartons to house evening grounding preparations.",
+      "A cooling crescent mark for evening grounding preparations.",
     productGuidance: {
       phase: "Evening Peristalsis",
       action: "Take 1 Triphala capsule before sleep with lukewarm water or organic cow's ghee.",
@@ -71,7 +71,7 @@ const steps: readonly StepData[] = [
     ritualPhase: "Seasonal Cycles",
     timeframe: "Ritu-Sandhi (Solstices)",
     description:
-      "Expansive linear rays radiating outward, aligned with seasonal transitions. Reserved exclusively for rare, single-origin botanical harvest batches.",
+      "Radiating rays reserved for rare, single-origin seasonal harvest batches.",
     productGuidance: {
       phase: "Full Tridoshic Balance",
       action: "A 90-day continuous rasayana cycle during autumn and spring seasonal pivots.",
@@ -130,29 +130,25 @@ export function ArtworkSection() {
               </h2>
 
               <p className="font-serif text-base sm:text-lg md:text-xl font-normal leading-relaxed text-[#3E240C]">
-                Gond painting originated in Madhya Pradesh, the same state our family pharmacy has worked in since 1999 — now protected by a formal Geographical Indication (GI) tag.
+                Authentic Gond art from Madhya Pradesh, protected under a formal GI tag.
               </p>
             </Reveal>
 
             {/* Archival Non-Imitation Covenant Card */}
             <Reveal delay={0.05}>
               <div className="relative rounded-2xl border border-[#E6D3BA] bg-[#FFFDF9] p-5 sm:p-6 shadow-[0_8px_24px_rgba(62,36,12,0.03)]">
-                <div className="mb-2.5">
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-[#8A6220] block">
-                    Phoolchand Aushdhalaya · Board of Provenance
-                  </span>
-                  <h3 className="font-serif text-base sm:text-lg font-semibold text-[#2A1808] mt-0.5">
+                <div className="mb-2.5 flex items-center justify-between gap-2 flex-wrap">
+                  <h3 className="font-serif text-base sm:text-lg font-semibold text-[#2A1808]">
                     Our Non-Imitation Covenant
                   </h3>
+                  <span className="font-sans text-[10px] font-semibold text-[#5C2E06] shrink-0">
+                    #AU-442/2023
+                  </span>
                 </div>
 
-                <blockquote className="border-l-2 border-[#C49A45]/60 pl-3.5 my-3 text-xs sm:text-sm font-serif italic text-[#2A1808] leading-relaxed">
-                  &ldquo;We do not illustrate Gond-style motifs in-house, nor generate digital imitations. Commissioned pieces carry the artist&rsquo;s name, village, and GI license record.&rdquo;
+                <blockquote className="border-l-2 border-[#C49A45]/60 pl-3.5 my-1 text-xs sm:text-sm font-serif italic text-[#2A1808] leading-relaxed">
+                  &ldquo;Commissioned pieces carry the artist&rsquo;s name, village, and GI license record.&rdquo;
                 </blockquote>
-
-                <p className="font-sans text-[11px] text-[#5C2E06] leading-relaxed pt-1">
-                  GI Authorised User Registration: <strong className="text-[#3E240C] font-semibold">#AU-442/2023</strong>
-                </p>
               </div>
             </Reveal>
 

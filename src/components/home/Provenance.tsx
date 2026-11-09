@@ -80,11 +80,11 @@ export function Provenance() {
               <Heading as="h2" size="statement" id="provenance-heading">
                 Where an herb grows changes the herb.
               </Heading>
-              <Text className="max-w-[42ch] text-base leading-relaxed text-ink sm:text-lg">
-                Ayurvedic classical texts teach that an herb grown in one terrain and harvested in one season possesses entirely different attributes (*gunas*) than the same plant grown elsewhere.
+              <Text className="max-w-[38ch] text-base leading-relaxed text-ink sm:text-lg">
+                Soil and season change an herb&rsquo;s potency — so for five generations, we&rsquo;ve sourced ours directly from trusted wild-crafters and farmers across Madhya Pradesh.
               </Text>
-              <Text className="max-w-[42ch] text-sm text-tone-muted sm:text-base">
-                Over five generations, the family behind Phoolchand Aushdhalaya has cultivated deep regional relationships with wild-crafters and farmers across Madhya Pradesh—selecting botanicals by soil, rainfall, and harvest window rather than wholesale commodity trade.
+              <Text className="hidden max-w-[42ch] text-sm text-tone-muted sm:block sm:text-base">
+                Selected by soil, rainfall, and harvest window — never wholesale commodity trade.
               </Text>
             </Reveal>
           </div>

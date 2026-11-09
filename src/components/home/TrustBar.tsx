@@ -25,14 +25,14 @@ export function TrustBar() {
         {stats.map((item) => (
           <div
             key={item.stat}
-            className="flex flex-1 items-center justify-center gap-3.5 py-5 sm:px-6 sm:py-0"
+            className="flex flex-1 items-center justify-center gap-4 py-6 sm:px-6 sm:py-0"
           >
-            <item.icon className="h-6 w-6 shrink-0 text-brand-leaf-green" strokeWidth={1.5} />
+            <item.icon className="h-8 w-8 shrink-0 text-brand-leaf-green" strokeWidth={1.5} />
             <div className="flex flex-col">
-              <span className="font-sans text-sm font-bold uppercase tracking-wide text-brand-primary">
+              <span className="font-sans text-xl sm:text-2xl font-black uppercase tracking-wide text-brand-primary leading-tight">
                 {item.stat}
               </span>
-              <span className="font-sans text-xs text-brand-primary/65">{item.caption}</span>
+              <span className="font-sans text-xs sm:text-sm text-brand-primary/65">{item.caption}</span>
             </div>
           </div>
         ))}

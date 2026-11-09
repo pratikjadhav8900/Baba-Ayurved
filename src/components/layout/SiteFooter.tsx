@@ -30,10 +30,10 @@ export function SiteFooter() {
               Preserving 159 years of authentic clinical Hakim lineage from Maharaj Bada, Gwalior, Madhya Pradesh.
             </p>
             <div className="rounded-xs border border-brand-sand/30 bg-[#3E240C]/60 p-4">
-              <span className="block font-sans text-[10px] uppercase tracking-label text-brand-sand">
+              <span className="block font-sans text-xs font-semibold uppercase tracking-label text-brand-sand">
                 Lineage Philosophy
               </span>
-              <p className="mt-1 font-serif text-xs italic text-brand-ivory">
+              <p className="mt-1.5 font-serif text-sm sm:text-base italic text-brand-ivory leading-relaxed">
                 &ldquo;Ritual, not remedy. The unit of practice is a morning, an evening, and a season.&rdquo;
               </p>
             </div>
