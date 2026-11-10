@@ -322,7 +322,7 @@ export function ProductShelf() {
     >
       <div className="mx-auto max-w-[1720px] px-4 sm:px-6 md:px-10 lg:px-12">
         <Reveal className="mb-10 md:mb-14 max-w-3xl">
-          <span className="font-sans text-[11px] font-bold uppercase tracking-[0.25em] text-[#8C5E28] block mb-2">
+          <span className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-[#8C5E28] block mb-2">
             Classical Botanical Formulations
           </span>
           <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black uppercase tracking-tight text-[#2A1808] leading-[1.05]">
@@ -368,7 +368,7 @@ export function ProductShelf() {
                       aria-label={shelfLabels[r]}
                       className={cn("relative", r < rows.length - 1 && "mb-16 sm:mb-20")}
                     >
-                      <span className="mb-3 block px-3 font-sans text-[10px] font-bold uppercase tracking-[0.22em] text-[#8C5E28] sm:px-8 sm:text-[11px]">
+                      <span className="mb-3 block px-3 font-sans text-[12px] font-bold uppercase tracking-[0.22em] text-[#8C5E28] sm:px-8 sm:text-[13px]">
                         {shelfLabels[r]}
                       </span>
                       <div className="relative z-10 grid grid-cols-4 items-end gap-3 px-3 sm:gap-8 sm:px-8">
@@ -399,8 +399,8 @@ export function ProductShelf() {
                       <div className="mt-5 grid grid-cols-4 gap-3 px-3 sm:gap-8 sm:px-8">
                         {row.map((item) => (
                           <div key={item.source.id} className="text-center">
-                            <div className="font-sans text-[12px] leading-tight font-semibold text-[#2A1808] sm:text-[14px]">{item.short}</div>
-                            <div className="mt-0.5 font-sans text-[12px] text-[#8C5E28] tabular-nums sm:text-[13px]">₹{item.source.indicativePrice}</div>
+                            <div className="font-sans text-[14px] leading-tight font-semibold text-[#2A1808] sm:text-[14px]">{item.short}</div>
+                            <div className="mt-0.5 font-sans text-[14px] text-[#8C5E28] tabular-nums sm:text-[14px]">₹{item.source.indicativePrice}</div>
                           </div>
                         ))}
                       </div>
@@ -538,7 +538,7 @@ function ProductPage({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           />
-          <p className="mt-6 font-sans text-[12px] text-[#8C5E28]">Drag to turn</p>
+          <p className="mt-6 font-sans text-[14px] text-[#8C5E28]">Drag to turn</p>
         </div>
 
         <m.div
@@ -581,7 +581,7 @@ function ProductPage({
               type="button"
               onClick={add}
               className={cn(
-                "h-12 flex-1 rounded-xl font-sans text-[13px] font-semibold uppercase tracking-wider text-[#FAF6F0] shadow-md transition-[background-color,transform] duration-150 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3E240C]",
+                "h-12 flex-1 rounded-xl font-sans text-[14px] font-semibold uppercase tracking-wider text-[#FAF6F0] shadow-md transition-[background-color,transform] duration-150 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3E240C]",
                 added ? "bg-brand-leaf-green" : "bg-[#3E240C] hover:bg-[#2A1808]",
               )}
             >
@@ -631,12 +631,12 @@ function ProductPage({
           className="mt-14 border-t border-[#DFCDB7] pt-10 sm:mt-16"
         >
           <div className="mb-5 flex items-center justify-between gap-3">
-            <span className="font-sans text-[10px] font-bold uppercase tracking-[0.22em] text-[#8C5E28] sm:text-[11px]">
+            <span className="font-sans text-[12px] font-bold uppercase tracking-[0.22em] text-[#8C5E28] sm:text-[13px]">
               You may also like
             </span>
             <Link
               href="/shop"
-              className="shrink-0 font-sans text-[11px] font-semibold text-[#3E240C] underline-offset-4 hover:underline sm:text-xs"
+              className="shrink-0 font-sans text-[13px] font-semibold text-[#3E240C] underline-offset-4 hover:underline sm:text-xs"
             >
               Browse full catalogue &rarr;
             </Link>
@@ -652,8 +652,8 @@ function ProductPage({
                 <div className={cn("w-full max-w-[120px]", THUMB_ASPECT[s.kind])}>
                   <ProductArt item={s} className="size-full" tight />
                 </div>
-                <span className="font-sans text-[12px] font-semibold text-[#2A1808]">{s.short}</span>
-                <span className="font-sans text-[12px] text-[#8C5E28] tabular-nums">₹{s.source.indicativePrice}</span>
+                <span className="font-sans text-[14px] font-semibold text-[#2A1808]">{s.short}</span>
+                <span className="font-sans text-[14px] text-[#8C5E28] tabular-nums">₹{s.source.indicativePrice}</span>
               </button>
             ))}
           </div>

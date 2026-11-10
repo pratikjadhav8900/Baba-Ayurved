@@ -259,7 +259,7 @@ export default function CheckoutPage() {
                     <p className="flex items-center gap-2 font-semibold">
                       Pay Online (UPI / Card)
                       {!RAZORPAY_ENABLED && (
-                        <span className="rounded-full bg-brand-sand/60 px-2 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-wider text-brand-primary">
+                        <span className="rounded-full bg-brand-sand/60 px-2 py-0.5 font-sans text-[12px] font-semibold uppercase tracking-wider text-brand-primary">
                           Coming Soon
                         </span>
                       )}
@@ -307,7 +307,7 @@ export default function CheckoutPage() {
                   ₹{subtotal.toLocaleString("en-IN")}
                 </span>
               </div>
-              <p className="mt-2 font-sans text-[11px] text-brand-leaf-green">
+              <p className="mt-2 font-sans text-[13px] text-brand-leaf-green">
                 Complimentary shipping &amp; Vaidya-verified packaging included.
               </p>
 
@@ -321,7 +321,7 @@ export default function CheckoutPage() {
                 Place Order
               </button>
 
-              <p className="mt-3 flex items-center justify-center gap-1.5 font-sans text-[11px] text-brand-primary/72">
+              <p className="mt-3 flex items-center justify-center gap-1.5 font-sans text-[13px] text-brand-primary/72">
                 <Lock className="h-3 w-3" />
                 Your information is stored securely on this device.
               </p>

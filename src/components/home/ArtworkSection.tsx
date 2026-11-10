@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import * as m from "motion/react-m";
 import { AnimatePresence } from "motion/react";
 import { RosetteSurround, type Treatment } from "@/components/brand/RosetteSurround";
+import { ArtworkProductReveal, revealProducts } from "@/components/home/ArtworkProductReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 
@@ -89,6 +89,7 @@ const steps: readonly StepData[] = [
 export function ArtworkSection() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const activeStep = steps[activeStepIndex];
+  const activeProduct = revealProducts[activeStepIndex] ?? revealProducts[0];
 
   return (
     <section
@@ -117,7 +118,7 @@ export function ArtworkSection() {
             {/* Header Lockup */}
             <Reveal>
               <div className="inline-flex items-center rounded-full border border-[#C49A45]/40 bg-[#F4EADA]/80 px-4 py-1.5 shadow-xs mb-5">
-                <span className="font-sans text-[11px] font-bold uppercase tracking-[0.25em] text-[#5C2E06]">
+                <span className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-[#5C2E06]">
                   Indigenous Art Stewardship · GI Tag #442
                 </span>
               </div>
@@ -141,7 +142,7 @@ export function ArtworkSection() {
                   <h3 className="font-serif text-base sm:text-lg font-semibold text-[#2A1808]">
                     Our Non-Imitation Covenant
                   </h3>
-                  <span className="font-sans text-[10px] font-semibold text-[#5C2E06] shrink-0">
+                  <span className="font-sans text-[12px] font-semibold text-[#5C2E06] shrink-0">
                     #AU-442/2023
                   </span>
                 </div>
@@ -261,7 +262,7 @@ export function ArtworkSection() {
 
                 {/* Top Provenance Badges (Pure typography, no generic icons) */}
                 <div className="relative z-10 flex items-center justify-between gap-2 border-b border-[#E6D3BA]/60 pb-3.5 mb-5">
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-[#5C5E27] bg-[#5C5E27]/10 px-3 py-1 rounded-full">
+                  <span className="font-sans text-[12px] font-bold uppercase tracking-[0.18em] text-[#5C5E27] bg-[#5C5E27]/10 px-3 py-1 rounded-full">
                     GI Tag Compliant
                   </span>
 
@@ -270,37 +271,35 @@ export function ArtworkSection() {
                   </span>
                 </div>
 
-                {/* LARGE HERO PRODUCT PHOTOGRAPH */}
+                {/* Jar/bottle silhouette assembles itself in bands on every step change —
+                    driven by the same tap state as the stepper, not hover (hover never
+                    fires on a touchscreen, which is most of this site's traffic). */}
                 <div className="relative z-10 flex flex-col items-center justify-center">
-                  <div className="relative w-full max-w-[360px] sm:max-w-[400px] aspect-[3/4] rounded-2xl overflow-hidden border border-[#E6D3BA]/70 shadow-[0_12px_35px_rgba(62,36,12,0.07)] bg-[#FAF6F0] group">
-                    <Image
-                      src="/brand/triphala-product-full.jpg"
-                      alt="Baba Ayurveda Triphala Organic Rasayana Apothecary Bottle"
-                      fill
-                      className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                      sizes="(min-width: 1024px) 440px, (min-width: 640px) 400px, 90vw"
-                      priority
-                    />
-
-                    {/* Subtle warm vignette on the image edges */}
-                    <div
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5"
-                    />
+                  <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[3/4]">
+                    <ArtworkProductReveal activeIndex={activeStepIndex} className="h-full w-full" />
                   </div>
 
                   {/* Botanical Spec Subtitle */}
-                  <div className="text-center mt-4">
-                    <span className="text-[#A87E30] text-[11px] font-semibold uppercase tracking-[0.22em] block mb-1">
-                      Shastrokt Classical Rasayana
-                    </span>
-                    <h4 className="font-serif text-2xl font-semibold text-[#2A1808]">
-                      Triphala Rasayana
-                    </h4>
-                    <p className="font-sans text-xs uppercase tracking-[0.15em] text-[#5C2E06] mt-0.5">
-                      Wild Amalaki · Haritaki · Bibhitaki
-                    </p>
-                  </div>
+                  <AnimatePresence mode="wait">
+                    <m.div
+                      key={activeProduct.name}
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-center mt-4"
+                    >
+                      <span className="text-[#A87E30] text-[13px] font-semibold uppercase tracking-[0.22em] block mb-1">
+                        {activeProduct.subtitle}
+                      </span>
+                      <h4 className="font-serif text-2xl font-semibold text-[#2A1808]">
+                        {activeProduct.name}
+                      </h4>
+                      <p className="font-sans text-xs uppercase tracking-[0.15em] text-[#5C2E06] mt-0.5">
+                        {activeProduct.botanicals}
+                      </p>
+                    </m.div>
+                  </AnimatePresence>
                 </div>
 
                 {/* Dynamic Step Guidance Box (Synchronized with selected stepper) */}
@@ -315,10 +314,10 @@ export function ArtworkSection() {
                       className="rounded-xl bg-[#F7EFE4]/70 border border-[#E6D3BA]/80 p-3.5"
                     >
                       <div className="flex items-center justify-between mb-1.5">
-                        <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-[#3E240C]">
+                        <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-[#3E240C]">
                           {activeStep.productGuidance.phase}
                         </span>
-                        <span className="font-sans text-[10px] text-[#A87E30] font-semibold tracking-wider uppercase">
+                        <span className="font-sans text-[12px] text-[#A87E30] font-semibold tracking-wider uppercase">
                           Step {activeStep.stepNumber} of 03
                         </span>
                       </div>
@@ -339,7 +338,7 @@ export function ArtworkSection() {
                       href="/shop"
                       className="inline-flex items-center justify-center rounded-xl bg-[#3E240C] px-5 py-3.5 font-sans text-xs sm:text-sm font-semibold tracking-wide text-[#FBF7F3] shadow-sm transition-all duration-300 hover:bg-[#2A1808] hover:shadow-md w-full text-center"
                     >
-                      Explore Triphala Formulation
+                      Explore {activeProduct.name}
                     </Link>
                   </div>
                 </div>

@@ -99,11 +99,11 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
           {/* Form and Badge Overlays */}
           <div className="absolute left-4 top-4 flex flex-col gap-1.5">
             {product.badge && (
-              <span className="rounded-full bg-brand-primary/95 px-3 py-1 font-sans text-[10px] font-semibold uppercase tracking-wider text-brand-ivory shadow-xs backdrop-blur-xs">
+              <span className="rounded-full bg-brand-primary/95 px-3 py-1 font-sans text-[12px] font-semibold uppercase tracking-wider text-brand-ivory shadow-xs backdrop-blur-xs">
                 {product.badge}
               </span>
             )}
-            <span className="rounded-full border border-brand-sand/70 bg-white/95 px-3 py-1 font-sans text-[10px] font-semibold uppercase tracking-wider text-brand-primary shadow-2xs backdrop-blur-xs">
+            <span className="rounded-full border border-brand-sand/70 bg-white/95 px-3 py-1 font-sans text-[12px] font-semibold uppercase tracking-wider text-brand-primary shadow-2xs backdrop-blur-xs">
               {product.form}
             </span>
           </div>
@@ -144,7 +144,7 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
 
           <div className="my-5 space-y-3.5 border-y border-solid border-brand-sand/60 py-4">
             <div>
-              <span className="block font-sans text-[11px] font-semibold uppercase tracking-wider text-brand-leaf-green">
+              <span className="block font-sans text-[13px] font-semibold uppercase tracking-wider text-brand-leaf-green">
                 Classical Scripture Reference
               </span>
               <span className="font-serif text-sm font-medium text-brand-primary">
@@ -153,7 +153,7 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
             </div>
 
             <div>
-              <span className="block font-sans text-[11px] font-semibold uppercase tracking-wider text-brand-leaf-green">
+              <span className="block font-sans text-[13px] font-semibold uppercase tracking-wider text-brand-leaf-green">
                 Ritual Timing
               </span>
               <span className="font-serif text-sm text-brand-primary">
@@ -162,7 +162,7 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
             </div>
 
             <div>
-              <span className="block font-sans text-[11px] font-semibold uppercase tracking-wider text-brand-leaf-green">
+              <span className="block font-sans text-[13px] font-semibold uppercase tracking-wider text-brand-leaf-green">
                 Classical Guidance
               </span>
               <span className="font-serif text-sm text-brand-primary">
@@ -173,7 +173,7 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
 
           {/* Botanicals */}
           <div className="mb-6">
-            <span className="mb-2 block font-sans text-[11px] font-semibold uppercase tracking-wider text-brand-leaf-green">
+            <span className="mb-2 block font-sans text-[13px] font-semibold uppercase tracking-wider text-brand-leaf-green">
               Key Classical Botanicals
             </span>
             <div className="flex flex-wrap gap-1.5">
@@ -222,7 +222,7 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
               </button>
             </div>
 
-            <p className="mt-4 text-center font-sans text-[11px] text-brand-primary/72">
+            <p className="mt-4 text-center font-sans text-[13px] text-brand-primary/72">
               <span>Prepared to Shastrokt standards by Phoolchand Aushdhalaya</span>
             </p>
           </div>

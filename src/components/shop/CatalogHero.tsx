@@ -116,10 +116,10 @@ export function CatalogHero() {
               <span className="font-serif text-3xl sm:text-4xl font-bold text-[#FAF5EE] tracking-tight">
                 150+
               </span>
-              <span className="mt-1 font-sans text-[11px] font-semibold uppercase tracking-wider text-[#E2B784]">
+              <span className="mt-1 font-sans text-[13px] font-semibold uppercase tracking-wider text-[#E2B784]">
                 Years of Family Lineage
               </span>
-              <span className="mt-0.5 font-sans text-[10px] text-[#D6C4B0]/60">
+              <span className="mt-0.5 font-sans text-[12px] text-[#D6C4B0]/60">
                 Founded in MP, India
               </span>
             </div>
@@ -128,10 +128,10 @@ export function CatalogHero() {
               <span className="font-serif text-3xl sm:text-4xl font-bold text-[#FAF5EE] tracking-tight">
                 174
               </span>
-              <span className="mt-1 font-sans text-[11px] font-semibold uppercase tracking-wider text-[#E2B784]">
+              <span className="mt-1 font-sans text-[13px] font-semibold uppercase tracking-wider text-[#E2B784]">
                 Classical Formulary SKUs
               </span>
-              <span className="mt-0.5 font-sans text-[10px] text-[#D6C4B0]/60">
+              <span className="mt-0.5 font-sans text-[12px] text-[#D6C4B0]/60">
                 Across 7 Traditional Forms
               </span>
             </div>
@@ -140,10 +140,10 @@ export function CatalogHero() {
               <span className="font-serif text-3xl sm:text-4xl font-bold text-[#FAF5EE] tracking-tight">
                 100%
               </span>
-              <span className="mt-1 font-sans text-[11px] font-semibold uppercase tracking-wider text-[#E2B784]">
+              <span className="mt-1 font-sans text-[13px] font-semibold uppercase tracking-wider text-[#E2B784]">
                 Wildcrafted Botanicals
               </span>
-              <span className="mt-0.5 font-sans text-[10px] text-[#D6C4B0]/60">
+              <span className="mt-0.5 font-sans text-[12px] text-[#D6C4B0]/60">
                 Single-origin harvest
               </span>
             </div>
@@ -152,10 +152,10 @@ export function CatalogHero() {
               <span className="font-serif text-3xl sm:text-4xl font-bold text-[#FAF5EE] tracking-tight">
                 0%
               </span>
-              <span className="mt-1 font-sans text-[11px] font-semibold uppercase tracking-wider text-[#E2B784]">
+              <span className="mt-1 font-sans text-[13px] font-semibold uppercase tracking-wider text-[#E2B784]">
                 Synthetic Preservatives
               </span>
-              <span className="mt-0.5 font-sans text-[10px] text-[#D6C4B0]/60">
+              <span className="mt-0.5 font-sans text-[12px] text-[#D6C4B0]/60">
                 Zero artificial colors or fillers
               </span>
             </div>

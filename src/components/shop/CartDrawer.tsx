@@ -129,7 +129,7 @@ export function CartDrawer() {
                             <Trash2 className="h-4 w-4" />
                           </button>
                         </div>
-                        <p className="font-hindi text-[11px] text-brand-leaf-green">
+                        <p className="font-hindi text-[13px] text-brand-leaf-green">
                           {product.sanskritName} &middot; {product.packSize}
                         </p>
                       </div>
@@ -183,7 +183,7 @@ export function CartDrawer() {
               </span>
             </div>
 
-            <p className="mb-4 font-sans text-[11px] text-brand-leaf-green">
+            <p className="mb-4 font-sans text-[13px] text-brand-leaf-green">
               <span>Complimentary shipping &amp; Vaidya-verified packaging included.</span>
             </p>
 

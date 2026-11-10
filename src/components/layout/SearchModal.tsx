@@ -102,7 +102,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
               <X className="h-4 w-4" />
             </button>
           ) : (
-            <kbd className="hidden rounded-xs border border-line bg-paper-deep px-2 py-0.5 font-sans text-[11px] text-tone-muted sm:inline-block">
+            <kbd className="hidden rounded-xs border border-line bg-paper-deep px-2 py-0.5 font-sans text-[13px] text-tone-muted sm:inline-block">
               ESC
             </kbd>
           )}

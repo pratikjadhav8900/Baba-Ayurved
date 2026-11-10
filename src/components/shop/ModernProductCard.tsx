@@ -62,7 +62,7 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
 
         {badgeLabel && (
           <span
-            className={`absolute right-2.5 top-2.5 rounded-md px-2.5 py-1 font-sans text-[10px] font-bold uppercase tracking-wider shadow-xs ${badgeClass}`}
+            className={`absolute right-2.5 top-2.5 rounded-md px-2.5 py-1 font-sans text-[12px] font-bold uppercase tracking-wider shadow-xs ${badgeClass}`}
           >
             {badgeLabel}
           </span>
@@ -86,10 +86,10 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
           className="cursor-pointer font-sans text-base font-extrabold uppercase tracking-tight text-brand-primary transition-colors hover:text-brand-leaf-green"
         >
           {product.name}
-          <sup className="ml-0.5 text-[10px]">®</sup>
+          <sup className="ml-0.5 text-[12px]">®</sup>
         </h3>
 
-        <p className="font-sans text-[11px] font-semibold uppercase tracking-wider text-[#B8863B]">
+        <p className="font-sans text-[13px] font-semibold uppercase tracking-wider text-[#B8863B]">
           {subtitle}
         </p>
 
@@ -105,7 +105,7 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
           <button
             type="button"
             onClick={handleAddToCart}
-            className={`inline-flex items-center justify-center gap-1.5 rounded-full border px-4 py-2 font-sans text-[11px] font-bold uppercase tracking-wider transition-all duration-200 ease-out active:scale-95 ${
+            className={`inline-flex items-center justify-center gap-1.5 rounded-full border px-4 py-2 font-sans text-[13px] font-bold uppercase tracking-wider transition-all duration-200 ease-out active:scale-95 ${
               isPopping ? "scale-105" : "scale-100"
             } ${
               isAdded

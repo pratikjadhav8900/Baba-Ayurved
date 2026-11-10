@@ -51,7 +51,7 @@ export default function RitualsIndexPage() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <span className="font-sans text-[10px] font-semibold uppercase tracking-label text-indigo">
+                  <span className="font-sans text-[12px] font-semibold uppercase tracking-label text-indigo">
                     {ritual.number} &middot; {ritual.term}
                   </span>
                   <h2 className="mt-0.5 font-serif text-lg font-medium text-ink group-hover:text-indigo">

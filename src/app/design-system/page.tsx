@@ -104,7 +104,7 @@ function Block({
     <section className="flex flex-col gap-6 rounded-sm border border-line bg-paper p-6 sm:p-10 shadow-xs">
       <div className="flex flex-col gap-1 border-b border-line pb-4">
         {number && (
-          <span className="font-sans text-[11px] font-semibold uppercase tracking-label text-leaf">
+          <span className="font-sans text-[13px] font-semibold uppercase tracking-label text-leaf">
             {number} &middot; Section
           </span>
         )}
@@ -172,35 +172,35 @@ export default function DesignSystemPage() {
             </div>
             <div className="flex h-8 w-full overflow-hidden rounded-xs border border-line shadow-inner">
               <div
-                className="flex items-center justify-center font-sans text-[11px] font-semibold text-primary"
+                className="flex items-center justify-center font-sans text-[13px] font-semibold text-primary"
                 style={{ width: "60%", backgroundColor: "#F0E4D3" }}
                 title="60% Ivory Cream (#F0E4D3)"
               >
                 60% Ivory (#F0E4D3)
               </div>
               <div
-                className="flex items-center justify-center font-sans text-[11px] font-semibold text-ivory"
+                className="flex items-center justify-center font-sans text-[13px] font-semibold text-ivory"
                 style={{ width: "25%", backgroundColor: "#5C2E06" }}
                 title="25% Primary Brown (#5C2E06)"
               >
                 25% Brown (#5C2E06)
               </div>
               <div
-                className="flex items-center justify-center font-sans text-[10px] font-medium text-primary"
+                className="flex items-center justify-center font-sans text-[12px] font-medium text-primary"
                 style={{ width: "10%", backgroundColor: "#E6D3BA" }}
                 title="10% Neutrals Sand/Cream"
               >
                 10% Neutrals
               </div>
               <div
-                className="flex items-center justify-center font-sans text-[10px] font-semibold text-ivory"
+                className="flex items-center justify-center font-sans text-[12px] font-semibold text-ivory"
                 style={{ width: "5%", backgroundColor: "#5C5E27" }}
                 title="5% Leaf Green (#5C5E27)"
               >
                 5%
               </div>
             </div>
-            <p className="font-sans text-[11px] text-tone-muted">
+            <p className="font-sans text-[13px] text-tone-muted">
               Ivory Cream (60%) establishes calm whitespace and purity; Primary Brown (25%) provides authoritative heritage wordmarks and primary actions; Neutrals (10%) offer subtle depth and section breaks; Leaf Green (5%) provides focused botanical accents.
             </p>
           </div>
@@ -217,7 +217,7 @@ export default function DesignSystemPage() {
                   style={{ backgroundColor: color.hex }}
                 >
                   <span
-                    className={`rounded-xs px-2 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-label ${
+                    className={`rounded-xs px-2 py-0.5 font-sans text-[12px] font-semibold uppercase tracking-label ${
                       color.textDark ? "bg-primary/10 text-primary" : "bg-ivory/20 text-ivory"
                     }`}
                   >
@@ -229,8 +229,8 @@ export default function DesignSystemPage() {
                     <span className="font-serif text-base font-semibold text-primary">{color.name}</span>
                     <span className="font-mono text-xs font-bold text-primary">{color.hex}</span>
                   </div>
-                  <span className="font-sans text-[11px] text-tone-muted">{color.role}</span>
-                  <div className="mt-auto border-t border-line/60 pt-2 text-[10px] text-tone-muted">
+                  <span className="font-sans text-[13px] text-tone-muted">{color.role}</span>
+                  <div className="mt-auto border-t border-line/60 pt-2 text-[12px] text-tone-muted">
                     <div>Token: <code className="font-mono text-primary">{color.token}</code></div>
                     <div>RGB: {color.rgb}</div>
                     <div>Contrast: <strong className="text-leaf">{color.contrastRating}</strong></div>
@@ -250,89 +250,89 @@ export default function DesignSystemPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {/* Primary Vector on Ivory */}
             <div className="flex flex-col gap-3 rounded-xs border border-line bg-ivory p-6">
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-label text-primary">
+              <span className="font-sans text-[13px] font-semibold uppercase tracking-label text-primary">
                 01 &middot; Primary Vector Logo (Light)
               </span>
               <div className="flex h-36 items-center justify-center">
                 <BrandLogo variant="primary" size="lg" />
               </div>
-              <p className="border-t border-line/60 pt-2 font-sans text-[11px] text-tone-muted">
+              <p className="border-t border-line/60 pt-2 font-sans text-[13px] text-tone-muted">
                 Extracted vector artwork: &ldquo;BABA&rdquo; in #5C2E06 with botanical leaf in #5C5E27 on &ldquo;A&rdquo;, &ldquo;AYURVEDA&rdquo; below.
               </p>
             </div>
 
             {/* Reversed Vector on Primary Brown */}
             <div className="flex flex-col gap-3 rounded-xs border border-line bg-primary p-6 text-ivory">
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-label text-sand">
+              <span className="font-sans text-[13px] font-semibold uppercase tracking-label text-sand">
                 02 &middot; Reversed Vector Logo (Dark)
               </span>
               <div className="flex h-36 items-center justify-center">
                 <BrandLogo variant="primary" tone="reversed" size="lg" />
               </div>
-              <p className="border-t border-line-reversed pt-2 font-sans text-[11px] text-sand/90">
+              <p className="border-t border-line-reversed pt-2 font-sans text-[13px] text-sand/90">
                 Reversed vector artwork in Ivory Cream (#F0E4D3) for primary dark sections, footer, and ribbon banners.
               </p>
             </div>
 
             {/* Monogram & Standalone Leaf */}
             <div className="flex flex-col gap-3 rounded-xs border border-line bg-cream p-6">
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-label text-leaf">
+              <span className="font-sans text-[13px] font-semibold uppercase tracking-label text-leaf">
                 03 &middot; Monogram &amp; Leaf Icon
               </span>
               <div className="flex h-36 items-center justify-center gap-8">
                 <div className="flex flex-col items-center gap-1">
                   <BrandLogo variant="monogram" size="md" />
-                  <span className="font-sans text-[10px] text-tone-muted">Monogram</span>
+                  <span className="font-sans text-[12px] text-tone-muted">Monogram</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <BrandLogo variant="leaf" size="md" />
-                  <span className="font-sans text-[10px] text-leaf">Leaf Icon</span>
+                  <span className="font-sans text-[12px] text-leaf">Leaf Icon</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
                   <BrandLogo variant="favicon" size="md" />
-                  <span className="font-sans text-[10px] text-tone-muted">Favicon</span>
+                  <span className="font-sans text-[12px] text-tone-muted">Favicon</span>
                 </div>
               </div>
-              <p className="border-t border-line/60 pt-2 font-sans text-[11px] text-tone-muted">
+              <p className="border-t border-line/60 pt-2 font-sans text-[13px] text-tone-muted">
                 Compact icons for mobile navigation, app icons, wax seals, and secondary packaging labels.
               </p>
             </div>
 
             {/* Dark Background Card (#3E240C) */}
             <div className="flex flex-col gap-3 rounded-xs border border-line bg-[#3E240C] p-6 text-ivory">
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-label text-sand">
+              <span className="font-sans text-[13px] font-semibold uppercase tracking-label text-sand">
                 04 &middot; Dark Background Card
               </span>
               <div className="flex h-36 items-center justify-center">
                 <BrandLogo variant="dark-bg" size="lg" />
               </div>
-              <p className="border-t border-line-reversed pt-2 font-sans text-[11px] text-sand/90">
+              <p className="border-t border-line-reversed pt-2 font-sans text-[13px] text-sand/90">
                 Official dark-mode container card extracted from Brand Kit §02 / §03.
               </p>
             </div>
 
             {/* Light Background Card (#F0E4D3) */}
             <div className="flex flex-col gap-3 rounded-xs border border-line bg-off-white p-6">
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-label text-primary">
+              <span className="font-sans text-[13px] font-semibold uppercase tracking-label text-primary">
                 05 &middot; Light Background Card
               </span>
               <div className="flex h-36 items-center justify-center">
                 <BrandLogo variant="light-bg" size="lg" />
               </div>
-              <p className="border-t border-line/60 pt-2 font-sans text-[11px] text-tone-muted">
+              <p className="border-t border-line/60 pt-2 font-sans text-[13px] text-tone-muted">
                 Official light-mode container card extracted from Brand Kit §02 / §03.
               </p>
             </div>
 
             {/* V2 High-Resolution Render */}
             <div className="flex flex-col gap-3 rounded-xs border border-line bg-sand/30 p-6">
-              <span className="font-sans text-[11px] font-semibold uppercase tracking-label text-leaf">
+              <span className="font-sans text-[13px] font-semibold uppercase tracking-label text-leaf">
                 06 &middot; V2 Master Raster Render
               </span>
               <div className="flex h-36 items-center justify-center">
                 <BrandLogo variant="v2-primary" size="lg" />
               </div>
-              <p className="border-t border-line/60 pt-2 font-sans text-[11px] text-tone-muted">
+              <p className="border-t border-line/60 pt-2 font-sans text-[13px] text-tone-muted">
                 Original 1802x872 px high-resolution raster asset preserved from Brand Kit §03.
               </p>
             </div>
@@ -354,28 +354,28 @@ export default function DesignSystemPage() {
 
               <div className="flex flex-col gap-6">
                 <div>
-                  <span className="font-sans text-[11px] text-tone-muted">Hero Display (clamp 4.25rem – 9rem)</span>
+                  <span className="font-sans text-[13px] text-tone-muted">Hero Display (clamp 4.25rem – 9rem)</span>
                   <p className="font-serif text-5xl font-normal text-primary sm:text-6xl md:text-7xl">
                     Herbal Purity. Living Lineage.
                   </p>
                 </div>
 
                 <div>
-                  <span className="font-sans text-[11px] text-tone-muted">Statement Heading (clamp 1.75rem – 3.25rem)</span>
+                  <span className="font-sans text-[13px] text-tone-muted">Statement Heading (clamp 1.75rem – 3.25rem)</span>
                   <Heading as="p" size="statement" className="text-primary">
                     A practice before it was a pharmacy.
                   </Heading>
                 </div>
 
                 <div>
-                  <span className="font-sans text-[11px] text-tone-muted">Section Heading (clamp 1.375rem – 1.625rem)</span>
+                  <span className="font-sans text-[13px] text-tone-muted">Section Heading (clamp 1.375rem – 1.625rem)</span>
                   <Heading as="p" size="section" className="text-primary">
                     Classical Shastrokt compounding in Central India
                   </Heading>
                 </div>
 
                 <div>
-                  <span className="font-sans text-[11px] text-tone-muted">Product Heading (clamp 1.25rem – 1.5rem)</span>
+                  <span className="font-sans text-[13px] text-tone-muted">Product Heading (clamp 1.25rem – 1.5rem)</span>
                   <Heading as="p" size="product" className="text-primary">
                     Maha Bhringraj Taila &middot; Classical Scalp Formulation
                   </Heading>
@@ -391,22 +391,22 @@ export default function DesignSystemPage() {
 
               <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
                 <div className="flex flex-col gap-2">
-                  <span className="font-sans text-[11px] text-tone-muted">Navigation Link (500, 13–14px)</span>
+                  <span className="font-sans text-[13px] text-tone-muted">Navigation Link (500, 13–14px)</span>
                   <p className="font-sans text-sm font-medium tracking-wide text-primary">
                     THE PHARMACY &middot; HERITAGE &middot; RITUALS
                   </p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <span className="font-sans text-[11px] text-tone-muted">Price &amp; Metadata (600, 14–16px)</span>
+                  <span className="font-sans text-[13px] text-tone-muted">Price &amp; Metadata (600, 14–16px)</span>
                   <p className="font-sans text-base font-semibold text-primary">
                     ₹ 680 <span className="text-xs font-normal text-tone-muted">(200 ml / glass bottle)</span>
                   </p>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <span className="font-sans text-[11px] text-tone-muted">Proof Label (600, 10px uppercase, tracking-label)</span>
-                  <p className="font-sans text-[10px] font-semibold uppercase tracking-label text-leaf">
+                  <span className="font-sans text-[13px] text-tone-muted">Proof Label (600, 10px uppercase, tracking-label)</span>
+                  <p className="font-sans text-[12px] font-semibold uppercase tracking-label text-leaf">
                     SHASTROKT FORMULATION &middot; BATCH 2026-A
                   </p>
                 </div>
@@ -448,14 +448,14 @@ export default function DesignSystemPage() {
                     className="object-cover transition duration-300 group-hover:scale-105"
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
-                  <div className="absolute top-2 right-2 rounded-xs bg-primary/90 px-2 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-label text-ivory">
+                  <div className="absolute top-2 right-2 rounded-xs bg-primary/90 px-2 py-0.5 font-sans text-[12px] font-semibold uppercase tracking-label text-ivory">
                     {asset.type}
                   </div>
                 </div>
                 <div className="flex flex-1 flex-col gap-1 p-4">
                   <h3 className="font-serif text-lg font-medium text-primary">{asset.title}</h3>
                   <p className="font-sans text-xs text-tone-muted">{asset.description}</p>
-                  <div className="mt-auto border-t border-line/60 pt-2 font-mono text-[10px] text-tone-muted">
+                  <div className="mt-auto border-t border-line/60 pt-2 font-mono text-[12px] text-tone-muted">
                     {asset.dimensions} &middot; {asset.source}
                   </div>
                 </div>

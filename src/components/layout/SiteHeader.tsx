@@ -155,7 +155,7 @@ export function SiteHeader() {
             {wishlistCount > 0 && (
               <span
                 style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
-                className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
+                className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[12px] font-bold shadow-md"
               >
                 {wishlistCount}
               </span>
@@ -178,7 +178,7 @@ export function SiteHeader() {
             {totalCount > 0 && (
               <span
                 style={{ backgroundColor: "#FFFFFF", color: "#0A0D11" }}
-                className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[10px] font-bold shadow-md"
+                className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full font-sans text-[12px] font-bold shadow-md"
               >
                 {totalCount}
               </span>

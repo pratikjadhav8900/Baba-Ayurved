@@ -73,7 +73,7 @@ export default function ShopPage() {
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-4">
-                    <span className="font-sans text-[10px] font-semibold uppercase tracking-label text-indigo">
+                    <span className="font-sans text-[12px] font-semibold uppercase tracking-label text-indigo">
                       {ritual.term}
                     </span>
                     <h3 className="mt-0.5 font-serif text-base font-medium text-ink group-hover:text-indigo">

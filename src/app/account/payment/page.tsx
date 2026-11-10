@@ -23,7 +23,7 @@ export default function PaymentMethodPage() {
           <p className="flex items-center gap-2 font-semibold">
             Pay Online (UPI / Card)
             {!RAZORPAY_ENABLED && (
-              <span className="rounded-full bg-brand-sand/60 px-2 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-wider text-brand-primary">
+              <span className="rounded-full bg-brand-sand/60 px-2 py-0.5 font-sans text-[12px] font-semibold uppercase tracking-wider text-brand-primary">
                 Coming Soon
               </span>
             )}

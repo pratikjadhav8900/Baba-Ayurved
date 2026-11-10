@@ -16,7 +16,7 @@ export function LogoutButton({ variant = "row" }: { variant?: "row" | "sidebar" 
       <div aria-disabled="true" className={`${base} cursor-not-allowed text-brand-primary/55`}>
         <LogOut className="h-4 w-4" strokeWidth={1.75} />
         <span className="flex-1">Logout</span>
-        <span className="rounded-full bg-brand-sand/50 px-2 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-wider text-brand-primary/72">
+        <span className="rounded-full bg-brand-sand/50 px-2 py-0.5 font-sans text-[12px] font-semibold uppercase tracking-wider text-brand-primary/72">
           Soon
         </span>
       </div>

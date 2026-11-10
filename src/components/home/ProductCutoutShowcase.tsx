@@ -180,7 +180,7 @@ export function ProductCutoutShowcase() {
         </div>
 
         <div className="absolute bottom-3 left-3 right-3 z-10 rounded-xs border border-brand-sand/60 bg-brand-off-white/90 p-3 backdrop-blur-md">
-          <span className="block font-sans text-[11px] font-semibold uppercase tracking-label text-brand-leaf-green">
+          <span className="block font-sans text-[13px] font-semibold uppercase tracking-label text-brand-leaf-green">
             Desha &amp; Kala &middot; Classical Ethnobotany
           </span>
           <span className="block font-serif text-sm font-medium text-brand-primary">

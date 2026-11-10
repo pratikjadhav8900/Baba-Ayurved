@@ -16,7 +16,7 @@ const socialLinks = [
 const linkClass =
   "inline-flex min-h-9 items-center font-sans text-sm text-brand-ivory underline decoration-transparent decoration-1 underline-offset-[0.4em] transition-colors duration-(--duration-calm) hover:text-brand-sand hover:decoration-brand-sand";
 
-const columnLabel = "font-sans text-[11px] uppercase tracking-label text-brand-sand font-semibold";
+const columnLabel = "font-sans text-[13px] uppercase tracking-label text-brand-sand font-semibold";
 
 export function SiteFooter() {
   return (
@@ -50,7 +50,7 @@ export function SiteFooter() {
               {rituals.map((ritual) => (
                 <li key={ritual.slug}>
                   <Link href={`/rituals/${ritual.slug}`} className={linkClass}>
-                    {ritual.name} &middot; <span className="text-[11px] text-brand-sand">{ritual.term}</span>
+                    {ritual.name} &middot; <span className="text-[13px] text-brand-sand">{ritual.term}</span>
                   </Link>
                 </li>
               ))}
@@ -125,7 +125,7 @@ export function SiteFooter() {
           <p>
             &copy; 2026 {site.name} &middot; Phoolchand Aushdhalaya lineage since 1870s &middot; Pharmacy founded {site.foundedYear}
           </p>
-          <div className="flex flex-wrap gap-4 text-[11px]">
+          <div className="flex flex-wrap gap-4 text-[13px]">
             <span>Madhya Pradesh, India</span>
             <span>&middot;</span>
             <span>Batch Traceability</span>

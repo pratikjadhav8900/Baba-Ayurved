@@ -75,7 +75,7 @@ export function Discover() {
                       frameClassName="rounded-xl border border-line"
                     />
                     <div className="flex flex-col">
-                      <span className="font-sans text-[11px] font-semibold uppercase tracking-label text-indigo">
+                      <span className="font-sans text-[13px] font-semibold uppercase tracking-label text-indigo">
                         {ritual.term} &middot; {ritual.number}
                       </span>
                       <span className="font-serif text-lg font-medium text-ink group-hover:text-indigo">

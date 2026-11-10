@@ -121,7 +121,7 @@ export function SiteIntro() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.9 }}
-            className="absolute bottom-8 font-sans text-[11px] uppercase tracking-[0.2em] text-[#E2B784]/60"
+            className="absolute bottom-8 font-sans text-[13px] uppercase tracking-[0.2em] text-[#E2B784]/60"
           >
             Tap to skip
           </m.span>

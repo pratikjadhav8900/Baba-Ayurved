@@ -131,7 +131,7 @@ export function StaggerTestimonials() {
       onTouchEnd={() => setIsPaused(false)}
     >
       <div className="mx-auto mb-2 max-w-7xl px-6 text-center md:px-12">
-        <span className="font-sans text-[11px] font-bold uppercase tracking-[0.25em] text-brand-leaf-green">
+        <span className="font-sans text-[13px] font-bold uppercase tracking-[0.25em] text-brand-leaf-green">
           Community Voices
         </span>
       </div>

@@ -1,112 +1,85 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Heading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
-import { GondTreeOfLife, GondLeafIcon, GondPatternBorder } from "@/components/brand/GondArt";
-import { ArrowRight, Sparkles, BookOpen, Clock, ShieldCheck } from "lucide-react";
+import { imageSlots } from "@/content/assets";
+import { ArrowRight } from "lucide-react";
+
+const phases = [
+  { days: "Days 1–3", name: "Colon Clear", formula: "Avipattikar + Ezee Churna" },
+  { days: "Days 4–10", name: "Liver Reset", formula: "Bhoomi Amla + Yashtimadhu" },
+  { days: "Days 11–14+", name: "Daily Rhythm", formula: "Lifelong 2-product Dinacharya" },
+] as const;
 
 export function GutKitHeroBanner() {
-  return (
-    <section className="relative overflow-hidden bg-[#FAF6F0] py-16 sm:py-20 md:py-24 border-t border-b border-[#DFCDB7]">
-      {/* Gond Art Watermark */}
-      <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 opacity-10 text-brand-primary hidden lg:block">
-        <GondTreeOfLife className="h-[460px] w-[460px]" />
-      </div>
+  const slot = imageSlots.packagingBoxes;
 
+  return (
+    <section className="bg-[#FAF6F0] py-14 sm:py-18 md:py-20 border-t border-b border-[#DFCDB7]">
       <Container width="wide">
-        <div className="rounded-3xl border border-brand-sand bg-brand-cream/80 p-8 sm:p-12 md:p-14 shadow-2xl backdrop-blur-xs relative overflow-hidden">
-          {/* Subtle Inner Gond Top Accent */}
-          <div className="text-brand-sand/82 mb-6">
-            <GondPatternBorder className="w-full h-3" />
+        <div className="overflow-hidden rounded-3xl border border-[#DFCDB7] bg-white shadow-sm lg:grid lg:grid-cols-2 lg:items-stretch">
+          {/* Real product shot, not a decorative card */}
+          <div className="relative aspect-[16/10] bg-[#EFE4D6] lg:aspect-auto">
+            {slot.src && (
+              <Image
+                src={slot.src}
+                alt={slot.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            )}
+            <span className="absolute left-4 top-4 rounded-full bg-brand-leaf-green px-3.5 py-1.5 font-sans text-sm font-bold text-white shadow-md">
+              Save ₹99
+            </span>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
-            {/* Left 7 Columns: Story & Doctrine */}
-            <div className="flex flex-col gap-6 lg:col-span-7">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-brand-sand bg-brand-off-white px-3.5 py-1 w-fit shadow-xs">
-                <GondLeafIcon className="h-4 w-4 text-brand-leaf-green" />
-                <span className="font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-brand-primary">
-                  Master Launch &middot; 3-Phase Panchakarma Edition
-                </span>
-              </div>
+          {/* Offer details */}
+          <div className="flex flex-col gap-5 p-6 sm:p-8 lg:p-10">
+            <span className="font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#8C5E28]">
+              3-Phase Panchakarma Kit
+            </span>
 
-              {/* Headline */}
-              <div className="flex flex-col gap-2">
-                <span className="font-serif text-lg italic text-brand-leaf-green">
-                  Charaka Samhita (Vimanasthana 2.8–9)
-                </span>
-                <Heading as="h2" size="statement" className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-brand-primary">
-                  The Unhurried Gut Health Ritual Kit
-                </Heading>
-              </div>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-brand-primary">
+              The Unhurried Gut Health Ritual Kit
+            </h2>
 
-              {/* Core Philosophy Paragraph */}
-              <p className="font-sans text-base sm:text-lg leading-relaxed text-brand-primary/93 max-w-xl">
-                Modern digestive distress is rarely a failure of nutrition alone; it is a failure of pace. Even wholesome food turns into <em>Ama</em> when consumed in haste. This 14-day progressive ritual gently decelerates your system through 4 classical formulations, a custom 3g Matra measuring spoon, and conscious behavioral pauses.
-              </p>
+            <p className="font-sans text-base leading-relaxed text-brand-primary/90 max-w-lg">
+              A 14-day progressive ritual that decelerates digestion through 4 classical formulations and a custom Matra measuring spoon.
+            </p>
 
-              {/* 3 Phases Micro-Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                <div className="rounded-2xl border border-brand-sand/80 bg-brand-off-white/90 p-3.5 flex flex-col gap-1">
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-brand-leaf-green">Days 1–3</span>
-                  <span className="font-serif text-sm font-bold text-brand-primary">Phase 1: Colon Clear</span>
-                  <span className="font-sans text-[11px] text-brand-primary/86">Avipattikar + Ezee Churna</span>
+            <div className="flex flex-col gap-2.5 border-y border-[#DFCDB7] py-4">
+              {phases.map((phase, i) => (
+                <div key={phase.days} className="flex items-baseline gap-3">
+                  <span className="shrink-0 font-sans text-sm font-bold text-[#8C5E28]">
+                    {i + 1}.
+                  </span>
+                  <p className="font-sans text-sm text-brand-primary">
+                    <span className="font-semibold">{phase.name}</span>
+                    <span className="text-brand-primary/68"> ({phase.days}) &middot; {phase.formula}</span>
+                  </p>
                 </div>
-                <div className="rounded-2xl border border-brand-sand/80 bg-brand-off-white/90 p-3.5 flex flex-col gap-1">
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-brand-leaf-green">Days 4–10</span>
-                  <span className="font-serif text-sm font-bold text-brand-primary">Phase 2: Liver Reset</span>
-                  <span className="font-sans text-[11px] text-brand-primary/86">Bhoomi Amla + Yashtimadhu</span>
-                </div>
-                <div className="rounded-2xl border border-brand-sand/80 bg-brand-off-white/90 p-3.5 flex flex-col gap-1">
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-brand-leaf-green">Days 11–14+</span>
-                  <span className="font-serif text-sm font-bold text-brand-primary">Phase 3: Daily Rhythm</span>
-                  <span className="font-sans text-[11px] text-brand-primary/86">Lifelong 2-product Dinacharya</span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-3">
-                <Link
-                  href="/rituals/unhurried-gut-health"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand-primary px-8 font-sans text-xs font-bold uppercase tracking-wider text-brand-ivory hover:bg-[#3E240C] transition-all shadow-lg cursor-pointer"
-                >
-                  <span>Explore 14-Day Protocol &amp; Tracker</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <div className="flex items-center gap-2 text-xs font-sans text-brand-primary/90">
-                  <span className="font-bold font-serif text-lg text-brand-primary">₹949.00</span>
-                  <span className="line-through text-brand-primary/64 text-[11px]">₹1,048.00</span>
-                  <span className="rounded-full bg-brand-leaf-green/15 px-2 py-0.5 text-[10px] font-bold text-brand-leaf-green">Save ₹99</span>
-                </div>
-              </div>
+              ))}
             </div>
 
-            {/* Right 5 Columns: Shastrokta Assurance Card */}
-            <div className="lg:col-span-5 flex flex-col gap-5">
-              {/* Heritage & AYUSH Compliance Strip */}
-              <div className="rounded-2xl bg-brand-primary p-5 text-brand-ivory flex flex-col gap-2 border border-brand-primary shadow-xl">
-                <div className="flex items-center justify-between text-xs text-brand-sand">
-                  <span className="font-bold tracking-widest uppercase text-[10px]">Ayush Classical Medicine</span>
-                  <span className="font-mono text-[11px]">Lic. 25D/23/99</span>
-                </div>
-                <p className="font-sans text-xs text-brand-ivory/95 leading-relaxed">
-                  Formulations hand-prepared following 159 years of clinical wisdom from our family Pothis in Gwalior, Madhya Pradesh.
-                </p>
-                <div className="flex items-center gap-2 pt-1 text-[11px] text-brand-sand/90">
-                  <ShieldCheck className="h-4 w-4 text-brand-sand shrink-0" />
-                  <span>Zero synthetic binders &middot; Zero unverified cure claims</span>
-                </div>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div className="flex items-baseline gap-2.5">
+                <span className="font-bold font-serif text-3xl text-brand-primary">₹949</span>
+                <span className="line-through text-brand-primary/58 text-base">₹1,048</span>
               </div>
+              <Button href="/rituals/unhurried-gut-health" size="md">
+                Explore 14-Day Protocol
+                <ArrowRight className="h-4 w-4" />
+              </Button>
             </div>
+
+            <p className="font-sans text-sm text-brand-primary/60">
+              AYUSH-compliant &middot; Lic. 25D/23/99 &middot; No synthetic binders
+            </p>
           </div>
         </div>
       </Container>
     </section>
   );
 }
-

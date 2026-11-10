@@ -90,7 +90,7 @@ export function BottomNav() {
               <span className="absolute -top-0.5 -right-1 h-1.5 w-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade80]" />
             )}
           </m.div>
-          <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
+          <span className="font-sans text-[12px] tracking-wide mt-1 leading-none">
             Home
           </span>
         </Link>
@@ -117,7 +117,7 @@ export function BottomNav() {
               <span className="absolute -top-0.5 -right-1 h-1.5 w-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade80]" />
             )}
           </m.div>
-          <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
+          <span className="font-sans text-[12px] tracking-wide mt-1 leading-none">
             Products
           </span>
         </Link>
@@ -141,12 +141,12 @@ export function BottomNav() {
           >
             <Package size={18} strokeWidth={isOrdersActive ? 2.4 : 1.8} />
             {orders.length > 0 && (
-              <span className="absolute -top-2 -right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C2392A] px-1 font-mono text-[9px] font-bold text-white shadow-[0_0_8px_rgba(194,57,42,0.8)]">
+              <span className="absolute -top-2 -right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C2392A] px-1 font-mono text-[12px] font-bold text-white shadow-[0_0_8px_rgba(194,57,42,0.8)]">
                 {orders.length > 9 ? "9+" : orders.length}
               </span>
             )}
           </m.div>
-          <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
+          <span className="font-sans text-[12px] tracking-wide mt-1 leading-none">
             Orders
           </span>
         </Link>
@@ -173,12 +173,12 @@ export function BottomNav() {
               <span className="absolute -top-0.5 -right-1 h-1.5 w-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade80]" />
             )}
             {totalCount > 0 && (
-              <span className="absolute -top-2 -right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C2392A] px-1 font-mono text-[9px] font-bold text-white shadow-[0_0_8px_rgba(194,57,42,0.8)]">
+              <span className="absolute -top-2 -right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#C2392A] px-1 font-mono text-[12px] font-bold text-white shadow-[0_0_8px_rgba(194,57,42,0.8)]">
                 {totalCount > 9 ? "9+" : totalCount}
               </span>
             )}
           </m.div>
-          <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
+          <span className="font-sans text-[12px] tracking-wide mt-1 leading-none">
             Cart
           </span>
         </button>
@@ -205,7 +205,7 @@ export function BottomNav() {
               <span className="absolute -top-0.5 -right-1 h-1.5 w-1.5 rounded-full bg-[#4ade80] shadow-[0_0_6px_#4ade80]" />
             )}
           </m.div>
-          <span className="font-sans text-[10px] tracking-wide mt-1 leading-none">
+          <span className="font-sans text-[12px] tracking-wide mt-1 leading-none">
             Account
           </span>
         </Link>

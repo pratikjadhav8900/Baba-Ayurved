@@ -69,7 +69,7 @@ export function ProductShowcase() {
                   )}
 
                   {/* Form Badge */}
-                  <div className="absolute left-3 top-3 rounded-xs bg-brand-ivory/95 px-2.5 py-1 font-sans text-[11px] font-semibold tracking-label uppercase text-brand-primary border border-brand-sand/60 shadow-2xs backdrop-blur-xs">
+                  <div className="absolute left-3 top-3 rounded-xs bg-brand-ivory/95 px-2.5 py-1 font-sans text-[13px] font-semibold tracking-label uppercase text-brand-primary border border-brand-sand/60 shadow-2xs backdrop-blur-xs">
                     {product.form}
                   </div>
 
@@ -90,7 +90,7 @@ export function ProductShowcase() {
                     <span className="font-hindi text-xs text-brand-leaf-green font-medium">
                       {product.sanskritName}
                     </span>
-                    <span className="font-sans text-[11px] uppercase tracking-label text-brand-primary/72 font-semibold">
+                    <span className="font-sans text-[13px] uppercase tracking-label text-brand-primary/72 font-semibold">
                       {product.ritualTiming.split(" ")[0]}
                     </span>
                   </div>
@@ -105,7 +105,7 @@ export function ProductShowcase() {
 
                   <div className="mt-4 flex items-center justify-between border-t border-solid border-brand-sand/60 pt-3">
                     <div className="flex flex-col">
-                      <span className="font-sans text-[10px] uppercase tracking-label text-brand-primary/72">
+                      <span className="font-sans text-[12px] uppercase tracking-label text-brand-primary/72">
                         {product.packSize}
                       </span>
                       <span className="font-sans text-sm font-bold text-brand-primary">

@@ -51,10 +51,10 @@ export function Heritage() {
             
             {/* Pill Tag */}
             <div className="inline-flex w-fit items-center gap-2.5 rounded-full border border-[#DFCDB7] bg-[#FAF5ED] px-1.5 py-1 shadow-xs backdrop-blur-xs">
-              <span className="rounded-full bg-[#3E240C] px-3 py-0.5 font-sans text-[11px] font-bold tracking-wider text-[#FAF6F0] uppercase">
+              <span className="rounded-full bg-[#3E240C] px-3 py-0.5 font-sans text-[13px] font-bold tracking-wider text-[#FAF6F0] uppercase">
                 PHOOLCHAND
               </span>
-              <span className="pr-3 font-sans text-[11px] font-bold tracking-[0.2em] text-[#8C5E28] uppercase">
+              <span className="pr-3 font-sans text-[13px] font-bold tracking-[0.2em] text-[#8C5E28] uppercase">
                 LIVING LINEAGE
               </span>
             </div>
@@ -76,7 +76,7 @@ export function Heritage() {
             <div className="grid grid-cols-2 gap-y-4 gap-x-6 border-y border-[#DFCDB7] py-4 sm:grid-cols-4 sm:gap-x-4">
               {metadataItems.map((item) => (
                 <div key={item.label} className="flex flex-col">
-                  <span className="font-sans text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#8C5E28]">
+                  <span className="font-sans text-[12px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-[#8C5E28]">
                     {item.label}
                   </span>
                   <span className="mt-1 font-sans text-sm sm:text-[15px] font-bold text-[#2A1808]">
@@ -132,7 +132,7 @@ export function Heritage() {
               <h3 className="font-sans text-[15px] font-bold text-[#2A1808]">
                 Living Principles
               </h3>
-              <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[13px] text-[#5C2E06]/85">
+              <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[14px] text-[#5C2E06]/85">
                 {livingPrinciples.map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 leading-snug">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5C5E27]" />
@@ -147,7 +147,7 @@ export function Heritage() {
               <h3 className="font-sans text-[15px] font-bold text-[#2A1808]">
                 Compounding Standard
               </h3>
-              <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[13px] text-[#5C2E06]/85">
+              <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[14px] text-[#5C2E06]/85">
                 {compoundingStandards.map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 leading-snug">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5C5E27]" />
@@ -162,7 +162,7 @@ export function Heritage() {
               <h3 className="font-sans text-[15px] font-bold text-[#FAF6F0]">
                 What Baba Ayurved Delivers
               </h3>
-              <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[13px] text-[#F0E4D3]/90">
+              <ul className="mt-2.5 flex flex-col gap-2 font-sans text-xs sm:text-[14px] text-[#F0E4D3]/90">
                 {babaDelivers.map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 leading-snug">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5C5E27]" />

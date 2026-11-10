@@ -82,7 +82,7 @@ export default function PersonalInformationPage() {
               <item.icon className="h-[18px] w-[18px] text-brand-primary/82" strokeWidth={1.5} />
               <span className="flex-1 font-sans text-sm font-medium text-brand-primary">{item.label}</span>
               {item.countKey && counts[item.countKey] > 0 && (
-                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-brand-leaf-green/15 px-1.5 font-sans text-[11px] font-semibold text-brand-leaf-green">
+                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-brand-leaf-green/15 px-1.5 font-sans text-[13px] font-semibold text-brand-leaf-green">
                   {counts[item.countKey]}
                 </span>
               )}

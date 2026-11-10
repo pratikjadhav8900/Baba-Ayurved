@@ -142,11 +142,11 @@ export function GutHealthRitualKit() {
               {/* Eyebrow with Gond Leaf */}
               <div className="inline-flex items-center gap-2 rounded-full border border-brand-sand bg-brand-cream/80 px-4 py-1.5 backdrop-blur-xs w-fit">
                 <GondLeafIcon className="h-4 w-4 text-brand-leaf-green" />
-                <span className="font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-brand-primary">
+                <span className="font-sans text-[13px] font-bold uppercase tracking-[0.2em] text-brand-primary">
                   3-Phase Panchakarma Architecture
                 </span>
                 <span className="text-brand-sand">&middot;</span>
-                <span className="font-sans text-[11px] font-semibold text-brand-leaf-green">
+                <span className="font-sans text-[13px] font-semibold text-brand-leaf-green">
                   Rooted in Madhya Pradesh
                 </span>
               </div>
@@ -182,19 +182,19 @@ export function GutHealthRitualKit() {
               {/* Key Value Badges */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
                 <div className="flex flex-col border-l-2 border-brand-leaf-green pl-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-leaf-green">Lineage</span>
+                  <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-brand-leaf-green">Lineage</span>
                   <span className="font-serif text-sm font-semibold text-brand-primary">159 Years (Since 1860s)</span>
                 </div>
                 <div className="flex flex-col border-l-2 border-brand-leaf-green pl-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-leaf-green">Origin</span>
+                  <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-brand-leaf-green">Origin</span>
                   <span className="font-serif text-sm font-semibold text-brand-primary">Maharaj Bada, Gwalior</span>
                 </div>
                 <div className="flex flex-col border-l-2 border-brand-leaf-green pl-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-leaf-green">Facility</span>
+                  <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-brand-leaf-green">Facility</span>
                   <span className="font-serif text-sm font-semibold text-brand-primary">Lic. No. 25D/23/99</span>
                 </div>
                 <div className="flex flex-col border-l-2 border-brand-leaf-green pl-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-leaf-green">Standard</span>
+                  <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-brand-leaf-green">Standard</span>
                   <span className="font-serif text-sm font-semibold text-brand-primary">100% Shastrokta AYUSH</span>
                 </div>
               </div>
@@ -257,7 +257,7 @@ export function GutHealthRitualKit() {
                   <div>
                     <span className="block font-sans text-xs text-brand-primary/72 line-through">MRP: ₹1,048.00</span>
                     <span className="font-serif text-2xl font-bold text-brand-primary">₹949.00</span>
-                    <span className="block font-sans text-[10px] text-brand-leaf-green">Inclusive of all taxes &amp; tools</span>
+                    <span className="block font-sans text-[12px] text-brand-leaf-green">Inclusive of all taxes &amp; tools</span>
                   </div>
                   <Button variant="primary" tone="default" size="lg" className="rounded-full shadow-lg">
                     Begin 14-Day Reset
@@ -301,7 +301,7 @@ export function GutHealthRitualKit() {
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className="font-sans text-[11px] font-bold uppercase tracking-wider">Phase 1</span>
+                <span className="font-sans text-[13px] font-bold uppercase tracking-wider">Phase 1</span>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${activePhase === "phase1" ? "bg-brand-ivory/20" : "bg-brand-sand/40"}`}>
                   Days 1–3
                 </span>
@@ -322,7 +322,7 @@ export function GutHealthRitualKit() {
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className="font-sans text-[11px] font-bold uppercase tracking-wider">Phase 2</span>
+                <span className="font-sans text-[13px] font-bold uppercase tracking-wider">Phase 2</span>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${activePhase === "phase2" ? "bg-brand-ivory/20" : "bg-brand-sand/40"}`}>
                   Days 4–10
                 </span>
@@ -343,7 +343,7 @@ export function GutHealthRitualKit() {
               }`}
             >
               <div className="flex items-center justify-between">
-                <span className="font-sans text-[11px] font-bold uppercase tracking-wider">Phase 3</span>
+                <span className="font-sans text-[13px] font-bold uppercase tracking-wider">Phase 3</span>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${activePhase === "phase3" ? "bg-brand-ivory/20" : "bg-brand-sand/40"}`}>
                   Days 11–14 &amp; Daily
                 </span>
@@ -428,7 +428,7 @@ export function GutHealthRitualKit() {
 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   <div className="flex flex-col gap-2 rounded-2xl bg-brand-off-white/90 p-4 border border-brand-sand/60">
-                    <span className="font-sans text-[11px] font-bold uppercase text-brand-leaf-green">1. Early Morning Empty Stomach</span>
+                    <span className="font-sans text-[13px] font-bold uppercase text-brand-leaf-green">1. Early Morning Empty Stomach</span>
                     <h4 className="font-serif text-base font-bold text-brand-primary">Bhoomi Amla 50ml Shot</h4>
                     <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">
                       3g (1 level scoop) stirred into 50ml water. Quick shot followed by plain water. Wait 20 mins before tea/breakfast.
@@ -436,7 +436,7 @@ export function GutHealthRitualKit() {
                   </div>
 
                   <div className="flex flex-col gap-2 rounded-2xl bg-brand-off-white/90 p-4 border border-brand-sand/60">
-                    <span className="font-sans text-[11px] font-bold uppercase text-brand-leaf-green">2. Mid-Morning Post-Breakfast</span>
+                    <span className="font-sans text-[13px] font-bold uppercase text-brand-leaf-green">2. Mid-Morning Post-Breakfast</span>
                     <h4 className="font-serif text-base font-bold text-brand-primary">Yashtimadhu Tablet</h4>
                     <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">
                       1 to 2 tablets with clay-pot water or warm milk. Pair with 5 slow, deep abdominal breaths away from screens.
@@ -444,7 +444,7 @@ export function GutHealthRitualKit() {
                   </div>
 
                   <div className="flex flex-col gap-2 rounded-2xl bg-brand-off-white/90 p-4 border border-brand-sand/60">
-                    <span className="font-sans text-[11px] font-bold uppercase text-brand-leaf-green">3. Lunch Unhurried Meal</span>
+                    <span className="font-sans text-[13px] font-bold uppercase text-brand-leaf-green">3. Lunch Unhurried Meal</span>
                     <h4 className="font-serif text-base font-bold text-brand-primary">Avipattikar &ldquo;Savor&rdquo;</h4>
                     <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">
                       Full dose of 3g placed on tongue for 3 seconds to trigger cephalic digestive enzymes. Follow with water &amp; 100 steps. (Halved on Days 7 &amp; 10).
@@ -452,7 +452,7 @@ export function GutHealthRitualKit() {
                   </div>
 
                   <div className="flex flex-col gap-2 rounded-2xl bg-brand-off-white/90 p-4 border border-brand-sand/60">
-                    <span className="font-sans text-[11px] font-bold uppercase text-brand-leaf-green">4. Bedtime Periodic Release</span>
+                    <span className="font-sans text-[13px] font-bold uppercase text-brand-leaf-green">4. Bedtime Periodic Release</span>
                     <h4 className="font-serif text-base font-bold text-brand-primary">Days 7 &amp; 10 ONLY</h4>
                     <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">
                       Take 3g Ezee Churna with warm water ONLY on Nights 7 and 10. Rest days prevent bowel dependency and habituation.
@@ -522,7 +522,7 @@ export function GutHealthRitualKit() {
             <div className="overflow-x-auto rounded-2xl border border-brand-sand bg-brand-off-white shadow-xs">
               <table className="w-full text-left border-collapse text-xs">
                 <thead>
-                  <tr className="border-b border-brand-sand bg-brand-cream/80 text-brand-primary uppercase tracking-wider font-sans text-[10px]">
+                  <tr className="border-b border-brand-sand bg-brand-cream/80 text-brand-primary uppercase tracking-wider font-sans text-[12px]">
                     <th className="py-3 px-4 font-bold">Day</th>
                     <th className="py-3 px-4 font-bold">Phase</th>
                     <th className="py-3 px-4 font-bold">Early Morning (Shot)</th>
@@ -543,7 +543,7 @@ export function GutHealthRitualKit() {
                       <td className="py-3 px-4 font-serif font-medium text-brand-primary">
                         {row.phase}
                         {row.specialNote && (
-                          <span className="block text-[10px] text-amber-900 font-sans mt-0.5">
+                          <span className="block text-[12px] text-amber-900 font-sans mt-0.5">
                             * {row.specialNote}
                           </span>
                         )}
@@ -589,7 +589,7 @@ export function GutHealthRitualKit() {
                     : "bg-brand-off-white text-brand-primary border-brand-sand hover:border-brand-primary/40"
                 }`}
               >
-                <span className={`font-sans text-[10px] font-bold uppercase tracking-widest ${selectedProductIndex === idx ? "text-brand-sand" : "text-brand-leaf-green"}`}>
+                <span className={`font-sans text-[12px] font-bold uppercase tracking-widest ${selectedProductIndex === idx ? "text-brand-sand" : "text-brand-leaf-green"}`}>
                   Formula 0{idx + 1}
                 </span>
                 <span className="font-serif text-base font-bold mt-1">{prod.name}</span>
@@ -623,11 +623,11 @@ export function GutHealthRitualKit() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex flex-col gap-1 border-l-2 border-brand-leaf-green pl-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-leaf-green">Anupana (Vehicle)</span>
+                  <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-brand-leaf-green">Anupana (Vehicle)</span>
                   <span className="font-sans text-xs text-brand-primary/93">{currentProduct.anupana}</span>
                 </div>
                 <div className="flex flex-col gap-1 border-l-2 border-brand-leaf-green pl-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-leaf-green">Daily Protocol</span>
+                  <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-brand-leaf-green">Daily Protocol</span>
                   <span className="font-sans text-xs text-brand-primary/93">{currentProduct.protocol}</span>
                 </div>
               </div>
@@ -646,19 +646,19 @@ export function GutHealthRitualKit() {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                     <div className="p-2.5 rounded-lg bg-brand-off-white border border-brand-sand/60">
                       <span className="font-bold text-brand-primary block">Tier 1: Active Virechana (50%)</span>
-                      <span className="text-[11px] text-brand-primary/86">Sanay (20%), Nishot (10%), Kala Dana (10%), Revanchini (10%)</span>
+                      <span className="text-[13px] text-brand-primary/86">Sanay (20%), Nishot (10%), Kala Dana (10%), Revanchini (10%)</span>
                     </div>
                     <div className="p-2.5 rounded-lg bg-brand-off-white border border-brand-sand/60">
                       <span className="font-bold text-brand-primary block">Tier 2: Mucosal Buffers (18%)</span>
-                      <span className="text-[11px] text-brand-primary/86">Belgiri (10%), Amla (5%), Isabgol (3%)</span>
+                      <span className="text-[13px] text-brand-primary/86">Belgiri (10%), Amla (5%), Isabgol (3%)</span>
                     </div>
                     <div className="p-2.5 rounded-lg bg-brand-off-white border border-brand-sand/60">
                       <span className="font-bold text-brand-primary block">Tier 3: Vata Anulomana (22%)</span>
-                      <span className="text-[11px] text-brand-primary/86">Sendha Namak (5%), Kala Namak (5%), Harad (10%), Sada Namak (2%)</span>
+                      <span className="text-[13px] text-brand-primary/86">Sendha Namak (5%), Kala Namak (5%), Harad (10%), Sada Namak (2%)</span>
                     </div>
                     <div className="p-2.5 rounded-lg bg-brand-off-white border border-brand-sand/60">
                       <span className="font-bold text-brand-primary block">Tier 4: Krimi-Nashaka (10%)</span>
-                      <span className="text-[11px] text-brand-primary/86">Vaividang (10%) clears pathogenic microflora</span>
+                      <span className="text-[13px] text-brand-primary/86">Vaividang (10%) clears pathogenic microflora</span>
                     </div>
                   </div>
                 </div>
@@ -669,7 +669,7 @@ export function GutHealthRitualKit() {
             <div className="lg:col-span-5 flex flex-col gap-4 justify-between rounded-2xl border border-brand-sand bg-[#2A1808] p-6 text-brand-ivory">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between border-b border-brand-sand/20 pb-3">
-                  <span className="font-sans text-[10px] font-bold uppercase tracking-widest text-brand-sand">
+                  <span className="font-sans text-[12px] font-bold uppercase tracking-widest text-brand-sand">
                     Official AYUSH Box Label
                   </span>
                   <span className="font-mono text-xs text-brand-sand">Lic: 25D/23/99</span>
@@ -682,12 +682,12 @@ export function GutHealthRitualKit() {
                 </div>
 
                 <div className="flex flex-col gap-1 border-t border-brand-sand/20 pt-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-sand">Ayurvedic Composition:</span>
+                  <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-brand-sand">Ayurvedic Composition:</span>
                   <p className="font-sans text-xs text-brand-ivory/93 leading-relaxed">{currentProduct.botanical}</p>
                 </div>
 
                 <div className="flex flex-col gap-1 border-t border-brand-sand/20 pt-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-sand">Manufactured By:</span>
+                  <span className="font-sans text-[13px] font-bold uppercase tracking-wider text-brand-sand">Manufactured By:</span>
                   <p className="font-sans text-xs text-brand-ivory/93">
                     Baba Ayurved Pharmacy, Industrial Area, Gwalior, M.P.
                   </p>
@@ -749,7 +749,7 @@ export function GutHealthRitualKit() {
             {/* Vector Tool Display Card */}
             <div className="lg:col-span-6">
               <div className="rounded-3xl border border-brand-sand bg-brand-cream/60 p-8 shadow-xl flex flex-col items-center justify-center text-center">
-                <span className="font-sans text-[11px] font-bold uppercase tracking-widest text-brand-leaf-green mb-6">
+                <span className="font-sans text-[13px] font-bold uppercase tracking-widest text-brand-leaf-green mb-6">
                   Tactile Ritual Specimen &middot; 1 Level Scoop = 3g
                 </span>
 
@@ -759,15 +759,15 @@ export function GutHealthRitualKit() {
 
                 <div className="mt-6 grid grid-cols-3 gap-4 border-t border-brand-sand/60 pt-6 w-full text-center">
                   <div>
-                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/72">Calibrated Matra</span>
+                    <span className="block font-sans text-[12px] uppercase tracking-wider text-brand-primary/72">Calibrated Matra</span>
                     <span className="font-serif text-sm font-bold text-brand-primary">Exactly 3.0 Grams</span>
                   </div>
                   <div>
-                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/72">Material</span>
+                    <span className="block font-sans text-[12px] uppercase tracking-wider text-brand-primary/72">Material</span>
                     <span className="font-serif text-sm font-bold text-brand-primary">Neem Wood / Brass</span>
                   </div>
                   <div>
-                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/72">Craftsmanship</span>
+                    <span className="block font-sans text-[12px] uppercase tracking-wider text-brand-primary/72">Craftsmanship</span>
                     <span className="font-serif text-sm font-bold text-brand-primary">Gond Engraved Handle</span>
                   </div>
                 </div>

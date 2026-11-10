@@ -498,7 +498,7 @@ export function Rituals() {
             <button
               type="button"
               onClick={() => setActiveTab("morning")}
-              className={`group inline-flex h-11 sm:h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-5 sm:px-6 font-sans text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer select-none shadow-xs ${
+              className={`group inline-flex h-11 sm:h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-5 sm:px-6 font-sans text-xs sm:text-[14px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer select-none shadow-xs ${
                 activeTab === "morning"
                   ? "bg-[#3E240C] text-[#FAF6F0] shadow-md ring-2 ring-[#3E240C]/20 border border-[#3E240C]"
                   : "bg-[#FAF5ED] border border-[#DFCDB7] text-[#5C2E06] hover:bg-[#FFFDF9] hover:border-[#C49A45]/60"
@@ -510,7 +510,7 @@ export function Rituals() {
             <button
               type="button"
               onClick={() => setActiveTab("evening")}
-              className={`group inline-flex h-11 sm:h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-5 sm:px-6 font-sans text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer select-none shadow-xs ${
+              className={`group inline-flex h-11 sm:h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-5 sm:px-6 font-sans text-xs sm:text-[14px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer select-none shadow-xs ${
                 activeTab === "evening"
                   ? "bg-[#3E240C] text-[#FAF6F0] shadow-md ring-2 ring-[#3E240C]/20 border border-[#3E240C]"
                   : "bg-[#FAF5ED] border border-[#DFCDB7] text-[#5C2E06] hover:bg-[#FFFDF9] hover:border-[#C49A45]/60"
@@ -522,7 +522,7 @@ export function Rituals() {
             <button
               type="button"
               onClick={() => setActiveTab("rasayana")}
-              className={`group inline-flex h-11 sm:h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-5 sm:px-6 font-sans text-xs sm:text-[13px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer select-none shadow-xs ${
+              className={`group inline-flex h-11 sm:h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-5 sm:px-6 font-sans text-xs sm:text-[14px] font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer select-none shadow-xs ${
                 activeTab === "rasayana"
                   ? "bg-[#3E240C] text-[#FAF6F0] shadow-md ring-2 ring-[#3E240C]/20 border border-[#3E240C]"
                   : "bg-[#FAF5ED] border border-[#DFCDB7] text-[#5C2E06] hover:bg-[#FFFDF9] hover:border-[#C49A45]/60"
@@ -710,7 +710,7 @@ export function Rituals() {
                             <div className="font-sans font-light text-2xl sm:text-3xl text-white tracking-tight leading-tight lowercase">
                               glow<br />from<br />within
                             </div>
-                            <span className="inline-block mt-2 font-sans text-[10px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
+                            <span className="inline-block mt-2 font-sans text-[12px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
                               Step {card.step.stepNumber} &middot; {card.step.sanskrit}
                             </span>
                           </div>
@@ -720,7 +720,7 @@ export function Rituals() {
                               {card.taglinePrimary}
                               <span className="block font-medium opacity-95">{card.taglineSecondary}</span>
                             </h4>
-                            <span className="inline-block mt-1.5 font-sans text-[10px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
+                            <span className="inline-block mt-1.5 font-sans text-[12px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
                               Step {card.step.stepNumber} &middot; {card.step.sanskrit}
                             </span>
                           </div>
@@ -729,7 +729,7 @@ export function Rituals() {
 
                       {/* Quick Inspect Hover Pill Button */}
                       <div className="absolute top-4 right-14 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                        <span className="rounded-full bg-[#FAF6F0]/95 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-[#2A1808] border border-[#DFCDB7] backdrop-blur-md shadow-sm">
+                        <span className="rounded-full bg-[#FAF6F0]/95 px-3 py-1 font-sans text-[12px] font-bold uppercase tracking-wider text-[#2A1808] border border-[#DFCDB7] backdrop-blur-md shadow-sm">
                           Inspect &rarr;
                         </span>
                       </div>
@@ -741,7 +741,7 @@ export function Rituals() {
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 hidden lg:flex items-center pointer-events-none">
                   <div className="bg-[#3E240C] text-[#FAF6F0] py-5 px-2 rounded-l-2xl shadow-xl border-l border-y border-[#C49A45]/40 flex items-center justify-center">
                     <span
-                      className="font-sans font-black text-[11px] uppercase tracking-widest text-[#FAF6F0] select-none"
+                      className="font-sans font-black text-[13px] uppercase tracking-widest text-[#FAF6F0] select-none"
                       style={{ writingMode: "vertical-rl" }}
                     >
                       NEW LAUNCH OFFER
@@ -919,7 +919,7 @@ export function Rituals() {
                             <div className="font-sans font-light text-2xl sm:text-3xl text-white tracking-tight leading-tight lowercase">
                               soothe<br />the<br />senses
                             </div>
-                            <span className="inline-block mt-2 font-sans text-[10px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
+                            <span className="inline-block mt-2 font-sans text-[12px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
                               Step {card.step.stepNumber} &middot; {card.step.sanskrit}
                             </span>
                           </div>
@@ -929,7 +929,7 @@ export function Rituals() {
                               {card.taglinePrimary}
                               <span className="block font-medium opacity-95">{card.taglineSecondary}</span>
                             </h4>
-                            <span className="inline-block mt-1.5 font-sans text-[10px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
+                            <span className="inline-block mt-1.5 font-sans text-[12px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
                               Step {card.step.stepNumber} &middot; {card.step.sanskrit}
                             </span>
                           </div>
@@ -938,7 +938,7 @@ export function Rituals() {
 
                       {/* Quick Inspect Hover Pill Button */}
                       <div className="absolute top-4 right-14 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                        <span className="rounded-full bg-[#FAF6F0]/95 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-[#2A1808] border border-[#DFCDB7] backdrop-blur-md shadow-sm">
+                        <span className="rounded-full bg-[#FAF6F0]/95 px-3 py-1 font-sans text-[12px] font-bold uppercase tracking-wider text-[#2A1808] border border-[#DFCDB7] backdrop-blur-md shadow-sm">
                           Inspect &rarr;
                         </span>
                       </div>
@@ -950,7 +950,7 @@ export function Rituals() {
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 hidden lg:flex items-center pointer-events-none">
                   <div className="bg-[#3E240C] text-[#FAF6F0] py-5 px-2 rounded-l-2xl shadow-xl border-l border-y border-[#C49A45]/40 flex items-center justify-center">
                     <span
-                      className="font-sans font-black text-[11px] uppercase tracking-widest text-[#FAF6F0] select-none"
+                      className="font-sans font-black text-[13px] uppercase tracking-widest text-[#FAF6F0] select-none"
                       style={{ writingMode: "vertical-rl" }}
                     >
                       DUSK SANCTUARY
@@ -1128,7 +1128,7 @@ export function Rituals() {
                             <div className="font-sans font-light text-2xl sm:text-3xl text-white tracking-tight leading-tight lowercase">
                               pure<br />tridoshic<br />balance
                             </div>
-                            <span className="inline-block mt-2 font-sans text-[10px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
+                            <span className="inline-block mt-2 font-sans text-[12px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
                               Step {card.step.stepNumber} &middot; {card.step.sanskrit}
                             </span>
                           </div>
@@ -1138,7 +1138,7 @@ export function Rituals() {
                               {card.taglinePrimary}
                               <span className="block font-medium opacity-95">{card.taglineSecondary}</span>
                             </h4>
-                            <span className="inline-block mt-1.5 font-sans text-[10px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
+                            <span className="inline-block mt-1.5 font-sans text-[12px] uppercase font-bold tracking-widest text-[#FAF6F0]/90">
                               Step {card.step.stepNumber} &middot; {card.step.sanskrit}
                             </span>
                           </div>
@@ -1147,7 +1147,7 @@ export function Rituals() {
 
                       {/* Quick Inspect Hover Pill Button */}
                       <div className="absolute top-4 right-14 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                        <span className="rounded-full bg-[#FAF6F0]/95 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-wider text-[#2A1808] border border-[#DFCDB7] backdrop-blur-md shadow-sm">
+                        <span className="rounded-full bg-[#FAF6F0]/95 px-3 py-1 font-sans text-[12px] font-bold uppercase tracking-wider text-[#2A1808] border border-[#DFCDB7] backdrop-blur-md shadow-sm">
                           Inspect &rarr;
                         </span>
                       </div>
@@ -1159,7 +1159,7 @@ export function Rituals() {
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 hidden lg:flex items-center pointer-events-none">
                   <div className="bg-[#3E240C] text-[#FAF6F0] py-5 px-2 rounded-l-2xl shadow-xl border-l border-y border-[#C49A45]/40 flex items-center justify-center">
                     <span
-                      className="font-sans font-black text-[11px] uppercase tracking-widest text-[#FAF6F0] select-none"
+                      className="font-sans font-black text-[13px] uppercase tracking-widest text-[#FAF6F0] select-none"
                       style={{ writingMode: "vertical-rl" }}
                     >
                       SEASONAL EDITIONS
@@ -1194,7 +1194,7 @@ export function Rituals() {
 
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2">
-                <span className="rounded-xs bg-brand-cream border border-brand-sand px-2.5 py-0.5 font-sans text-[10px] font-bold uppercase tracking-label text-brand-leaf-green">
+                <span className="rounded-xs bg-brand-cream border border-brand-sand px-2.5 py-0.5 font-sans text-[12px] font-bold uppercase tracking-label text-brand-leaf-green">
                   Step {selectedStep.stepNumber} &middot; {selectedStep.tag}
                 </span>
                 <span className="font-sans text-xs text-brand-primary/72">
@@ -1223,7 +1223,7 @@ export function Rituals() {
               </div>
 
               <div className="rounded-sm border border-brand-sand bg-brand-cream/60 p-3.5">
-                <span className="block font-sans text-[11px] font-bold uppercase tracking-label text-brand-primary/82">
+                <span className="block font-sans text-[13px] font-bold uppercase tracking-label text-brand-primary/82">
                   Classical Treatise Reference
                 </span>
                 <span className="font-serif text-sm italic text-brand-primary">

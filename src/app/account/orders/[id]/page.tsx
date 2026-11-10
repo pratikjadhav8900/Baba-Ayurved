@@ -75,7 +75,7 @@ export default function OrderDetailPage() {
                       <Icon className="h-4 w-4" />
                     </div>
                     <span
-                      className={`text-center font-sans text-[10px] font-semibold uppercase tracking-wider ${
+                      className={`text-center font-sans text-[12px] font-semibold uppercase tracking-wider ${
                         isComplete ? "text-brand-primary" : "text-brand-primary/58"
                       }`}
                     >

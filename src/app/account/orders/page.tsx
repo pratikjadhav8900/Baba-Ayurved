@@ -56,7 +56,7 @@ export default function OrdersPage() {
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <span className="rounded-full bg-brand-leaf-green/15 px-3 py-1 font-sans text-[11px] font-semibold uppercase tracking-wider text-brand-leaf-green">
+            <span className="rounded-full bg-brand-leaf-green/15 px-3 py-1 font-sans text-[13px] font-semibold uppercase tracking-wider text-brand-leaf-green">
               {statusLabel[order.status]}
             </span>
             <span className="font-sans text-base font-bold text-brand-primary">
