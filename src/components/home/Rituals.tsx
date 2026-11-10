@@ -487,7 +487,7 @@ export function Rituals() {
 
           {/* Interactive Mode Switcher Tabs */}
           <div
-            className="flex items-center gap-3 overflow-x-auto py-1.5 scrollbar-none touch-pan-x"
+            className="flex items-center gap-3 overflow-x-auto py-1.5 scrollbar-none"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -612,7 +612,7 @@ export function Rituals() {
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
-                  className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory scroll-smooth scroll-px-4 cursor-grab active:cursor-grabbing touch-pan-x"
+                  className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory scroll-smooth scroll-px-4 cursor-grab active:cursor-grabbing"
                   style={{
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",
@@ -833,7 +833,7 @@ export function Rituals() {
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
-                  className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing touch-pan-x"
+                  className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing"
                   style={{
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",
@@ -1042,7 +1042,7 @@ export function Rituals() {
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
-                  className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing touch-pan-x"
+                  className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 scrollbar-none snap-x snap-mandatory cursor-grab active:cursor-grabbing"
                   style={{
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",

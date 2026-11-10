@@ -513,7 +513,7 @@ function ProductPage({
           <m.div
             layoutId={`shelf-product-${p.id}`}
             transition={SPRING}
-            className="relative z-10 aspect-[2/3] h-[46vh] max-h-[460px] cursor-grab touch-none select-none active:cursor-grabbing"
+            className="relative z-10 aspect-[2/3] h-[46vh] max-h-[460px] cursor-grab touch-pan-y select-none active:cursor-grabbing"
             onPointerDown={onDown}
             onPointerMove={onMove}
             onPointerUp={onUp}

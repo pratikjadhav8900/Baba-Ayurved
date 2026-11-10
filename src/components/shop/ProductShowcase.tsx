@@ -21,7 +21,7 @@ export function ProductShowcase() {
   return (
     <div className="flex flex-col gap-10">
       {/* Category Filter Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap touch-pan-x">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap">
         {productCategories.map((cat) => {
           const isActive = activeCategory === cat.id;
           return (

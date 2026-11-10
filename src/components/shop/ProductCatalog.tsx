@@ -44,7 +44,7 @@ export function ProductCatalog() {
       <div className="flex flex-col gap-4 border-b border-solid border-brand-sand/60 pb-6 sm:flex-row sm:items-center sm:justify-between">
         {/* Category Pills Bar (Horizontal Scroll on Mobile) */}
         <div className="relative -mx-4 sm:mx-0">
-          <div className="flex items-center gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:flex-wrap sm:px-0 touch-pan-x">
+          <div className="flex items-center gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:flex-wrap sm:px-0">
             {productCategories.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
