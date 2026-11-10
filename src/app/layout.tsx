@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteIntro } from "@/components/brand/SiteIntro";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { BottomNav } from "@/components/layout/BottomNav";
@@ -51,6 +52,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <OrderProvider>
                   <ProfileProvider>
                     <MotionProvider>
+                      <Suspense fallback={null}>
+                        <SiteIntro />
+                      </Suspense>
                       <Suspense fallback={null}>
                         <SiteHeader />
                       </Suspense>
