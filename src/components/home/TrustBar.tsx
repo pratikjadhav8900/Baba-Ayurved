@@ -32,7 +32,7 @@ export function TrustBar() {
               <span className="font-sans text-xl sm:text-2xl font-black uppercase tracking-wide text-brand-primary leading-tight">
                 {item.stat}
               </span>
-              <span className="font-sans text-xs sm:text-sm text-brand-primary/65">{item.caption}</span>
+              <span className="font-sans text-xs sm:text-sm text-brand-primary/76">{item.caption}</span>
             </div>
           </div>
         ))}

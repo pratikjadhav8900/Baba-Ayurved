@@ -71,7 +71,7 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
         <button
           type="button"
           onClick={handleToggleWishlist}
-          className="absolute left-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-brand-primary/70 shadow-2xs backdrop-blur-xs transition-all hover:scale-110 hover:text-brand-primary active:scale-90"
+          className="absolute left-2.5 top-2.5 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-brand-primary/82 shadow-2xs backdrop-blur-xs transition-all hover:scale-110 hover:text-brand-primary active:scale-90"
           aria-label={wishlisted ? `Remove ${product.name} from wishlist` : `Add ${product.name} to wishlist`}
           aria-pressed={wishlisted}
         >
@@ -93,7 +93,7 @@ export function ModernProductCard({ product, onInspect }: ModernProductCardProps
           {subtitle}
         </p>
 
-        <p className="line-clamp-2 font-sans text-xs leading-relaxed text-brand-primary/65">
+        <p className="line-clamp-2 font-sans text-xs leading-relaxed text-brand-primary/76">
           {product.description}
         </p>
 

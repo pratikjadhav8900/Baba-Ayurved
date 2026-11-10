@@ -32,7 +32,7 @@ export default function ShopPage() {
             <Heading as="h2" size="statement" className="text-brand-primary">
               The Classical Apothecary Grid
             </Heading>
-            <p className="max-w-2xl font-serif text-sm text-brand-primary/75 sm:text-base">
+            <p className="max-w-2xl font-serif text-sm text-brand-primary/86 sm:text-base">
               Pure single herbs, authentic churnas, cold-pressed tailas, and slow-cooked avalehas. Filter by practice or sort by price.
             </p>
           </div>
@@ -49,7 +49,7 @@ export default function ShopPage() {
             <Heading as="h2" size="statement" id="by-ritual-heading" className="text-brand-primary">
               By daily ritual
             </Heading>
-            <p className="mt-2 font-serif text-sm text-brand-primary/70">
+            <p className="mt-2 font-serif text-sm text-brand-primary/82">
               Classical Ayurvedic daily living (Dinacharya, Ratricharya, and Ritucharya).
             </p>
           </div>
@@ -98,7 +98,7 @@ export default function ShopPage() {
             <Heading as="h2" size="statement" id="by-category-heading" className="text-brand-primary">
               Seven classical forms
             </Heading>
-            <Text className="text-sm text-brand-primary/70">
+            <Text className="text-sm text-brand-primary/82">
               Our trade catalogue comprises approximately 174 SKUs. Consumer naming conventions are being reviewed with our Vaidya before individual product pages launch.
             </Text>
           </div>

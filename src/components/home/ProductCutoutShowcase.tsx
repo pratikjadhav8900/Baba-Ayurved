@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, type MouseEvent } from "react";
+import { useEffect, useRef, type PointerEvent as ReactPointerEvent } from "react";
 import Image from "next/image";
 import * as m from "motion/react-m";
-import { useMotionValue, useSpring, useTransform } from "motion/react";
+import { animate, useMotionValue, useSpring, useTransform } from "motion/react";
 import { usePrefersReducedMotion } from "@/components/motion/usePrefersReducedMotion";
 
 /**
@@ -74,10 +74,38 @@ export function ProductCutoutShowcase() {
   // so this range already bakes in the equivalent of a -50% centering translate.
   const glowX = useTransform(tiltY, [-10, 10], ["-62%", "-38%"]);
 
-  function handleMouseMove(e: MouseEvent<HTMLDivElement>) {
+  // A mouse-only tilt means touch visitors — most of the audience — never see
+  // any of this dimensionality at all, which is what read as "boring" on
+  // mobile. So the stage auto-drifts through a slow, continuous tilt sweep by
+  // default, and real pointer input (mouse hover *or* a finger dragging
+  // across it) takes over instantly for as long as it's active. The idle
+  // loop is stopped (not just overridden) while interacting, since a running
+  // animate() would otherwise keep fighting direct .set() calls every frame.
+  const idleRef = useRef<{ x: ReturnType<typeof animate>; y: ReturnType<typeof animate> } | null>(null);
+
+  function startIdleSway() {
+    idleRef.current = {
+      x: animate(tiltXRaw, [0, 3.5, 0, -3.5, 0], { duration: 13, repeat: Infinity, ease: "easeInOut" }),
+      y: animate(tiltYRaw, [0, 7, 0, -7, 0], { duration: 9, repeat: Infinity, ease: "easeInOut" }),
+    };
+  }
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    startIdleSway();
+    return () => {
+      idleRef.current?.x.stop();
+      idleRef.current?.y.stop();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reduceMotion]);
+
+  function handlePointerMove(e: ReactPointerEvent<HTMLDivElement>) {
     if (reduceMotion) return;
     const el = stageRef.current;
     if (!el) return;
+    idleRef.current?.x.stop();
+    idleRef.current?.y.stop();
     const rect = el.getBoundingClientRect();
     const relX = (e.clientX - rect.left) / rect.width - 0.5;
     const relY = (e.clientY - rect.top) / rect.height - 0.5;
@@ -85,19 +113,22 @@ export function ProductCutoutShowcase() {
     tiltXRaw.set(-relY * 12);
   }
 
-  function handleMouseLeave() {
-    tiltXRaw.set(0);
-    tiltYRaw.set(0);
+  function handlePointerLeave() {
+    if (reduceMotion) return;
+    // animate()'s keyframe array implicitly starts from the value's current
+    // position, so this eases smoothly back to centre and straight into the
+    // sway — no separate settle tween needed.
+    startIdleSway();
   }
 
   return (
-    <div className="relative overflow-hidden rounded-md border border-brand-sand bg-brand-off-white p-3 shadow-xl">
+    <div className="relative overflow-hidden rounded-2xl shadow-xl">
       <div
         ref={stageRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{ perspective: 1100 }}
-        className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-[radial-gradient(ellipse_at_50%_30%,#F7EDDD_0%,#EADAC3_55%,#DFC9AD_100%)]"
+        onPointerMove={handlePointerMove}
+        onPointerLeave={handlePointerLeave}
+        style={{ perspective: 1100, touchAction: "pan-y" }}
+        className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-[radial-gradient(ellipse_at_50%_30%,#F7EDDD_0%,#EADAC3_55%,#DFC9AD_100%)]"
       >
         {/* Reserves the caption chip's own band at the bottom of the stage, so layer
             `bottom` percentages (and the ground shadow) are computed against the

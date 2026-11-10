@@ -60,7 +60,7 @@ export function SourceLedger({
                       className={
                         isTemplate
                           ? isGlass
-                            ? "mt-1.5 font-sans text-xs inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-white/90 border border-white/20"
+                            ? "mt-1.5 font-sans text-xs inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-white/95 border border-white/20"
                             : "mt-1 font-sans text-value text-tone-muted"
                           : isGlass
                             ? "mt-1 font-serif text-step text-white"
@@ -86,7 +86,7 @@ export function SourceLedger({
       {isTemplate && (
         <figcaption
           className={`font-sans text-value ${
-            isGlass ? "text-white/60" : "text-tone-muted"
+            isGlass ? "text-white/72" : "text-tone-muted"
           }`}
         >
           Template. No source has been verified yet, so none is shown. Records will appear here once the

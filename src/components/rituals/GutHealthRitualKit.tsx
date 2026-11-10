@@ -125,10 +125,10 @@ export function GutHealthRitualKit() {
   return (
     <div className="relative overflow-hidden bg-brand-off-white text-brand-primary">
       {/* Decorative Gond Art Background Subtle Watermarks */}
-      <div className="pointer-events-none absolute -left-20 top-20 text-brand-sand/35 hidden lg:block">
+      <div className="pointer-events-none absolute -left-20 top-20 text-brand-sand/55 hidden lg:block">
         <GondTreeOfLife className="h-[520px] w-[520px]" />
       </div>
-      <div className="pointer-events-none absolute -right-24 top-[900px] text-brand-sand/30 hidden lg:block">
+      <div className="pointer-events-none absolute -right-24 top-[900px] text-brand-sand/52 hidden lg:block">
         <GondTreeOfLife className="h-[560px] w-[560px]" />
       </div>
 
@@ -169,10 +169,10 @@ export function GutHealthRitualKit() {
                     <span className="font-sans text-xs font-bold uppercase tracking-widest text-brand-primary">
                       Charaka Samhita &middot; Vimanasthana 2.8–9
                     </span>
-                    <p className="font-serif text-sm sm:text-base leading-relaxed italic text-brand-primary/90">
+                    <p className="font-serif text-sm sm:text-base leading-relaxed italic text-brand-primary/95">
                       &ldquo;Even wholesome, perfectly balanced food turns into Ama (toxic, undigested metabolic residue) when consumed in haste, anxiety, or emotional restlessness.&rdquo;
                     </p>
-                    <p className="font-sans text-xs text-brand-primary/75">
+                    <p className="font-sans text-xs text-brand-primary/86">
                       Modern digestive distress is rarely a failure of nutrition alone; it is a failure of pace. This kit gently decelerates your digestive fire (Agni) through 4 classical formulations, a custom 3g Matra spoon, and conscious pauses.
                     </p>
                   </div>
@@ -219,35 +219,35 @@ export function GutHealthRitualKit() {
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-brand-ivory">1</span>
                     <div>
                       <h4 className="font-serif text-base font-semibold text-brand-primary">Yashtimadhu Tablet (500mg &middot; 60 Tabs)</h4>
-                      <p className="font-sans text-xs text-brand-primary/75">Gastric mucosal soother &amp; mid-morning mind-gut calm</p>
+                      <p className="font-sans text-xs text-brand-primary/86">Gastric mucosal soother &amp; mid-morning mind-gut calm</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-brand-ivory">2</span>
                     <div>
                       <h4 className="font-serif text-base font-semibold text-brand-primary">Avipattikar Churna (100g Powder)</h4>
-                      <p className="font-sans text-xs text-brand-primary/75">Digestive fire (Agni) balance &amp; lunch sensory ritual</p>
+                      <p className="font-sans text-xs text-brand-primary/86">Digestive fire (Agni) balance &amp; lunch sensory ritual</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-brand-ivory">3</span>
                     <div>
                       <h4 className="font-serif text-base font-semibold text-brand-primary">Bhoomi Amla Churna (100g Pure)</h4>
-                      <p className="font-sans text-xs text-brand-primary/75">Empty-stomach 50ml rapid herbal shot for liver reset</p>
+                      <p className="font-sans text-xs text-brand-primary/86">Empty-stomach 50ml rapid herbal shot for liver reset</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-brand-ivory">4</span>
                     <div>
                       <h4 className="font-serif text-base font-semibold text-brand-primary">Ezee Churna Heritage Blend (100g)</h4>
-                      <p className="font-sans text-xs text-brand-primary/75">12-herb gentle colon release on scheduled nights</p>
+                      <p className="font-sans text-xs text-brand-primary/86">12-herb gentle colon release on scheduled nights</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 border-t border-brand-sand/60 pt-3">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-leaf-green text-xs font-bold text-brand-ivory">★</span>
                     <div>
                       <h4 className="font-serif text-base font-semibold text-brand-leaf-green">Custom 3g &ldquo;Matra&rdquo; Measuring Spoon</h4>
-                      <p className="font-sans text-xs text-brand-primary/75">Hand-carved neem wood or etched brass with Gond handle work</p>
+                      <p className="font-sans text-xs text-brand-primary/86">Hand-carved neem wood or etched brass with Gond handle work</p>
                     </div>
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export function GutHealthRitualKit() {
                 {/* Price & CTA */}
                 <div className="mt-8 flex items-center justify-between border-t border-brand-sand pt-6">
                   <div>
-                    <span className="block font-sans text-xs text-brand-primary/60 line-through">MRP: ₹1,048.00</span>
+                    <span className="block font-sans text-xs text-brand-primary/72 line-through">MRP: ₹1,048.00</span>
                     <span className="font-serif text-2xl font-bold text-brand-primary">₹949.00</span>
                     <span className="block font-sans text-[10px] text-brand-leaf-green">Inclusive of all taxes &amp; tools</span>
                   </div>
@@ -284,7 +284,7 @@ export function GutHealthRitualKit() {
             <Heading as="h2" size="statement" className="font-serif text-brand-primary">
               The 14-Day Ritual Architecture
             </Heading>
-            <Text className="text-base text-brand-primary/85">
+            <Text className="text-base text-brand-primary/93">
               &ldquo;Just as a soiled cloth cannot take on a brilliant, pure dye, Rasayana agents and Agni tonics cannot function optimally over an uncleaned, toxic gut (Ashuddha Koshtha).&rdquo;
             </Text>
           </div>
@@ -307,7 +307,7 @@ export function GutHealthRitualKit() {
                 </span>
               </div>
               <h3 className="font-serif text-lg font-bold mt-1">Koshtha-Shodhana</h3>
-              <p className={`text-xs mt-1 ${activePhase === "phase1" ? "text-brand-ivory/80" : "text-brand-primary/70"}`}>
+              <p className={`text-xs mt-1 ${activePhase === "phase1" ? "text-brand-ivory/90" : "text-brand-primary/82"}`}>
                 Clearing pathways &amp; trapped colon waste
               </p>
             </button>
@@ -328,7 +328,7 @@ export function GutHealthRitualKit() {
                 </span>
               </div>
               <h3 className="font-serif text-lg font-bold mt-1">Yakrit &amp; Agni Reset</h3>
-              <p className={`text-xs mt-1 ${activePhase === "phase2" ? "text-brand-ivory/80" : "text-brand-primary/70"}`}>
+              <p className={`text-xs mt-1 ${activePhase === "phase2" ? "text-brand-ivory/90" : "text-brand-primary/82"}`}>
                 Hepatic bile cool &amp; mucosal healing
               </p>
             </button>
@@ -349,7 +349,7 @@ export function GutHealthRitualKit() {
                 </span>
               </div>
               <h3 className="font-serif text-lg font-bold mt-1">Rasayana &amp; Samagni</h3>
-              <p className={`text-xs mt-1 ${activePhase === "phase3" ? "text-brand-ivory/80" : "text-brand-primary/70"}`}>
+              <p className={`text-xs mt-1 ${activePhase === "phase3" ? "text-brand-ivory/90" : "text-brand-primary/82"}`}>
                 Sealing rhythm &amp; lifelong Dinacharya
               </p>
             </button>
@@ -379,7 +379,7 @@ export function GutHealthRitualKit() {
                       <Sun className="h-4 w-4 text-brand-leaf-green" />
                       <h4 className="font-serif text-base font-bold">Lunch (Unhurried Meal Ritual)</h4>
                     </div>
-                    <p className="font-sans text-sm text-brand-primary/85 leading-relaxed">
+                    <p className="font-sans text-sm text-brand-primary/93 leading-relaxed">
                       Take a <strong>half-dose of Avipattikar Churna (1.5g to 2g = 1/2 Matra scoop)</strong> mixed in room-temperature water or fresh spiced buttermilk (Takra). Follow with 100 unhurried steps (Shatapavali).
                     </p>
                   </div>
@@ -389,7 +389,7 @@ export function GutHealthRitualKit() {
                       <Moon className="h-4 w-4 text-brand-leaf-green" />
                       <h4 className="font-serif text-base font-bold">Bedtime (Letting-Go Ritual)</h4>
                     </div>
-                    <p className="font-sans text-sm text-brand-primary/85 leading-relaxed">
+                    <p className="font-sans text-sm text-brand-primary/93 leading-relaxed">
                       Take <strong>Ezee Churna (3g to 5g = 1 level Matra scoop)</strong> stirred into a 50ml lukewarm herbal shot, followed by a full glass of warm water (Ushnodaka) on Nights 1, 2, and 3.
                     </p>
                   </div>
@@ -402,7 +402,7 @@ export function GutHealthRitualKit() {
                     <h5 className="font-sans text-xs font-bold uppercase tracking-wider text-amber-900">
                       Mandatory Clinical Safety Rule &middot; Double-Virechana Prevention
                     </h5>
-                    <p className="font-sans text-xs leading-relaxed text-brand-primary/90">
+                    <p className="font-sans text-xs leading-relaxed text-brand-primary/95">
                       Avipattikar contains ~50% Nishot (Trivrit), and Ezee Churna contains 50% active Virechana herbs (Sanay 20%, Nishot 10%, Kala Dana 10%, Revanchini 10%). To prevent excessive purgation, intestinal cramping, or fluid loss, <strong>Avipattikar Churna must be strictly restricted to a 1.5g half-dose</strong> on all days when Ezee Churna is administered.
                     </p>
                   </div>
@@ -430,7 +430,7 @@ export function GutHealthRitualKit() {
                   <div className="flex flex-col gap-2 rounded-2xl bg-brand-off-white/90 p-4 border border-brand-sand/60">
                     <span className="font-sans text-[11px] font-bold uppercase text-brand-leaf-green">1. Early Morning Empty Stomach</span>
                     <h4 className="font-serif text-base font-bold text-brand-primary">Bhoomi Amla 50ml Shot</h4>
-                    <p className="font-sans text-xs text-brand-primary/80 leading-relaxed">
+                    <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">
                       3g (1 level scoop) stirred into 50ml water. Quick shot followed by plain water. Wait 20 mins before tea/breakfast.
                     </p>
                   </div>
@@ -438,7 +438,7 @@ export function GutHealthRitualKit() {
                   <div className="flex flex-col gap-2 rounded-2xl bg-brand-off-white/90 p-4 border border-brand-sand/60">
                     <span className="font-sans text-[11px] font-bold uppercase text-brand-leaf-green">2. Mid-Morning Post-Breakfast</span>
                     <h4 className="font-serif text-base font-bold text-brand-primary">Yashtimadhu Tablet</h4>
-                    <p className="font-sans text-xs text-brand-primary/80 leading-relaxed">
+                    <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">
                       1 to 2 tablets with clay-pot water or warm milk. Pair with 5 slow, deep abdominal breaths away from screens.
                     </p>
                   </div>
@@ -446,7 +446,7 @@ export function GutHealthRitualKit() {
                   <div className="flex flex-col gap-2 rounded-2xl bg-brand-off-white/90 p-4 border border-brand-sand/60">
                     <span className="font-sans text-[11px] font-bold uppercase text-brand-leaf-green">3. Lunch Unhurried Meal</span>
                     <h4 className="font-serif text-base font-bold text-brand-primary">Avipattikar &ldquo;Savor&rdquo;</h4>
-                    <p className="font-sans text-xs text-brand-primary/80 leading-relaxed">
+                    <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">
                       Full dose of 3g placed on tongue for 3 seconds to trigger cephalic digestive enzymes. Follow with water &amp; 100 steps. (Halved on Days 7 &amp; 10).
                     </p>
                   </div>
@@ -454,7 +454,7 @@ export function GutHealthRitualKit() {
                   <div className="flex flex-col gap-2 rounded-2xl bg-brand-off-white/90 p-4 border border-brand-sand/60">
                     <span className="font-sans text-[11px] font-bold uppercase text-brand-leaf-green">4. Bedtime Periodic Release</span>
                     <h4 className="font-serif text-base font-bold text-brand-primary">Days 7 &amp; 10 ONLY</h4>
-                    <p className="font-sans text-xs text-brand-primary/80 leading-relaxed">
+                    <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">
                       Take 3g Ezee Churna with warm water ONLY on Nights 7 and 10. Rest days prevent bowel dependency and habituation.
                     </p>
                   </div>
@@ -484,7 +484,7 @@ export function GutHealthRitualKit() {
                       <Sparkles className="h-4 w-4 text-brand-leaf-green" />
                       <h4 className="font-serif text-base font-bold">Days 11–14: Concluding the Cleanse</h4>
                     </div>
-                    <p className="font-sans text-sm text-brand-primary/85 leading-relaxed">
+                    <p className="font-sans text-sm text-brand-primary/93 leading-relaxed">
                       Complete the 11-day liver reset with 3g Bhoomi Amla on empty stomach through Day 14. Take a final bedtime release of 3g Ezee Churna on Night 14 to seal the 14-day reset. After Day 14, pause both.
                     </p>
                   </div>
@@ -494,7 +494,7 @@ export function GutHealthRitualKit() {
                       <Wind className="h-4 w-4" />
                       <h4 className="font-serif text-base font-bold">Lifelong Daily Dinacharya (Day 15+)</h4>
                     </div>
-                    <p className="font-sans text-sm text-brand-ivory/90 leading-relaxed">
+                    <p className="font-sans text-sm text-brand-ivory/95 leading-relaxed">
                       Continue <strong>Yashtimadhu Tablet (Mid-Morning Mind-Gut Pause)</strong> and <strong>Avipattikar Churna (Lunch Unhurried Meal + 100 Steps)</strong> as your permanent, non-habit forming gut-brain balance.
                     </p>
                   </div>
@@ -510,7 +510,7 @@ export function GutHealthRitualKit() {
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-primary">
                   14-Day Master Ritual Schedule
                 </h3>
-                <p className="font-sans text-xs text-brand-primary/70">
+                <p className="font-sans text-xs text-brand-primary/82">
                   Sequential protocol across all 3 phases &middot; Designed for steady digestive pacing without bowel habituation.
                 </p>
               </div>
@@ -548,10 +548,10 @@ export function GutHealthRitualKit() {
                           </span>
                         )}
                       </td>
-                      <td className="py-3 px-4 text-brand-primary/80">{row.morning}</td>
-                      <td className="py-3 px-4 text-brand-primary/80">{row.midMorning}</td>
+                      <td className="py-3 px-4 text-brand-primary/90">{row.morning}</td>
+                      <td className="py-3 px-4 text-brand-primary/90">{row.midMorning}</td>
                       <td className="py-3 px-4 font-medium text-brand-primary">{row.lunch}</td>
-                      <td className="py-3 px-4 text-brand-primary/90">{row.bedtime}</td>
+                      <td className="py-3 px-4 text-brand-primary/95">{row.bedtime}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -571,7 +571,7 @@ export function GutHealthRitualKit() {
             <Heading as="h2" size="statement" className="font-serif text-brand-primary">
               The 4 Classical Formulations
             </Heading>
-            <Text className="text-base text-brand-primary/80">
+            <Text className="text-base text-brand-primary/90">
               In strict accordance with Indian AYUSH guidelines, all formulations are classified as Classical Shastrokta Aushadhi or Heritage Proprietary formulations. No US FDA &ldquo;Supplement Facts&rdquo; or vague claims.
             </Text>
           </div>
@@ -593,7 +593,7 @@ export function GutHealthRitualKit() {
                   Formula 0{idx + 1}
                 </span>
                 <span className="font-serif text-base font-bold mt-1">{prod.name}</span>
-                <span className={`font-sans text-xs mt-1 ${selectedProductIndex === idx ? "text-brand-ivory/80" : "text-brand-primary/70"}`}>
+                <span className={`font-sans text-xs mt-1 ${selectedProductIndex === idx ? "text-brand-ivory/90" : "text-brand-primary/82"}`}>
                   {prod.mrp} &middot; {prod.netWeight}
                 </span>
               </button>
@@ -608,7 +608,7 @@ export function GutHealthRitualKit() {
                 <span className="rounded-full bg-brand-leaf-green/15 px-3 py-1 font-sans text-xs font-bold uppercase text-brand-leaf-green">
                   {currentProduct.classification}
                 </span>
-                <span className="font-sans text-xs text-brand-primary/60">Batch: {currentProduct.batch}</span>
+                <span className="font-sans text-xs text-brand-primary/72">Batch: {currentProduct.batch}</span>
               </div>
 
               <div>
@@ -618,23 +618,23 @@ export function GutHealthRitualKit() {
 
               <div className="flex flex-col gap-2 rounded-xl bg-brand-cream/60 p-4 border border-brand-sand/60">
                 <span className="font-sans text-xs font-bold uppercase tracking-wider text-brand-primary">Classical Shastra Authority</span>
-                <p className="font-serif text-sm italic text-brand-primary/90">{currentProduct.shastra}</p>
+                <p className="font-serif text-sm italic text-brand-primary/95">{currentProduct.shastra}</p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex flex-col gap-1 border-l-2 border-brand-leaf-green pl-3">
                   <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-leaf-green">Anupana (Vehicle)</span>
-                  <span className="font-sans text-xs text-brand-primary/85">{currentProduct.anupana}</span>
+                  <span className="font-sans text-xs text-brand-primary/93">{currentProduct.anupana}</span>
                 </div>
                 <div className="flex flex-col gap-1 border-l-2 border-brand-leaf-green pl-3">
                   <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-leaf-green">Daily Protocol</span>
-                  <span className="font-sans text-xs text-brand-primary/85">{currentProduct.protocol}</span>
+                  <span className="font-sans text-xs text-brand-primary/93">{currentProduct.protocol}</span>
                 </div>
               </div>
 
               <div className="flex flex-col gap-1">
                 <span className="font-sans text-xs font-bold uppercase tracking-wider text-brand-primary">Sensory &amp; Physiological Rationale</span>
-                <p className="font-sans text-xs text-brand-primary/80 leading-relaxed">{currentProduct.rationale}</p>
+                <p className="font-sans text-xs text-brand-primary/90 leading-relaxed">{currentProduct.rationale}</p>
               </div>
 
               {/* If Ezee Churna, Render the 4-Tier Pharmacological Synergy Table */}
@@ -646,19 +646,19 @@ export function GutHealthRitualKit() {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                     <div className="p-2.5 rounded-lg bg-brand-off-white border border-brand-sand/60">
                       <span className="font-bold text-brand-primary block">Tier 1: Active Virechana (50%)</span>
-                      <span className="text-[11px] text-brand-primary/75">Sanay (20%), Nishot (10%), Kala Dana (10%), Revanchini (10%)</span>
+                      <span className="text-[11px] text-brand-primary/86">Sanay (20%), Nishot (10%), Kala Dana (10%), Revanchini (10%)</span>
                     </div>
                     <div className="p-2.5 rounded-lg bg-brand-off-white border border-brand-sand/60">
                       <span className="font-bold text-brand-primary block">Tier 2: Mucosal Buffers (18%)</span>
-                      <span className="text-[11px] text-brand-primary/75">Belgiri (10%), Amla (5%), Isabgol (3%)</span>
+                      <span className="text-[11px] text-brand-primary/86">Belgiri (10%), Amla (5%), Isabgol (3%)</span>
                     </div>
                     <div className="p-2.5 rounded-lg bg-brand-off-white border border-brand-sand/60">
                       <span className="font-bold text-brand-primary block">Tier 3: Vata Anulomana (22%)</span>
-                      <span className="text-[11px] text-brand-primary/75">Sendha Namak (5%), Kala Namak (5%), Harad (10%), Sada Namak (2%)</span>
+                      <span className="text-[11px] text-brand-primary/86">Sendha Namak (5%), Kala Namak (5%), Harad (10%), Sada Namak (2%)</span>
                     </div>
                     <div className="p-2.5 rounded-lg bg-brand-off-white border border-brand-sand/60">
                       <span className="font-bold text-brand-primary block">Tier 4: Krimi-Nashaka (10%)</span>
-                      <span className="text-[11px] text-brand-primary/75">Vaividang (10%) clears pathogenic microflora</span>
+                      <span className="text-[11px] text-brand-primary/86">Vaividang (10%) clears pathogenic microflora</span>
                     </div>
                   </div>
                 </div>
@@ -678,23 +678,23 @@ export function GutHealthRitualKit() {
                 <div>
                   <span className="block font-sans text-xs uppercase tracking-wider text-brand-sand">BABA AYURVEDA</span>
                   <h4 className="font-serif text-xl font-bold text-brand-ivory">{currentProduct.name}</h4>
-                  <span className="text-xs text-brand-sand/80">{currentProduct.netWeight} &middot; MRP: {currentProduct.mrp}</span>
+                  <span className="text-xs text-brand-sand/90">{currentProduct.netWeight} &middot; MRP: {currentProduct.mrp}</span>
                 </div>
 
                 <div className="flex flex-col gap-1 border-t border-brand-sand/20 pt-3">
                   <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-sand">Ayurvedic Composition:</span>
-                  <p className="font-sans text-xs text-brand-ivory/85 leading-relaxed">{currentProduct.botanical}</p>
+                  <p className="font-sans text-xs text-brand-ivory/93 leading-relaxed">{currentProduct.botanical}</p>
                 </div>
 
                 <div className="flex flex-col gap-1 border-t border-brand-sand/20 pt-3">
                   <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-brand-sand">Manufactured By:</span>
-                  <p className="font-sans text-xs text-brand-ivory/85">
+                  <p className="font-sans text-xs text-brand-ivory/93">
                     Baba Ayurved Pharmacy, Industrial Area, Gwalior, M.P.
                   </p>
                 </div>
               </div>
 
-              <div className="border-t border-brand-sand/20 pt-4 flex items-center justify-between text-xs text-brand-sand/80">
+              <div className="border-t border-brand-sand/20 pt-4 flex items-center justify-between text-xs text-brand-sand/90">
                 <span>Shastrokta Standard</span>
                 <span className="font-bold text-brand-ivory">Pure &bull; Traditional &bull; Natural</span>
               </div>
@@ -714,32 +714,32 @@ export function GutHealthRitualKit() {
               <Heading as="h2" size="statement" className="font-serif text-brand-primary">
                 The Custom 3g &ldquo;Matra&rdquo; Measuring Spoon
               </Heading>
-              <Text className="text-base text-brand-primary/85 leading-relaxed">
+              <Text className="text-base text-brand-primary/93 leading-relaxed">
                 In classical Ayurveda, a <em>Matra</em> is not a casual pinch or an inconsistent kitchen tablespoon; it is a calibrated therapeutic unit. To eliminate measuring guesswork and ensure clinical efficacy across all 14 days, every kit includes our custom-crafted measuring spoon.
               </Text>
 
               <div className="flex flex-col gap-3 pt-2">
                 <div className="flex items-start gap-3">
                   <GondLeafIcon className="h-4 w-4 text-brand-leaf-green shrink-0 mt-1" />
-                  <p className="font-sans text-sm text-brand-primary/85">
+                  <p className="font-sans text-sm text-brand-primary/93">
                     <strong>Solid Hand-Carved Neem Wood or Etched Brass:</strong> Naturally antimicrobial materials chosen to maintain raw botanical energetics.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <GondLeafIcon className="h-4 w-4 text-brand-leaf-green shrink-0 mt-1" />
-                  <p className="font-sans text-sm text-brand-primary/85">
+                  <p className="font-sans text-sm text-brand-primary/93">
                     <strong>Single Debossed Fill Line (1 Level Scoop = 3g):</strong> Exact calibrated dosage for Bhoomi Amla, Avipattikar, and Ezee Churna.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <GondLeafIcon className="h-4 w-4 text-brand-leaf-green shrink-0 mt-1" />
-                  <p className="font-sans text-sm text-brand-primary/85">
+                  <p className="font-sans text-sm text-brand-primary/93">
                     <strong>Gond Tribal Motif Handle Engraving:</strong> Subtle dot-work honoring the indigenous tribal artisans of Madhya Pradesh.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <GondLeafIcon className="h-4 w-4 text-brand-leaf-green shrink-0 mt-1" />
-                  <p className="font-sans text-sm text-brand-primary/85">
+                  <p className="font-sans text-sm text-brand-primary/93">
                     <strong>Natural Jute Twine Binding:</strong> Hand-tied securely to the inner recycled board box divider.
                   </p>
                 </div>
@@ -759,15 +759,15 @@ export function GutHealthRitualKit() {
 
                 <div className="mt-6 grid grid-cols-3 gap-4 border-t border-brand-sand/60 pt-6 w-full text-center">
                   <div>
-                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/60">Calibrated Matra</span>
+                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/72">Calibrated Matra</span>
                     <span className="font-serif text-sm font-bold text-brand-primary">Exactly 3.0 Grams</span>
                   </div>
                   <div>
-                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/60">Material</span>
+                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/72">Material</span>
                     <span className="font-serif text-sm font-bold text-brand-primary">Neem Wood / Brass</span>
                   </div>
                   <div>
-                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/60">Craftsmanship</span>
+                    <span className="block font-sans text-[10px] uppercase tracking-wider text-brand-primary/72">Craftsmanship</span>
                     <span className="font-serif text-sm font-bold text-brand-primary">Gond Engraved Handle</span>
                   </div>
                 </div>
@@ -799,7 +799,7 @@ export function GutHealthRitualKit() {
                   className={`flex items-center gap-1.5 px-3 py-1 rounded-full font-sans text-xs font-bold transition-all cursor-pointer ${
                     letterLanguage === "en"
                       ? "bg-brand-primary text-brand-ivory shadow-xs"
-                      : "text-brand-primary/70 hover:text-brand-primary"
+                      : "text-brand-primary/82 hover:text-brand-primary"
                   }`}
                 >
                   English
@@ -810,7 +810,7 @@ export function GutHealthRitualKit() {
                   className={`flex items-center gap-1.5 px-3 py-1 rounded-full font-sans text-xs font-bold transition-all cursor-pointer ${
                     letterLanguage === "hi"
                       ? "bg-brand-primary text-brand-ivory shadow-xs"
-                      : "text-brand-primary/70 hover:text-brand-primary"
+                      : "text-brand-primary/82 hover:text-brand-primary"
                   }`}
                 >
                   हिंदी (Hindi)
@@ -821,7 +821,7 @@ export function GutHealthRitualKit() {
             {/* Parchment Styled Letter Card */}
             <div className="relative rounded-3xl border border-brand-sand/90 bg-[#FAF5ED] p-8 sm:p-12 shadow-xl backdrop-blur-xs">
               {/* Subtle Decorative Corner Accent */}
-              <div className="absolute right-6 top-6 text-brand-sand/60">
+              <div className="absolute right-6 top-6 text-brand-sand/72">
                 <GondLeafIcon className="h-8 w-8" />
               </div>
 
@@ -888,7 +888,7 @@ export function GutHealthRitualKit() {
           <Heading as="h2" size="statement" className="font-serif text-brand-ivory">
             Begin Your 14-Day Unhurried Journey
           </Heading>
-          <p className="font-serif text-base sm:text-lg italic text-brand-sand/90">
+          <p className="font-serif text-base sm:text-lg italic text-brand-sand/95">
             Restore the natural rhythm of Agni with Shastrokta precision, conscious meal pauses, and Central Indian botanical heritage.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">

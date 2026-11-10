@@ -33,7 +33,11 @@ export function FooterNewsletterForm() {
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="Your email address"
-        className="min-h-11 w-full rounded-sm border border-solid border-brand-sand/40 bg-[#3E240C]/50 px-4 pr-12 font-sans text-sm text-brand-ivory placeholder:text-brand-sand/70 outline-none transition-colors duration-(--duration-calm) focus-visible:border-brand-sand focus-visible:ring-2 focus-visible:ring-brand-sand/50"
+        className="min-h-11 w-full rounded-sm border border-solid border-brand-sand/40 bg-[#3E240C]/50 px-4 pr-12 font-sans text-sm text-brand-ivory placeholder:text-brand-sand/82 outline-none transition-colors duration-(--duration-calm) focus-visible:border-brand-sand focus-visible:ring-2 focus-visible:ring-brand-sand/50"
+        // Some extensions (password managers, anti-phishing shields) tag email/
+        // password inputs before React hydrates, causing a cosmetic, extension-
+        // only className mismatch. See the same note on <body> in layout.tsx.
+        suppressHydrationWarning
       />
       <button
         type="submit"

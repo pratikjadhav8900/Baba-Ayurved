@@ -4,7 +4,7 @@ import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { Heritage } from "@/components/home/Heritage";
 import { GutKitHeroBanner } from "@/components/home/GutKitHeroBanner";
-import { OptimizationProductSlider } from "@/components/home/OptimizationProductSlider";
+import { ProductShelf } from "@/components/home/ProductShelf";
 import { Provenance } from "@/components/home/Provenance";
 import { Rituals } from "@/components/home/Rituals";
 import { StaggerTestimonials } from "@/components/home/StaggerTestimonials";
@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
-      <OptimizationProductSlider />
+      <ProductShelf />
       <Rituals />
       <GutKitHeroBanner />
       <Heritage />

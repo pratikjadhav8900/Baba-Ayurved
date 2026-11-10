@@ -50,7 +50,7 @@ function AccountLayoutInner({ children }: { children: React.ReactNode }) {
                 className={`flex items-center gap-3 rounded-xl px-4 py-3 font-sans text-sm font-semibold transition-colors ${
                   isActive
                     ? "bg-brand-primary text-brand-ivory shadow-sm"
-                    : "text-brand-primary/75 hover:bg-brand-cream/60"
+                    : "text-brand-primary/86 hover:bg-brand-cream/60"
                 }`}
               >
                 <item.icon className="h-4 w-4" strokeWidth={1.75} />

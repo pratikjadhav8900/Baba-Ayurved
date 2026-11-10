@@ -13,12 +13,12 @@ export default function PaymentMethodPage() {
         <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-leaf-green" />
         <div className="font-sans text-sm text-brand-primary">
           <p className="font-semibold">Cash on Delivery</p>
-          <p className="text-xs text-brand-primary/70">Pay with cash when your order arrives. Available on every order.</p>
+          <p className="text-xs text-brand-primary/82">Pay with cash when your order arrives. Available on every order.</p>
         </div>
       </div>
 
       <div className="flex items-center gap-3 rounded-2xl border border-brand-sand/50 bg-white p-5 opacity-60">
-        <CreditCard className="h-5 w-5 shrink-0 text-brand-primary/50" />
+        <CreditCard className="h-5 w-5 shrink-0 text-brand-primary/64" />
         <div className="font-sans text-sm text-brand-primary">
           <p className="flex items-center gap-2 font-semibold">
             Pay Online (UPI / Card)
@@ -28,7 +28,7 @@ export default function PaymentMethodPage() {
               </span>
             )}
           </p>
-          <p className="text-xs text-brand-primary/70">
+          <p className="text-xs text-brand-primary/82">
             {RAZORPAY_ENABLED ? "Secure payment via Razorpay." : "Online payments are being set up."}
           </p>
         </div>

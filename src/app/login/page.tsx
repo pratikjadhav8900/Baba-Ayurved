@@ -3,9 +3,9 @@
 import { useEffect } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { LogIn } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { BrandLockup } from "@/components/brand/BrandLockup";
 
 const GOOGLE_AUTH_ENABLED = Boolean(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID);
 
@@ -21,36 +21,38 @@ export default function LoginPage() {
 
   return (
     <Section tone="paper" className="py-16 md:py-24">
-      <Container className="mx-auto flex max-w-sm flex-col items-center gap-6 text-center">
-        <BrandLockup layout="stacked" tone="default" size="md" />
+      <Container className="mx-auto flex max-w-sm justify-center">
+        <div className="flex w-full flex-col items-center rounded-3xl border border-brand-sand/60 bg-gradient-to-b from-brand-cream/70 to-white p-8 text-center shadow-xl">
+          <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-md">
+            <LogIn className="h-7 w-7 text-brand-primary" />
+          </div>
 
-        <div>
           <h1 className="font-serif text-2xl font-bold text-brand-primary">Sign In</h1>
-          <p className="mt-1 font-sans text-sm text-brand-primary/70">
+          <p className="mt-2 mb-6 font-sans text-sm text-brand-primary/82">
             Sign in to sync your orders, wishlist, and addresses across devices.
           </p>
-        </div>
 
-        {GOOGLE_AUTH_ENABLED ? (
-          <button
-            type="button"
-            onClick={() => signIn("google", { callbackUrl: "/account" })}
-            className="flex w-full items-center justify-center gap-3 rounded-xl border border-brand-sand/60 bg-white py-3 font-sans text-sm font-semibold text-brand-primary shadow-xs transition-all hover:shadow-md active:scale-[0.99]"
-          >
-            <GoogleIcon className="h-5 w-5" />
-            Continue with Google
-          </button>
-        ) : (
-          <div className="w-full rounded-xl border border-dashed border-brand-sand/60 bg-brand-cream/40 p-5">
-            <p className="font-sans text-sm font-semibold text-brand-primary">
-              Sign-in is launching soon
-            </p>
-            <p className="mt-1 font-sans text-xs text-brand-primary/65">
-              Google Sign-In is being set up. Your cart, wishlist, and orders are saved on this
-              device in the meantime.
-            </p>
-          </div>
-        )}
+          {GOOGLE_AUTH_ENABLED ? (
+            <button
+              type="button"
+              onClick={() => signIn("google", { callbackUrl: "/account" })}
+              className="flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-b from-brand-primary to-[#2A1808] py-3 font-sans text-sm font-semibold text-brand-ivory shadow-md transition-all hover:brightness-110 active:scale-[0.99]"
+            >
+              <GoogleIcon className="h-5 w-5" />
+              Continue with Google
+            </button>
+          ) : (
+            <div className="w-full rounded-xl border border-dashed border-brand-sand/60 bg-brand-cream/40 p-5 text-left">
+              <p className="font-sans text-sm font-semibold text-brand-primary">
+                Sign-in is launching soon
+              </p>
+              <p className="mt-1 font-sans text-xs text-brand-primary/76">
+                Google Sign-In is being set up. Your cart, wishlist, and orders are saved on this
+                device in the meantime.
+              </p>
+            </div>
+          )}
+        </div>
       </Container>
     </Section>
   );

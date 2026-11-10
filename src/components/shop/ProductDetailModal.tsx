@@ -128,17 +128,17 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
                 ₹{product.indicativePrice}
               </span>
               {product.originalPrice && (
-                <span className="font-sans text-sm text-brand-primary/45 line-through">
+                <span className="font-sans text-sm text-brand-primary/60 line-through">
                   ₹{product.originalPrice}
                 </span>
               )}
-              <span className="rounded-full bg-brand-cream px-2.5 py-0.5 font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/80">
+              <span className="rounded-full bg-brand-cream px-2.5 py-0.5 font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/90">
                 {product.packSize}
               </span>
             </div>
           </div>
 
-          <p className="font-sans text-sm leading-relaxed text-brand-primary/80">
+          <p className="font-sans text-sm leading-relaxed text-brand-primary/90">
             {product.description}
           </p>
 
@@ -222,7 +222,7 @@ export function ProductDetailModal({ product, onClose }: ProductDetailModalProps
               </button>
             </div>
 
-            <p className="mt-4 text-center font-sans text-[11px] text-brand-primary/60">
+            <p className="mt-4 text-center font-sans text-[11px] text-brand-primary/72">
               <span>Prepared to Shastrokt standards by Phoolchand Aushdhalaya</span>
             </p>
           </div>

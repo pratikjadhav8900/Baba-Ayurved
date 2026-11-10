@@ -65,7 +65,7 @@ function TestimonialCard({ position, testimonial, handleMove, cardSize }: Testim
       <p
         className={cn(
           "absolute bottom-8 left-8 right-8 mt-2 font-sans text-sm italic",
-          isCenter ? "text-brand-ivory/80" : "text-brand-primary/60"
+          isCenter ? "text-brand-ivory/90" : "text-brand-primary/72"
         )}
       >
         &mdash; {testimonial.by}

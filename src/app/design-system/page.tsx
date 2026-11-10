@@ -269,7 +269,7 @@ export default function DesignSystemPage() {
               <div className="flex h-36 items-center justify-center">
                 <BrandLogo variant="primary" tone="reversed" size="lg" />
               </div>
-              <p className="border-t border-line-reversed pt-2 font-sans text-[11px] text-sand/80">
+              <p className="border-t border-line-reversed pt-2 font-sans text-[11px] text-sand/90">
                 Reversed vector artwork in Ivory Cream (#F0E4D3) for primary dark sections, footer, and ribbon banners.
               </p>
             </div>
@@ -306,7 +306,7 @@ export default function DesignSystemPage() {
               <div className="flex h-36 items-center justify-center">
                 <BrandLogo variant="dark-bg" size="lg" />
               </div>
-              <p className="border-t border-line-reversed pt-2 font-sans text-[11px] text-sand/80">
+              <p className="border-t border-line-reversed pt-2 font-sans text-[11px] text-sand/90">
                 Official dark-mode container card extracted from Brand Kit §02 / §03.
               </p>
             </div>
@@ -565,7 +565,7 @@ export default function DesignSystemPage() {
                 <h4 className="font-serif text-lg font-medium text-primary">
                   Honoring the April 2023 GI Tag
                 </h4>
-                <p className="font-serif text-xs leading-relaxed text-ink/90">
+                <p className="font-serif text-xs leading-relaxed text-ink/95">
                   Gond painting belongs to the indigenous artists of Madhya Pradesh. We do not generate tribal artwork via AI or copy motifs in-house. All future packaging artwork will feature direct artist commissioning, named village attribution, and authorised GI licensing.
                 </p>
               </div>

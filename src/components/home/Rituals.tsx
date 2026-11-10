@@ -673,7 +673,7 @@ export function Rituals() {
                       {/* 4. Large Vertical Rotated Sans-Serif Text along Right Edge (Image 1 Signature) */}
                       <div className="absolute right-3 sm:right-4 top-6 bottom-6 z-10 flex items-center pointer-events-none">
                         <span
-                          className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-white/90 uppercase tracking-[0.18em] drop-shadow-md select-none transition-transform duration-300 group-hover:scale-105"
+                          className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-white/95 uppercase tracking-[0.18em] drop-shadow-md select-none transition-transform duration-300 group-hover:scale-105"
                           style={{ writingMode: "vertical-rl" }}
                         >
                           {card.verticalText}
@@ -882,7 +882,7 @@ export function Rituals() {
                       {/* 4. Large Vertical Rotated Sans-Serif Text along Right Edge */}
                       <div className="absolute right-3 sm:right-4 top-6 bottom-6 z-10 flex items-center pointer-events-none">
                         <span
-                          className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-white/90 uppercase tracking-[0.18em] drop-shadow-md select-none transition-transform duration-300 group-hover:scale-105"
+                          className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-white/95 uppercase tracking-[0.18em] drop-shadow-md select-none transition-transform duration-300 group-hover:scale-105"
                           style={{ writingMode: "vertical-rl" }}
                         >
                           {card.verticalText}
@@ -1091,7 +1091,7 @@ export function Rituals() {
                       {/* 4. Large Vertical Rotated Sans-Serif Text along Right Edge */}
                       <div className="absolute right-3 sm:right-4 top-6 bottom-6 z-10 flex items-center pointer-events-none">
                         <span
-                          className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-white/90 uppercase tracking-[0.18em] drop-shadow-md select-none transition-transform duration-300 group-hover:scale-105"
+                          className="font-sans font-black text-2xl sm:text-3xl md:text-4xl text-white/95 uppercase tracking-[0.18em] drop-shadow-md select-none transition-transform duration-300 group-hover:scale-105"
                           style={{ writingMode: "vertical-rl" }}
                         >
                           {card.verticalText}
@@ -1186,7 +1186,7 @@ export function Rituals() {
             <button
               type="button"
               onClick={() => setSelectedStep(null)}
-              className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full text-brand-primary/70 hover:bg-brand-cream hover:text-brand-primary"
+              className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full text-brand-primary/82 hover:bg-brand-cream hover:text-brand-primary"
               aria-label="Close modal"
             >
               <X className="h-5 w-5" />
@@ -1197,7 +1197,7 @@ export function Rituals() {
                 <span className="rounded-xs bg-brand-cream border border-brand-sand px-2.5 py-0.5 font-sans text-[10px] font-bold uppercase tracking-label text-brand-leaf-green">
                   Step {selectedStep.stepNumber} &middot; {selectedStep.tag}
                 </span>
-                <span className="font-sans text-xs text-brand-primary/60">
+                <span className="font-sans text-xs text-brand-primary/72">
                   {selectedStep.timing}
                 </span>
               </div>
@@ -1223,7 +1223,7 @@ export function Rituals() {
               </div>
 
               <div className="rounded-sm border border-brand-sand bg-brand-cream/60 p-3.5">
-                <span className="block font-sans text-[11px] font-bold uppercase tracking-label text-brand-primary/70">
+                <span className="block font-sans text-[11px] font-bold uppercase tracking-label text-brand-primary/82">
                   Classical Treatise Reference
                 </span>
                 <span className="font-serif text-sm italic text-brand-primary">
@@ -1235,12 +1235,12 @@ export function Rituals() {
                 <h4 className="font-sans text-xs font-bold uppercase tracking-label text-brand-primary">
                   How To Practice:
                 </h4>
-                <p className="font-sans text-sm leading-relaxed text-brand-primary/85">
+                <p className="font-sans text-sm leading-relaxed text-brand-primary/93">
                   {selectedStep.actionGuidance}
                 </p>
               </div>
 
-              <div className="border-t border-brand-sand pt-3 text-brand-primary/80">
+              <div className="border-t border-brand-sand pt-3 text-brand-primary/90">
                 <span className="font-sans text-xs">
                   Required Apothecary Tool: <strong>{selectedStep.vesselOrTool}</strong>
                 </span>

@@ -421,7 +421,7 @@ export function WebGLLiquid({
               </h2>
             )}
             {description && (
-              <p className="mt-6 max-w-[640px] font-sans text-base sm:text-lg md:text-xl font-normal leading-relaxed text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
+              <p className="mt-6 max-w-[640px] font-sans text-base sm:text-lg md:text-xl font-normal leading-relaxed text-white/95 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
                 {description}
               </p>
             )}
@@ -471,7 +471,7 @@ export function WebGLLiquid({
                 </h2>
               )}
               {description && (
-                <p className="mt-6 max-w-[640px] font-sans text-base sm:text-lg md:text-xl font-normal leading-relaxed text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
+                <p className="mt-6 max-w-[640px] font-sans text-base sm:text-lg md:text-xl font-normal leading-relaxed text-white/95 drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]">
                   {description}
                 </p>
               )}

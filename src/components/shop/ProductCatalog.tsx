@@ -55,7 +55,7 @@ export function ProductCatalog() {
                   className={`shrink-0 whitespace-nowrap rounded-xl px-4 py-2 font-sans text-xs font-semibold tracking-wider transition-all duration-200 focus-visible:outline-brand-primary ${
                     isActive
                       ? "bg-brand-primary text-brand-ivory shadow-xs"
-                      : "bg-white text-brand-primary/80 border border-brand-sand hover:bg-brand-sand/30 hover:text-brand-primary"
+                      : "bg-white text-brand-primary/90 border border-brand-sand hover:bg-brand-sand/30 hover:text-brand-primary"
                   }`}
                 >
                   {cat.label}
@@ -93,7 +93,7 @@ export function ProductCatalog() {
       </div>
 
       {/* Catalog Counter & Reset row */}
-      <div className="flex items-center justify-between text-xs font-medium text-brand-primary/70">
+      <div className="flex items-center justify-between text-xs font-medium text-brand-primary/82">
         <p>
           Showing <span className="font-bold text-brand-primary">{filteredProducts.length}</span>{" "}
           {filteredProducts.length === 1 ? "preparation" : "classical preparations"}
@@ -120,7 +120,7 @@ export function ProductCatalog() {
           <h3 className="font-serif text-xl font-bold text-brand-primary">
             No preparations match this selection
           </h3>
-          <p className="mt-1 font-sans text-xs text-brand-primary/70 max-w-sm">
+          <p className="mt-1 font-sans text-xs text-brand-primary/82 max-w-sm">
             Try choosing a different category or resetting filters to explore our full pharmacy catalogue.
           </p>
           <button

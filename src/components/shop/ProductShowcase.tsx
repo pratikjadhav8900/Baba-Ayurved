@@ -32,7 +32,7 @@ export function ProductShowcase() {
               className={`whitespace-nowrap rounded-sm px-4 py-2 font-sans text-xs font-semibold tracking-label uppercase transition-all duration-200 focus-visible:outline-brand-primary ${
                 isActive
                   ? "bg-brand-primary text-brand-ivory shadow-xs"
-                  : "bg-brand-cream text-brand-primary/80 hover:bg-brand-sand hover:text-brand-primary border border-brand-sand"
+                  : "bg-brand-cream text-brand-primary/90 hover:bg-brand-sand hover:text-brand-primary border border-brand-sand"
               }`}
             >
               {cat.label}
@@ -90,7 +90,7 @@ export function ProductShowcase() {
                     <span className="font-hindi text-xs text-brand-leaf-green font-medium">
                       {product.sanskritName}
                     </span>
-                    <span className="font-sans text-[11px] uppercase tracking-label text-brand-primary/60 font-semibold">
+                    <span className="font-sans text-[11px] uppercase tracking-label text-brand-primary/72 font-semibold">
                       {product.ritualTiming.split(" ")[0]}
                     </span>
                   </div>
@@ -99,13 +99,13 @@ export function ProductShowcase() {
                     {product.name}
                   </h3>
 
-                  <p className="mt-2 line-clamp-2 font-serif text-xs leading-relaxed text-brand-primary/80 sm:text-sm">
+                  <p className="mt-2 line-clamp-2 font-serif text-xs leading-relaxed text-brand-primary/90 sm:text-sm">
                     {product.description}
                   </p>
 
                   <div className="mt-4 flex items-center justify-between border-t border-solid border-brand-sand/60 pt-3">
                     <div className="flex flex-col">
-                      <span className="font-sans text-[10px] uppercase tracking-label text-brand-primary/60">
+                      <span className="font-sans text-[10px] uppercase tracking-label text-brand-primary/72">
                         {product.packSize}
                       </span>
                       <span className="font-sans text-sm font-bold text-brand-primary">
@@ -132,7 +132,7 @@ export function ProductShowcase() {
       {/* Vaidya Guidance Notice */}
       <div className="flex flex-col items-center justify-between gap-4 rounded-sm border border-solid border-line bg-paper-deep p-6 sm:flex-row">
         <div className="flex items-center gap-3">
-          <p className="font-serif text-xs text-ink/90 sm:text-sm">
+          <p className="font-serif text-xs text-ink/95 sm:text-sm">
             All formulations are handcrafted following classical Shastrokt standards of Phoolchand Aushdhalaya.
             Consult our staff Vaidya for personalised dinacharya guidance.
           </p>

@@ -63,7 +63,7 @@ export function ArtworkZone({
           <span
             className={cn(
               "font-sans text-label uppercase tracking-label",
-              isGlass ? "text-white/70" : "text-tone-muted",
+              isGlass ? "text-white/82" : "text-tone-muted",
             )}
           >
             Commissioned artwork &middot; Licence ref. {artwork.licenceReference}
@@ -114,7 +114,7 @@ export function ArtworkZone({
         <span
           className={cn(
             "font-sans text-value",
-            isGlass ? "text-white/85" : "text-tone-muted",
+            isGlass ? "text-white/93" : "text-tone-muted",
           )}
         >
           Artist and village: to be credited by name
@@ -122,7 +122,7 @@ export function ArtworkZone({
         <span
           className={cn(
             "font-sans text-label uppercase tracking-label",
-            isGlass ? "text-white/60" : "text-tone-muted",
+            isGlass ? "text-white/72" : "text-tone-muted",
           )}
         >
           No artwork or licence on file

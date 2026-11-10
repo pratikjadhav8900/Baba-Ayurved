@@ -22,7 +22,7 @@ export default function OrdersPage() {
         <MobileAccountHeader title="My Orders" />
         <div className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-brand-sand/60 bg-brand-cream/40 py-20 text-center">
           <Package className="h-8 w-8 text-brand-sand" strokeWidth={1.5} />
-          <p className="font-serif text-sm text-brand-primary/70">You haven&apos;t placed any orders yet.</p>
+          <p className="font-serif text-sm text-brand-primary/82">You haven&apos;t placed any orders yet.</p>
           <Link
             href="/shop"
             className="rounded-xl bg-brand-primary px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider text-brand-ivory"
@@ -46,7 +46,7 @@ export default function OrdersPage() {
         >
           <div>
             <p className="font-serif text-base font-bold text-brand-primary">{order.displayId}</p>
-            <p className="font-sans text-xs text-brand-primary/60">
+            <p className="font-sans text-xs text-brand-primary/72">
               {new Date(order.createdAt).toLocaleDateString("en-IN", {
                 day: "numeric",
                 month: "short",

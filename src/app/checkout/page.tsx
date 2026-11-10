@@ -68,7 +68,7 @@ export default function CheckoutPage() {
           <Heading as="h1" size="statement" className="text-brand-primary">
             Your bag is empty
           </Heading>
-          <p className="max-w-md font-serif text-sm text-brand-primary/75">
+          <p className="max-w-md font-serif text-sm text-brand-primary/86">
             Add a few classical preparations to your bag before checking out.
           </p>
           <a
@@ -134,7 +134,7 @@ export default function CheckoutPage() {
                       />
                       <div className="font-sans text-sm text-brand-primary">
                         <p className="font-semibold">{address.fullName} &middot; {address.phone}</p>
-                        <p className="text-brand-primary/75">
+                        <p className="text-brand-primary/86">
                           {address.line1}{address.line2 ? `, ${address.line2}` : ""}, {address.city}, {address.state} - {address.pincode}
                         </p>
                       </div>
@@ -150,48 +150,48 @@ export default function CheckoutPage() {
                     placeholder="Full name"
                     value={form.fullName}
                     onChange={(e) => setForm({ ...form, fullName: e.target.value })}
-                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary sm:col-span-1"
+                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary sm:col-span-1"
                   />
                   <input
                     required
                     placeholder="Phone number"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary sm:col-span-1"
+                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary sm:col-span-1"
                   />
                   <input
                     required
                     placeholder="Address line 1 (House no., street)"
                     value={form.line1}
                     onChange={(e) => setForm({ ...form, line1: e.target.value })}
-                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary sm:col-span-2"
+                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary sm:col-span-2"
                   />
                   <input
                     placeholder="Address line 2 (optional)"
                     value={form.line2}
                     onChange={(e) => setForm({ ...form, line2: e.target.value })}
-                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary sm:col-span-2"
+                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary sm:col-span-2"
                   />
                   <input
                     required
                     placeholder="City"
                     value={form.city}
                     onChange={(e) => setForm({ ...form, city: e.target.value })}
-                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
                   />
                   <input
                     required
                     placeholder="State"
                     value={form.state}
                     onChange={(e) => setForm({ ...form, state: e.target.value })}
-                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
                   />
                   <input
                     required
                     placeholder="Pincode"
                     value={form.pincode}
                     onChange={(e) => setForm({ ...form, pincode: e.target.value })}
-                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary sm:col-span-2"
+                    className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary sm:col-span-2"
                   />
                   <div className="flex gap-2 sm:col-span-2">
                     <button
@@ -234,7 +234,7 @@ export default function CheckoutPage() {
                   />
                   <div className="font-sans text-sm text-brand-primary">
                     <p className="font-semibold">Cash on Delivery</p>
-                    <p className="text-xs text-brand-primary/70">Pay with cash when your order arrives.</p>
+                    <p className="text-xs text-brand-primary/82">Pay with cash when your order arrives.</p>
                   </div>
                 </label>
 
@@ -264,7 +264,7 @@ export default function CheckoutPage() {
                         </span>
                       )}
                     </p>
-                    <p className="text-xs text-brand-primary/70">
+                    <p className="text-xs text-brand-primary/82">
                       {RAZORPAY_ENABLED
                         ? "Secure payment via Razorpay."
                         : "Online payments are being set up. Cash on Delivery is available now."}
@@ -292,7 +292,7 @@ export default function CheckoutPage() {
                       <div className="flex flex-1 items-center justify-between font-sans text-sm text-brand-primary">
                         <div>
                           <p className="font-semibold line-clamp-1">{product.name}</p>
-                          <p className="text-xs text-brand-primary/60">Qty {quantity}</p>
+                          <p className="text-xs text-brand-primary/72">Qty {quantity}</p>
                         </div>
                         <span className="font-semibold">₹{product.indicativePrice * quantity}</span>
                       </div>
@@ -302,7 +302,7 @@ export default function CheckoutPage() {
               </div>
 
               <div className="mt-4 flex items-center justify-between border-t border-brand-sand/50 pt-4">
-                <span className="font-sans text-xs uppercase tracking-wider text-brand-primary/70">Subtotal</span>
+                <span className="font-sans text-xs uppercase tracking-wider text-brand-primary/82">Subtotal</span>
                 <span className="font-sans text-xl font-bold text-brand-primary">
                   ₹{subtotal.toLocaleString("en-IN")}
                 </span>
@@ -321,7 +321,7 @@ export default function CheckoutPage() {
                 Place Order
               </button>
 
-              <p className="mt-3 flex items-center justify-center gap-1.5 font-sans text-[11px] text-brand-primary/60">
+              <p className="mt-3 flex items-center justify-center gap-1.5 font-sans text-[11px] text-brand-primary/72">
                 <Lock className="h-3 w-3" />
                 Your information is stored securely on this device.
               </p>

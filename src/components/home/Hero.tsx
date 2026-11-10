@@ -400,9 +400,9 @@ export function Hero() {
           {/* Top Bar inside Stage: Counter & Swipe Pill */}
           <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
             <span className="rounded-full bg-black/60 backdrop-blur-md border border-white/15 px-2.5 py-0.5 font-sans text-[11px] font-bold text-white tracking-wider">
-              0{currentIndex + 1} <span className="text-white/50">/ 0{slides.length}</span>
+              0{currentIndex + 1} <span className="text-white/64">/ 0{slides.length}</span>
             </span>
-            <span className="rounded-full bg-black/50 backdrop-blur-md border border-white/10 px-2.5 py-0.5 font-sans text-[10px] text-white/80 font-medium tracking-wide">
+            <span className="rounded-full bg-black/50 backdrop-blur-md border border-white/10 px-2.5 py-0.5 font-sans text-[10px] text-white/90 font-medium tracking-wide">
               Swipe to explore
             </span>
           </div>
@@ -468,10 +468,6 @@ export function Hero() {
             <span>ACCESS THE COLLECTION</span>
             <ShoppingBag className="h-4 w-4" />
           </button>
-
-          <p className="rounded-xl bg-black/35 px-4 py-2.5 text-center font-sans text-[11px] text-white leading-relaxed backdrop-blur-sm">
-            Ultra-pure formulations systematically verified from Sanskrit pharmacopeias for clinical reliability.
-          </p>
         </div>
 
       </div>

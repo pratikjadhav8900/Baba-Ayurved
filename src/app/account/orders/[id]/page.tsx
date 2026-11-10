@@ -25,7 +25,7 @@ export default function OrderDetailPage() {
       <div className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-brand-sand/60 bg-brand-cream/40 py-20 text-center">
         <MobileAccountHeader title="Order" backHref="/account/orders" />
         <h1 className="font-serif text-xl font-bold text-brand-primary">Order not found</h1>
-        <p className="font-serif text-sm text-brand-primary/75">
+        <p className="font-serif text-sm text-brand-primary/86">
           We couldn&apos;t find this order on this device.
         </p>
         <Link
@@ -45,7 +45,7 @@ export default function OrderDetailPage() {
       <MobileAccountHeader title="Order Details" backHref="/account/orders" />
       <div className="flex flex-col gap-1">
         <h1 className="font-serif text-xl font-bold text-brand-primary">{order.displayId}</h1>
-        <p className="font-sans text-sm text-brand-primary/70">
+        <p className="font-sans text-sm text-brand-primary/82">
           Placed on{" "}
           {new Date(order.createdAt).toLocaleDateString("en-IN", {
             day: "numeric",
@@ -76,7 +76,7 @@ export default function OrderDetailPage() {
                     </div>
                     <span
                       className={`text-center font-sans text-[10px] font-semibold uppercase tracking-wider ${
-                        isComplete ? "text-brand-primary" : "text-brand-primary/40"
+                        isComplete ? "text-brand-primary" : "text-brand-primary/58"
                       }`}
                     >
                       {step.label}
@@ -93,7 +93,7 @@ export default function OrderDetailPage() {
               );
             })}
           </div>
-          <p className="mt-6 font-sans text-xs text-brand-primary/60">
+          <p className="mt-6 font-sans text-xs text-brand-primary/72">
             {order.status === "placed"
               ? "We've received your order and are preparing it. We'll update this page as it progresses."
               : `Current status: ${order.status}.`}
@@ -117,7 +117,7 @@ export default function OrderDetailPage() {
                     <div className="flex flex-1 items-center justify-between font-sans text-sm text-brand-primary">
                       <div>
                         <p className="font-semibold">{item.name}</p>
-                        <p className="text-xs text-brand-primary/60">Qty {item.quantity}</p>
+                        <p className="text-xs text-brand-primary/72">Qty {item.quantity}</p>
                       </div>
                       <span className="font-semibold">₹{item.price * item.quantity}</span>
                     </div>
@@ -126,7 +126,7 @@ export default function OrderDetailPage() {
               })}
             </div>
             <div className="mt-4 flex items-center justify-between border-t border-brand-sand/50 pt-4">
-              <span className="font-sans text-xs uppercase tracking-wider text-brand-primary/70">Total</span>
+              <span className="font-sans text-xs uppercase tracking-wider text-brand-primary/82">Total</span>
               <span className="font-sans text-xl font-bold text-brand-primary">
                 ₹{order.subtotal.toLocaleString("en-IN")}
               </span>
@@ -137,7 +137,7 @@ export default function OrderDetailPage() {
           <div className="flex flex-col gap-6 lg:col-span-5">
             <div className="rounded-2xl border border-solid border-brand-sand/60 bg-white p-6">
               <h2 className="mb-3 font-serif text-lg font-bold text-brand-primary">Shipping Address</h2>
-              <p className="font-sans text-sm text-brand-primary/80">
+              <p className="font-sans text-sm text-brand-primary/90">
                 {order.shippingAddress.fullName} &middot; {order.shippingAddress.phone}
                 <br />
                 {order.shippingAddress.line1}
@@ -149,7 +149,7 @@ export default function OrderDetailPage() {
 
             <div className="rounded-2xl border border-solid border-brand-sand/60 bg-white p-6">
               <h2 className="mb-3 font-serif text-lg font-bold text-brand-primary">Payment</h2>
-              <p className="font-sans text-sm text-brand-primary/80">
+              <p className="font-sans text-sm text-brand-primary/90">
                 {order.paymentMethod === "cod" ? "Cash on Delivery" : "Paid Online"} &middot;{" "}
                 <span className="capitalize">{order.paymentStatus}</span>
               </p>

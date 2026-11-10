@@ -26,7 +26,7 @@ export function SiteFooter() {
           {/* Brand, Lineage & Newsletter Column */}
           <div className="flex flex-col gap-6 md:col-span-4">
             <BrandLockup layout="horizontal" tone="reversed" size="md" />
-            <p className="max-w-[32ch] font-serif text-sm leading-relaxed text-brand-ivory/90">
+            <p className="max-w-[32ch] font-serif text-sm leading-relaxed text-brand-ivory/95">
               Preserving 159 years of authentic clinical Hakim lineage from Maharaj Bada, Gwalior, Madhya Pradesh.
             </p>
             <div className="rounded-xs border border-brand-sand/30 bg-[#3E240C]/60 p-4">
@@ -77,7 +77,7 @@ export function SiteFooter() {
               </ul>
             </nav>
 
-            <div className="flex flex-col gap-2 text-xs font-sans text-brand-ivory/85">
+            <div className="flex flex-col gap-2 text-xs font-sans text-brand-ivory/93">
               <p className={columnLabel}>Manufactured By</p>
               <div className="flex items-start gap-2">
                 <MapPin aria-hidden size={14} strokeWidth={1.5} className="mt-0.5 shrink-0 text-brand-sand" />
@@ -113,7 +113,7 @@ export function SiteFooter() {
 
             <div className="flex flex-col gap-2">
               <p className={columnLabel}>Compliance</p>
-              <p className="font-sans text-xs leading-relaxed text-brand-ivory/85">
+              <p className="font-sans text-xs leading-relaxed text-brand-ivory/93">
                 Formulations prepared in accordance with the Ayurvedic Pharmacopoeia of India. No disease cure or treatment claims are made.
               </p>
             </div>
@@ -121,7 +121,7 @@ export function SiteFooter() {
         </Container>
 
         {/* Bottom Bar */}
-        <Container className="mt-14 flex flex-col gap-4 border-t border-solid border-brand-sand/20 pt-8 text-xs text-brand-ivory/85 md:flex-row md:items-center md:justify-between">
+        <Container className="mt-14 flex flex-col gap-4 border-t border-solid border-brand-sand/20 pt-8 text-xs text-brand-ivory/93 md:flex-row md:items-center md:justify-between">
           <p>
             &copy; 2026 {site.name} &middot; Phoolchand Aushdhalaya lineage since 1870s &middot; Pharmacy founded {site.foundedYear}
           </p>

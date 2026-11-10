@@ -59,7 +59,7 @@ export default function PersonalInformationPage() {
           </div>
           <div>
             <h1 className="font-serif text-xl font-bold text-brand-primary">{fullName || "Welcome"}</h1>
-            {profile.email && <p className="font-sans text-xs text-brand-primary/60">{profile.email}</p>}
+            {profile.email && <p className="font-sans text-xs text-brand-primary/72">{profile.email}</p>}
           </div>
           <a
             href="#edit-profile"
@@ -79,14 +79,14 @@ export default function PersonalInformationPage() {
                 index > 0 ? "border-t border-brand-sand/40" : ""
               }`}
             >
-              <item.icon className="h-[18px] w-[18px] text-brand-primary/70" strokeWidth={1.5} />
+              <item.icon className="h-[18px] w-[18px] text-brand-primary/82" strokeWidth={1.5} />
               <span className="flex-1 font-sans text-sm font-medium text-brand-primary">{item.label}</span>
               {item.countKey && counts[item.countKey] > 0 && (
                 <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-brand-leaf-green/15 px-1.5 font-sans text-[11px] font-semibold text-brand-leaf-green">
                   {counts[item.countKey]}
                 </span>
               )}
-              <ChevronRight className="h-4 w-4 text-brand-primary/40" />
+              <ChevronRight className="h-4 w-4 text-brand-primary/58" />
             </Link>
           ))}
         </div>
@@ -106,27 +106,28 @@ export default function PersonalInformationPage() {
             value={form.firstName}
             onChange={(e) => setForm({ ...form, firstName: e.target.value })}
             placeholder="First name"
-            className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+            className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
           />
           <input
             value={form.lastName}
             onChange={(e) => setForm({ ...form, lastName: e.target.value })}
             placeholder="Last name"
-            className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+            className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
           />
           <input
             type="email"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             placeholder="Email address"
-            className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+            className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
+            suppressHydrationWarning
           />
           <input
             type="tel"
             value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
             placeholder="Phone number"
-            className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+            className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
           />
           <button
             type="submit"
@@ -146,7 +147,7 @@ export default function PersonalInformationPage() {
           type="button"
           onClick={handleClearData}
           onBlur={() => setConfirmingClear(false)}
-          className="px-1 text-center font-sans text-xs font-semibold text-red-700/80"
+          className="px-1 text-center font-sans text-xs font-semibold text-red-700/90"
         >
           {confirmingClear ? "Tap again to confirm — clears all saved data" : "Clear saved data on this device"}
         </button>
@@ -160,7 +161,7 @@ export default function PersonalInformationPage() {
           </div>
           <div>
             <h2 className="font-serif text-lg font-bold text-brand-primary">Personal Information</h2>
-            <p className="font-sans text-xs text-brand-primary/60">
+            <p className="font-sans text-xs text-brand-primary/72">
               Saved on this device — sign-in &amp; cloud sync are launching soon.
             </p>
           </div>
@@ -169,32 +170,32 @@ export default function PersonalInformationPage() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <label className="flex flex-col gap-1.5">
-              <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/70">
+              <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/82">
                 First Name
               </span>
               <input
                 value={form.firstName}
                 onChange={(e) => setForm({ ...form, firstName: e.target.value })}
                 placeholder="First name"
-                className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+                className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
               />
             </label>
 
             <label className="flex flex-col gap-1.5">
-              <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/70">
+              <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/82">
                 Last Name
               </span>
               <input
                 value={form.lastName}
                 onChange={(e) => setForm({ ...form, lastName: e.target.value })}
                 placeholder="Last name"
-                className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+                className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
               />
             </label>
           </div>
 
           <label className="flex flex-col gap-1.5">
-            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/70">
+            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/82">
               Email
             </span>
             <input
@@ -202,12 +203,13 @@ export default function PersonalInformationPage() {
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               placeholder="you@example.com"
-              className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+              className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
+              suppressHydrationWarning
             />
           </label>
 
           <label className="flex flex-col gap-1.5">
-            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/70">
+            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/82">
               Phone
             </span>
             <input
@@ -215,18 +217,18 @@ export default function PersonalInformationPage() {
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
               placeholder="+91 XXXXX XXXXX"
-              className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+              className="rounded-lg border border-brand-sand/60 px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
             />
           </label>
 
           <label className="flex flex-col gap-1.5">
-            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/70">
+            <span className="font-sans text-xs font-semibold uppercase tracking-wider text-brand-primary/82">
               Gender
             </span>
             <select
               value={form.gender}
               onChange={(e) => setForm({ ...form, gender: e.target.value })}
-              className="rounded-lg border border-brand-sand/60 bg-white px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/40 outline-none focus-visible:border-brand-primary"
+              className="rounded-lg border border-brand-sand/60 bg-white px-3 py-2.5 font-sans text-sm text-brand-primary placeholder:text-brand-primary/58 outline-none focus-visible:border-brand-primary"
             >
               {genderOptions.map((option) => (
                 <option key={option} value={option}>
@@ -256,7 +258,7 @@ export default function PersonalInformationPage() {
             type="button"
             onClick={handleClearData}
             onBlur={() => setConfirmingClear(false)}
-            className="font-sans text-xs font-semibold text-red-700/80 hover:text-red-700 hover:underline"
+            className="font-sans text-xs font-semibold text-red-700/90 hover:text-red-700 hover:underline"
           >
             {confirmingClear ? "Tap again to confirm — this clears cart, orders, wishlist & addresses" : "Clear saved data on this device"}
           </button>
