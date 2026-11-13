@@ -94,28 +94,24 @@ export function ArtworkProductReveal({ activeIndex, className }: { activeIndex: 
     }
 
     const ctx = gsap.context(() => {
-      const bands = ".artwork-jar-band";
+      const bands = gsap.utils.toArray<SVGRectElement>(".artwork-jar-band");
       timelineRef.current?.kill();
 
+      // Animate the rect geometry itself (not CSS transforms): transforms on
+      // <clipPath> children resolve their origin against the whole viewBox and
+      // are unreliable across browsers, which left the image clipped to a tiny
+      // fragment in production.
+      const full = (b: (typeof BANDS)[number]) => ({ x: b.x, y: b.y, width: b.width, height: b.height });
       if (reduceMotion) {
-        gsap.set(bands, { scale: 1 });
+        bands.forEach((el, i) => gsap.set(el, { attr: full(BANDS[i]) }));
         return;
       }
 
-      gsap.set(bands, { scale: 0, transformOrigin: "50% 50%" });
       const tl = gsap.timeline();
-      tl.to(bands, {
-        scale: 1,
-        duration: 0.7,
-        stagger: { amount: 0.35, from: "start" },
-        ease: "expo.out",
-      }).to(bands, {
-        scale: 1.025,
-        duration: 0.5,
-        yoyo: true,
-        repeat: 1,
-        ease: "sine.inOut",
-        stagger: { amount: 0.15, from: "center" },
+      bands.forEach((el, i) => {
+        const b = BANDS[i];
+        gsap.set(el, { attr: { x: b.x + b.width / 2, y: b.y + b.height / 2, width: 0, height: 0 } });
+        tl.to(el, { attr: full(b), duration: 0.7, ease: "expo.out" }, i * 0.08);
       });
       timelineRef.current = tl;
     }, containerRef);
@@ -132,7 +128,6 @@ export function ArtworkProductReveal({ activeIndex, className }: { activeIndex: 
               <rect
                 key={i}
                 className="artwork-jar-band"
-                style={{ transform: "scale(0)", transformOrigin: "50% 50%" }}
                 {...band}
               />
             ))}
